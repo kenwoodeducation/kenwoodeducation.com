@@ -392,8 +392,7 @@ footer p + p { margin-top: 0.3rem; }
       <label>Anything else we should know <span>(optional)</span></label>
       <textarea name="notes" placeholder="Learning style, previous tutoring experience, specific topics, availability..."></textarea>
     </div>
-    <input type="hidden" name="_subject" value="New waitlist enquiry - Kenwood Education">
-    <input type="hidden" name="_next" value="https://kenwoodeducation.com/#thankyou">
+    <input type="hidden" name="_subject" value="New enquiry - Kenwood Education">
     <button type="submit" class="form-submit">Get matched</button>
     <p class="form-note">We&rsquo;ll be in touch shortly to discuss the right match for your child.</p>
     </form>
@@ -408,6 +407,33 @@ footer p + p { margin-top: 0.3rem; }
 </footer>
 
 <script>
+const form = document.getElementById('waitlist-form');
+form.addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const btn = form.querySelector('.form-submit');
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+  try {
+    const response = await fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    });
+    if (response.ok) {
+      btn.textContent = "Thank you - we'll be in touch shortly";
+      btn.style.background = '#085041';
+      form.querySelectorAll('input, select, textarea').forEach(el => el.disabled = true);
+    } else {
+      btn.textContent = 'Something went wrong - please email us directly';
+      btn.disabled = false;
+      btn.style.background = '#c0392b';
+    }
+  } catch (error) {
+    btn.textContent = 'Something went wrong - please email us directly';
+    btn.disabled = false;
+    btn.style.background = '#c0392b';
+  }
+});
 </script>
 </body>
 </html>
