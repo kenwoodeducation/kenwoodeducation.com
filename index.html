@@ -121,7 +121,8 @@ details summary { cursor: pointer; user-select: none; }
 details[open] > summary > span { transform: rotate(45deg); display: inline-block; transition: transform 0.2s; }
 
 .footer-logo { font-family: var(--serif); font-size: 1rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.65); margin-bottom: 0.5rem; }
-footer p { font-size: 0.78rem; color: rgba(255,255,255,0.4); font-weight: 300; }
+footer { background: var(--ink); padding: 2.5rem 2rem; text-align: center; }
+footer p { font-size: 0.78rem; color: white; font-weight: 300; }
 footer p + p { margin-top: 0.3rem; }
 
 @media (max-width: 600px) {
@@ -150,6 +151,14 @@ footer p + p { margin-top: 0.3rem; }
   "url": "https://kenwoodeducation.com",
   "telephone": "",
   "email": "hello@kenwoodeducation.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Suite 272, 17a Highgate High Street",
+    "addressLocality": "Highgate",
+    "addressRegion": "London",
+    "postalCode": "N6 5JT",
+    "addressCountry": "GB"
+  },
   "priceRange": "££",
   "areaServed": [
     {"@type": "Place", "name": "Highgate, London"},
@@ -579,8 +588,9 @@ footer p + p { margin-top: 0.3rem; }
     </span>
   </div>
   <p>Specialist in-person tutoring &middot; North London &middot; kenwoodeducation.com</p>
+  <p>Suite 272, 17a Highgate High Street, Highgate, London N6 5JT</p>
   <p>Highgate &middot; Hampstead &middot; Muswell Hill &middot; Crouch End &middot; East Finchley</p>
-  <p style="margin-top:1rem"><a href="mailto:hello@kenwoodeducation.com" style="color:rgba(255,255,255,0.4);text-decoration:none;font-size:0.75rem">hello@kenwoodeducation.com</a></p>
+  <p style="margin-top:1rem"><a href="mailto:hello@kenwoodeducation.com" style="color:white;text-decoration:none;font-size:0.75rem">hello@kenwoodeducation.com</a></p>
 </footer>
 
 <script>
