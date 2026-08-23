@@ -352,8 +352,17 @@ footer p + p { margin-top: 0.3rem; }
       <div><label>Email address</label><input type="email" name="email" placeholder="jane@example.com" required></div>
     </div>
     <div class="form-row">
-      <label>Phone number <span>(optional)</span></label>
-      <input type="text" name="phone" placeholder="07XXX XXXXXX">
+      <label>Phone number <span id="phone-hint">(optional)</span></label>
+      <input type="text" name="phone" id="phone-input" placeholder="07XXX XXXXXX">
+    </div>
+    <div class="form-row">
+      <label>Preferred contact method</label>
+      <select name="preferred_contact" id="preferred-contact">
+        <option value="">No preference</option>
+        <option>Phone</option>
+        <option>Email</option>
+        <option>WhatsApp</option>
+      </select>
     </div>
     <div class="form-grid">
       <div><label>Your area</label>
@@ -363,14 +372,19 @@ footer p + p { margin-top: 0.3rem; }
           <option>Crouch End</option><option>East Finchley</option><option>Other nearby area</option>
         </select>
       </div>
-      <div><label>Subject needed</label>
-        <select name="subject" required>
+      <div><label>Subject</label>
+        <select name="subject" id="subject-select" required>
           <option value="">Select subject</option>
           <option>GCSE Maths</option><option>GCSE English</option><option>GCSE Sciences</option>
-          <option>GCSE Other</option><option>A-level</option>
-          <option>Primary</option><option>Music Lessons</option><option>Multiple subjects</option><option>Other</option>
+          <option>GCSE Other</option>
+          <option>A-level Maths</option><option>A-level English</option><option>A-level Sciences</option><option>A-level Other</option>
+          <option>Primary</option><option>Entrance Exams</option><option>Music Lessons</option><option>Multiple subjects</option><option>Other</option>
         </select>
       </div>
+    </div>
+    <div class="form-row" id="subject-detail-row" style="display:none">
+      <label>Please specify</label>
+      <input type="text" name="subject_detail" id="subject-detail-input" placeholder="e.g. Geography, or Maths and Spanish">
     </div>
     <div class="form-grid">
       <div><label>Year group</label>
@@ -387,7 +401,6 @@ footer p + p { margin-top: 0.3rem; }
           <option>Needs catch-up support</option>
           <option>Working at expected level</option>
           <option>Aiming for top grades</option>
-          <option>Selective school prep</option>
         </select>
       </div>
     </div>
@@ -397,7 +410,7 @@ footer p + p { margin-top: 0.3rem; }
     </div>
     <div class="form-row">
       <label>Anything else we should know <span>(optional)</span></label>
-      <textarea name="notes" placeholder="Learning style, previous tutoring experience, specific topics, availability..."></textarea>
+      <textarea name="notes" placeholder="Learning style, previous tutoring experience, availability, or anything else that would help us find the right fit, e.g. additional needs like ADHD or dyslexia, if relevant."></textarea>
     </div>
     <input type="hidden" name="_subject" value="New enquiry - Kenwood Education">
     <button type="submit" class="form-submit">Get in touch</button>
@@ -521,6 +534,27 @@ footer p + p { margin-top: 0.3rem; }
 </footer>
 
 <script>
+const subjectSelect = document.getElementById('subject-select');
+const subjectDetailRow = document.getElementById('subject-detail-row');
+const subjectDetailInput = document.getElementById('subject-detail-input');
+
+subjectSelect.addEventListener('change', function() {
+  const needsDetail = ['Other', 'Multiple subjects', 'GCSE Other', 'A-level Other'].includes(this.value);
+  subjectDetailRow.style.display = needsDetail ? 'block' : 'none';
+  subjectDetailInput.required = needsDetail;
+  if (!needsDetail) subjectDetailInput.value = '';
+});
+
+const preferredContact = document.getElementById('preferred-contact');
+const phoneInput = document.getElementById('phone-input');
+const phoneHint = document.getElementById('phone-hint');
+
+preferredContact.addEventListener('change', function() {
+  const needsPhone = this.value === 'Phone' || this.value === 'WhatsApp';
+  phoneInput.required = needsPhone;
+  phoneHint.textContent = needsPhone ? '(required for ' + this.value + ')' : '(optional)';
+});
+
 const form = document.getElementById('enquiry-form');
 form.addEventListener('submit', async function(e) {
   e.preventDefault();
