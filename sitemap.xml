@@ -25,6 +25,42 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://kenwoodeducation.com/areas/highgate.html</loc>
+    <lastmod>2026-08-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://kenwoodeducation.com/areas/hampstead.html</loc>
+    <lastmod>2026-08-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://kenwoodeducation.com/areas/muswell-hill.html</loc>
+    <lastmod>2026-08-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://kenwoodeducation.com/areas/crouch-end.html</loc>
+    <lastmod>2026-08-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://kenwoodeducation.com/areas/east-finchley.html</loc>
+    <lastmod>2026-08-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://kenwoodeducation.com/areas/finchley.html</loc>
+    <lastmod>2026-08-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://kenwoodeducation.com/privacy.html</loc>
     <lastmod>2026-08-25</lastmod>
     <changefreq>yearly</changefreq>
