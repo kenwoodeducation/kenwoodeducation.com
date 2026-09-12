@@ -241,8 +241,8 @@ src="https://www.facebook.com/tr?id=1439021704748612&ev=PageView&noscript=1"
     <p class="lead">We do the hard work so you don&rsquo;t have to. Here&rsquo;s what that looks like in practice.</p>
     <div class="why-grid">
       <div class="why-card">
-        <h4>Oxbridge &amp; Russell Group-educated tutors</h4>
-        <p>Most of our tutors are educated to a genuinely high standard, from Oxbridge and Russell Group universities. In exceptional cases, we also work with tutors who bring outstanding credentials instead, such as a long, proven track record of teaching or tutoring success, or experience as a head of department.</p>
+        <h4>Local, Oxbridge &amp; Russell Group-educated tutors</h4>
+        <p>We only work with local tutors, so they show up and stay. Every tutor is Oxbridge or Russell Group educated, with several years to decades of experience, some as qualified teachers, heads of department, or examiners.</p>
       </div>
       <div class="why-card">
         <h4>We vet so you don&rsquo;t have to</h4>
@@ -250,7 +250,7 @@ src="https://www.facebook.com/tr?id=1439021704748612&ev=PageView&noscript=1"
       </div>
       <div class="why-card">
         <h4>Selectively matched to your child</h4>
-        <p>Other agencies post jobs on a board and let tutors bid for them. We don&rsquo;t. We take the time to understand your child&rsquo;s goals, learning style and personality, then personally match them with a tutor we believe is genuinely the right fit.</p>
+        <p>Other agencies post jobs on a board and let tutors bid for them. We don&rsquo;t. We take the time to understand your child&rsquo;s goals, learning style and personality, then personally match them with a tutor we believe is the right fit.</p>
       </div>
     </div>
     <div style="background:rgba(225,245,238,0.1);border:1px solid rgba(157,225,203,0.3);border-radius:var(--radius);padding:1.1rem 1.5rem;margin-top:1.25rem;display:flex;align-items:flex-start;gap:1rem">
@@ -367,7 +367,7 @@ src="https://www.facebook.com/tr?id=1439021704748612&ev=PageView&noscript=1"
 
 <div class="section-sm" id="enquiry">
   <h2 style="text-align:center">Tell us about your child</h2>
-  <p style="text-align:center;color:var(--muted);font-size:0.92rem;margin-bottom:2rem;max-width:460px;margin-left:auto;margin-right:auto;line-height:1.85">The more we know, the better we can match. We&rsquo;ll be in touch when we have the right tutor available.</p>
+  <p style="text-align:center;color:var(--muted);font-size:0.92rem;margin-bottom:2rem;max-width:460px;margin-left:auto;margin-right:auto;line-height:1.85">The more we know, the better we can match. We&rsquo;ll be in touch within 24 hours.</p>
   <div class="form-wrap">
     <form id="enquiry-form" action="https://formspree.io/f/xwvyjppk" method="POST">
     <div class="form-grid">
@@ -405,25 +405,25 @@ src="https://www.facebook.com/tr?id=1439021704748612&ev=PageView&noscript=1"
           <option>GCSE Maths</option><option>GCSE English</option><option>GCSE Sciences</option>
           <option>GCSE Other</option>
           <option>A-level Maths</option><option>A-level English</option><option>A-level Sciences</option><option>A-level Other</option>
-          <option>Primary</option><option>Entrance Exams</option><option>Music Lessons</option><option>Multiple subjects</option><option>Other</option>
+          <option>Primary</option><option>Entrance Exams</option><option>Multiple subjects</option><option>Other</option>
         </select>
       </div>
     </div>
     <div class="form-row" id="subject-detail-row" style="display:none">
       <label>Please specify <span style="color:var(--forest);font-weight:600">*</span></label>
-      <input type="text" name="subject_detail" id="subject-detail-input" placeholder="e.g. Geography, or Maths and Spanish">
+      <input type="text" name="subject_detail" id="subject-detail-input" placeholder="Please specify">
     </div>
     <div class="form-grid">
-      <div><label>Year group <span>(optional)</span></label>
-        <select name="year_group">
+      <div><label>Year group <span style="color:var(--forest);font-weight:600">*</span></label>
+        <select name="year_group" required>
           <option value="">Select year</option>
           <option>Year 3</option><option>Year 4</option><option>Year 5</option><option>Year 6</option>
           <option>Year 7</option><option>Year 8</option><option>Year 9</option><option>Year 10</option>
           <option>Year 11</option><option>Year 12</option><option>Year 13</option>
         </select>
       </div>
-      <div><label>Current level <span>(optional)</span></label>
-        <select name="current_level">
+      <div><label>Current level <span style="color:var(--forest);font-weight:600">*</span></label>
+        <select name="current_level" required>
           <option value="">Select level</option>
           <option>Needs catch-up support</option>
           <option>Working at expected level</option>
@@ -441,7 +441,7 @@ src="https://www.facebook.com/tr?id=1439021704748612&ev=PageView&noscript=1"
     </div>
     <input type="hidden" name="_subject" value="New enquiry - Kenwood Education">
     <button type="submit" class="form-submit">Get in touch</button>
-    <p class="form-note"><span style="color:var(--forest);font-weight:600">*</span> Required field. We&rsquo;ll be in touch shortly to discuss the right match for your child.</p>
+    <p class="form-note"><span style="color:var(--forest);font-weight:600">*</span> Required field. We&rsquo;ll be in touch within 24 hours to discuss the right match for your child.</p>
     <p class="form-note" style="margin-top:0.5rem">Don&rsquo;t see your subject or area? Get in touch anyway &mdash; we may be able to help.</p>
     </form>
   </div>
@@ -515,7 +515,7 @@ src="https://www.facebook.com/tr?id=1439021704748612&ev=PageView&noscript=1"
     </details>
     <details style="background:var(--sage);border:var(--border);border-radius:var(--radius-lg);padding:1.25rem">
       <summary style="font-family:var(--sans);font-size:0.95rem;font-weight:500;color:var(--ink);list-style:none;display:flex;justify-content:space-between;align-items:center">Which subjects do you cover? <span style="color:var(--forest);font-size:1.2rem">+</span></summary>
-      <p style="font-size:0.88rem;color:var(--muted);line-height:1.8;margin-top:0.75rem">We specialise in Maths, English and Science, from primary through to A-level, as well as music lessons. GCSE is our core focus. If you need a subject not listed, get in touch and we&rsquo;ll let you know whether we can help.</p>
+      <p style="font-size:0.88rem;color:var(--muted);line-height:1.8;margin-top:0.75rem">We specialise in Maths, English and Science, from primary through to A-level. GCSE is our core focus. If you need a subject not listed, get in touch and we&rsquo;ll let you know whether we can help.</p>
     </details>
     <details style="background:var(--sage);border:var(--border);border-radius:var(--radius-lg);padding:1.25rem">
       <summary style="font-family:var(--sans);font-size:0.95rem;font-weight:500;color:var(--ink);list-style:none;display:flex;justify-content:space-between;align-items:center">What areas do you cover? <span style="color:var(--forest);font-size:1.2rem">+</span></summary>
@@ -586,7 +586,15 @@ subjectSelect.addEventListener('change', function() {
   const needsDetail = ['Other', 'Multiple subjects', 'GCSE Other', 'A-level Other'].includes(this.value);
   subjectDetailRow.style.display = needsDetail ? 'block' : 'none';
   subjectDetailInput.required = needsDetail;
-  if (!needsDetail) subjectDetailInput.value = '';
+  if (!needsDetail) {
+    subjectDetailInput.value = '';
+  } else if (this.value === 'Multiple subjects') {
+    subjectDetailInput.placeholder = 'e.g. Maths and Spanish';
+  } else if (this.value === 'Other') {
+    subjectDetailInput.placeholder = 'e.g. Geography';
+  } else {
+    subjectDetailInput.placeholder = 'Please specify';
+  }
 });
 
 const preferredContact = document.getElementById('preferred-contact');
@@ -612,7 +620,7 @@ form.addEventListener('submit', async function(e) {
       headers: { 'Accept': 'application/json' }
     });
     if (response.ok) {
-      btn.textContent = "Thank you - we'll be in touch shortly";
+      btn.textContent = "Thank you - we'll be in touch within 24 hours";
       btn.style.background = '#085041';
       form.querySelectorAll('input, select, textarea').forEach(el => el.disabled = true);
       if (typeof gtag === 'function') {
