@@ -102,6 +102,8 @@ h2 { font-family: var(--sans); font-size: clamp(1.5rem,3vw,1.9rem); font-weight:
 .subject-card p { font-size: 0.8rem; color: var(--hint); line-height: 1.5; }
 .subject-card.featured p { color: var(--forest); }
 .form-wrap { background: var(--sage); border: var(--border); border-radius: var(--radius-lg); padding: 2rem; max-width: 540px; margin: 0 auto; }
+.form-section-label { font-family: var(--sans); font-size: 0.68rem; font-weight: 600; color: var(--forest-dark); letter-spacing: 0.1em; text-transform: uppercase; margin: 1.5rem 0 0.85rem; padding-top: 1.25rem; border-top: 1px solid rgba(15,110,86,0.15); }
+.form-section-label:first-child { margin-top: 0; padding-top: 0; border-top: none; }
 .form-row { margin-bottom: 1rem; }
 .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem; margin-bottom: 1rem; }
 label { display: block; font-size: 0.75rem; font-weight: 500; color: var(--muted); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 0.4rem; }
@@ -370,9 +372,23 @@ src="https://www.facebook.com/tr?id=1439021704748612&ev=PageView&noscript=1"
   <p style="text-align:center;color:var(--muted);font-size:0.92rem;margin-bottom:2rem;max-width:460px;margin-left:auto;margin-right:auto;line-height:1.85">The more we know, the better we can match. We&rsquo;ll be in touch within 24 hours.</p>
   <div class="form-wrap">
     <form id="enquiry-form" action="https://formspree.io/f/xwvyjppk" method="POST">
+    <div class="form-section-label">Your details</div>
     <div class="form-grid">
-      <div><label>First name <span style="color:var(--forest);font-weight:600">*</span></label><input type="text" name="first_name" placeholder="Jane" required></div>
-      <div><label>Last name <span style="color:var(--forest);font-weight:600">*</span></label><input type="text" name="last_name" placeholder="Smith" required></div>
+      <div><label>Your first name <span style="color:var(--forest);font-weight:600">*</span></label><input type="text" name="first_name" placeholder="Jane" required></div>
+      <div><label>Your last name <span style="color:var(--forest);font-weight:600">*</span></label><input type="text" name="last_name" placeholder="Smith" required></div>
+    </div>
+    <div class="form-row">
+      <label>Your relationship to the student <span style="color:var(--forest);font-weight:600">*</span></label>
+      <select name="relationship" id="relationship-select" required>
+        <option value="">Select relationship</option>
+        <option>Parent</option>
+        <option>Guardian</option>
+        <option>Other</option>
+      </select>
+    </div>
+    <div class="form-row" id="relationship-detail-row" style="display:none">
+      <label>Please specify <span style="color:var(--forest);font-weight:600">*</span></label>
+      <input type="text" name="relationship_detail" id="relationship-detail-input" placeholder="e.g. Personal assistant to the family">
     </div>
     <div class="form-row">
       <label>Email address <span style="color:var(--forest);font-weight:600">*</span></label>
@@ -391,8 +407,13 @@ src="https://www.facebook.com/tr?id=1439021704748612&ev=PageView&noscript=1"
         <option>WhatsApp</option>
       </select>
     </div>
+    <div class="form-section-label">Student details</div>
     <div class="form-grid">
-      <div><label>Your area <span style="color:var(--forest);font-weight:600">*</span></label>
+      <div><label>Student&rsquo;s first name <span style="color:var(--forest);font-weight:600">*</span></label><input type="text" name="student_first_name" placeholder="Alex" required></div>
+      <div><label>Student&rsquo;s last name <span>(optional)</span></label><input type="text" name="student_last_name" placeholder="Smith"></div>
+    </div>
+    <div class="form-grid">
+      <div><label>Area <span style="color:var(--forest);font-weight:600">*</span></label>
         <select name="area" required>
           <option value="">Select area</option>
           <option>Highgate</option><option>Hampstead</option><option>Muswell Hill</option>
@@ -579,6 +600,17 @@ src="https://www.facebook.com/tr?id=1439021704748612&ev=PageView&noscript=1"
 
 <script>
 const subjectSelect = document.getElementById('subject-select');
+const relationshipSelect = document.getElementById('relationship-select');
+const relationshipDetailRow = document.getElementById('relationship-detail-row');
+const relationshipDetailInput = document.getElementById('relationship-detail-input');
+
+relationshipSelect.addEventListener('change', function() {
+  const needsDetail = this.value === 'Other';
+  relationshipDetailRow.style.display = needsDetail ? 'block' : 'none';
+  relationshipDetailInput.required = needsDetail;
+  if (!needsDetail) relationshipDetailInput.value = '';
+});
+
 const subjectDetailRow = document.getElementById('subject-detail-row');
 const subjectDetailInput = document.getElementById('subject-detail-input');
 
