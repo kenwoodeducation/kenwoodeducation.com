@@ -202,7 +202,7 @@ src="https://www.facebook.com/tr?id=1439021704748612&ev=PageView&noscript=1"
   </a>
   <div style="display:flex;align-items:center;gap:1.75rem">
     <a href="guides/index.html" style="color:#3D5247;text-decoration:none;font-size:0.88rem;font-weight:500">Guides</a>
-    <a href="#enquiry" class="nav-cta">Get in touch</a>
+    <a href="#enquiry" class="nav-cta">Get Started</a>
   </div>
 </nav>
 
@@ -219,7 +219,7 @@ src="https://www.facebook.com/tr?id=1439021704748612&ev=PageView&noscript=1"
       <span class="area-tag">East Finchley</span>
       <span class="area-tag" style="background:transparent;border-color:rgba(15,110,86,0.3);color:var(--hint)">+ surrounding North London</span>
     </div>
-    <a href="#enquiry" class="btn-primary">Get in touch</a>
+    <a href="#enquiry" class="btn-primary">Get Started</a>
   </div>
 </div>
 
@@ -269,7 +269,7 @@ src="https://www.facebook.com/tr?id=1439021704748612&ev=PageView&noscript=1"
 
 <div style="background:var(--forest-pale);border-top:1px solid var(--forest-border);border-bottom:1px solid var(--forest-border);padding:2rem;text-align:center">
   <p style="font-size:0.95rem;color:var(--forest-dark);margin-bottom:1rem;font-weight:400">Ready to find the right tutor for your child?</p>
-  <a href="#enquiry" class="btn-primary">Get in touch</a>
+  <a href="#enquiry" class="btn-primary">Get Started</a>
 </div>
 
 <div class="divider" style="margin-top:0"></div>
@@ -317,7 +317,7 @@ src="https://www.facebook.com/tr?id=1439021704748612&ev=PageView&noscript=1"
   </div>
   <div style="text-align:center;margin-top:2rem">
     <p style="font-size:0.92rem;color:var(--muted);margin-bottom:1rem">It starts with a conversation about your child.</p>
-    <a href="#enquiry" class="btn-primary">Get in touch</a>
+    <a href="#enquiry" class="btn-primary">Get Started</a>
   </div>
 </div>
 
@@ -349,7 +349,7 @@ src="https://www.facebook.com/tr?id=1439021704748612&ev=PageView&noscript=1"
   </div>
   <div style="text-align:center;margin-top:2rem">
     <p style="font-size:0.92rem;color:var(--muted);margin-bottom:1rem">We think the comparison speaks for itself.</p>
-    <a href="#enquiry" class="btn-primary">Get in touch</a>
+    <a href="#enquiry" class="btn-primary">Get Started</a>
   </div>
 </div>
 
@@ -359,10 +359,11 @@ src="https://www.facebook.com/tr?id=1439021704748612&ev=PageView&noscript=1"
   <h2 style="text-align:center">Subjects &amp; levels</h2>
   <p style="text-align:center;color:var(--muted);font-size:0.92rem;margin-bottom:1.5rem;line-height:1.75">Specialising in Maths, English and Science, and more, from primary through to A-Level. In-person, in the local area.</p>
   <div class="subject-grid">
-    <div class="subject-card featured"><h4>GCSE</h4><p>Maths, English, Sciences &amp; more &middot; our core specialism</p></div>
+    <div class="subject-card"><h4>GCSE</h4><p>Maths, English, Sciences &amp; more</p></div>
     <div class="subject-card"><h4>A-level</h4><p>Maths, English, Sciences &amp; more</p></div>
     <div class="subject-card"><h4>Primary</h4><p>Reading, Writing, Maths</p></div>
-    <div class="subject-card"><h4>Entrance exam preparation</h4><p>Get in touch to discuss availability</p></div>
+    <div class="subject-card"><h4>Entrance exam preparation</h4><p>7+, 11+, 13+ &amp; Common Entrance</p></div>
+    <div class="subject-card"><h4>Oxbridge Prep</h4><p>Personal statements, interviews &amp; admissions tests</p></div>
   </div>
 </div>
 
@@ -396,7 +397,7 @@ src="https://www.facebook.com/tr?id=1439021704748612&ev=PageView&noscript=1"
       <input type="email" name="email" placeholder="jane@example.com" required>
     </div>
     <div class="form-row">
-      <label>Phone number <span id="phone-hint">(optional)</span></label>
+      <label>Phone number <span>(optional)</span></label>
       <input type="text" name="phone" id="phone-input" placeholder="07XXX XXXXXX">
     </div>
     <div class="form-row">
@@ -422,18 +423,87 @@ src="https://www.facebook.com/tr?id=1439021704748612&ev=PageView&noscript=1"
         </select>
       </div>
       <div><label>Subject <span style="color:var(--forest);font-weight:600">*</span></label>
-        <select name="subject" id="subject-select" required>
+        <select name="enquiry_subject" id="subject-select" required>
           <option value="">Select subject</option>
           <option>GCSE Maths</option><option>GCSE English</option><option>GCSE Sciences</option>
           <option>GCSE Other</option>
           <option>A-level Maths</option><option>A-level English</option><option>A-level Sciences</option><option>A-level Other</option>
-          <option>Primary</option><option>Entrance Exams</option><option>Multiple subjects</option><option>Other</option>
+          <option>Primary</option><option>Entrance Exams</option><option>Oxbridge Prep</option><option>Multiple subjects</option><option>Other</option>
         </select>
       </div>
     </div>
     <div class="form-row" id="subject-detail-row" style="display:none">
-      <label>Please specify <span style="color:var(--forest);font-weight:600">*</span></label>
+      <label id="subject-detail-label">Please specify <span style="color:var(--forest);font-weight:600">*</span></label>
       <input type="text" name="subject_detail" id="subject-detail-input" placeholder="Please specify">
+      <p id="subject-detail-hint" style="font-size:0.78rem;color:var(--hint);margin-top:0.4rem;display:none">The more detail you can give, the better we can match &mdash; subjects, level, and anything specific your child needs help with.</p>
+    </div>
+    <div class="form-row" id="sciences-detail-row" style="display:none">
+      <label>Which science(s)? <span style="color:var(--forest);font-weight:600">*</span></label>
+      <div style="display:flex;flex-wrap:wrap;gap:0.5rem 1.25rem">
+        <label style="text-transform:none;letter-spacing:normal;font-weight:400;font-size:0.88rem;color:var(--ink);display:inline-flex;align-items:center;gap:0.4rem"><input type="checkbox" name="sciences" value="Biology" style="width:auto">Biology</label>
+        <label style="text-transform:none;letter-spacing:normal;font-weight:400;font-size:0.88rem;color:var(--ink);display:inline-flex;align-items:center;gap:0.4rem"><input type="checkbox" name="sciences" value="Chemistry" style="width:auto">Chemistry</label>
+        <label style="text-transform:none;letter-spacing:normal;font-weight:400;font-size:0.88rem;color:var(--ink);display:inline-flex;align-items:center;gap:0.4rem"><input type="checkbox" name="sciences" value="Physics" style="width:auto">Physics</label>
+      </div>
+      <p id="sciences-error" style="font-size:0.78rem;color:#c0392b;margin-top:0.4rem;display:none">Please select at least one.</p>
+    </div>
+    <div class="form-row" id="english-detail-row" style="display:none">
+      <label>Which English? <span style="color:var(--forest);font-weight:600">*</span></label>
+      <div style="display:flex;flex-wrap:wrap;gap:0.5rem 1.25rem">
+        <label style="text-transform:none;letter-spacing:normal;font-weight:400;font-size:0.88rem;color:var(--ink);display:inline-flex;align-items:center;gap:0.4rem"><input type="checkbox" name="english" value="English Language" style="width:auto">English Language</label>
+        <label style="text-transform:none;letter-spacing:normal;font-weight:400;font-size:0.88rem;color:var(--ink);display:inline-flex;align-items:center;gap:0.4rem"><input type="checkbox" name="english" value="English Literature" style="width:auto">English Literature</label>
+      </div>
+      <p id="english-error" style="font-size:0.78rem;color:#c0392b;margin-top:0.4rem;display:none">Please select at least one.</p>
+    </div>
+    <div class="form-row" id="entrance-exams-detail-row" style="display:none">
+      <label>Which entrance exam? <span style="color:var(--forest);font-weight:600">*</span></label>
+      <div style="display:flex;flex-wrap:wrap;gap:0.5rem 1.25rem">
+        <label style="text-transform:none;letter-spacing:normal;font-weight:400;font-size:0.88rem;color:var(--ink);display:inline-flex;align-items:center;gap:0.4rem"><input type="radio" name="entrance_exam" value="7+" style="width:auto">7+</label>
+        <label style="text-transform:none;letter-spacing:normal;font-weight:400;font-size:0.88rem;color:var(--ink);display:inline-flex;align-items:center;gap:0.4rem"><input type="radio" name="entrance_exam" value="11+" style="width:auto">11+</label>
+        <label style="text-transform:none;letter-spacing:normal;font-weight:400;font-size:0.88rem;color:var(--ink);display:inline-flex;align-items:center;gap:0.4rem"><input type="radio" name="entrance_exam" value="13+" style="width:auto">13+</label>
+        <label style="text-transform:none;letter-spacing:normal;font-weight:400;font-size:0.88rem;color:var(--ink);display:inline-flex;align-items:center;gap:0.4rem"><input type="radio" name="entrance_exam" value="Common Entrance" style="width:auto">Common Entrance</label>
+        <label style="text-transform:none;letter-spacing:normal;font-weight:400;font-size:0.88rem;color:var(--ink);display:inline-flex;align-items:center;gap:0.4rem"><input type="radio" id="entrance-exam-other-radio" name="entrance_exam" value="Other" style="width:auto">Other</label>
+      </div>
+    </div>
+    <div class="form-row" id="entrance-exam-other-row" style="display:none">
+      <label>Please specify <span style="color:var(--forest);font-weight:600">*</span></label>
+      <input type="text" name="entrance_exam_other" id="entrance-exam-other-input" placeholder="Please specify">
+    </div>
+    <div class="form-row" id="target-school-row" style="display:none">
+      <label>Target school <span>(optional)</span></label>
+      <input type="text" name="target_school" placeholder="e.g. Highgate School">
+    </div>
+    <div class="form-row" id="oxbridge-prep-detail-row" style="display:none">
+      <label>Which area(s) of preparation? <span style="color:var(--forest);font-weight:600">*</span></label>
+      <div style="display:flex;flex-wrap:wrap;gap:0.5rem 1.25rem">
+        <label style="text-transform:none;letter-spacing:normal;font-weight:400;font-size:0.88rem;color:var(--ink);display:inline-flex;align-items:center;gap:0.4rem"><input type="checkbox" name="oxbridge_prep" value="Personal statement" style="width:auto">Personal statement</label>
+        <label style="text-transform:none;letter-spacing:normal;font-weight:400;font-size:0.88rem;color:var(--ink);display:inline-flex;align-items:center;gap:0.4rem"><input type="checkbox" name="oxbridge_prep" value="Interview technique" style="width:auto">Interview technique</label>
+        <label style="text-transform:none;letter-spacing:normal;font-weight:400;font-size:0.88rem;color:var(--ink);display:inline-flex;align-items:center;gap:0.4rem"><input type="checkbox" name="oxbridge_prep" value="Admissions test (e.g. TSA, MAT, PAT)" style="width:auto">Admissions test (e.g. TSA, MAT, PAT)</label>
+        <label style="text-transform:none;letter-spacing:normal;font-weight:400;font-size:0.88rem;color:var(--ink);display:inline-flex;align-items:center;gap:0.4rem"><input type="checkbox" name="oxbridge_prep" value="Subject knowledge" style="width:auto">Subject knowledge</label>
+        <label style="text-transform:none;letter-spacing:normal;font-weight:400;font-size:0.88rem;color:var(--ink);display:inline-flex;align-items:center;gap:0.4rem"><input type="checkbox" id="oxbridge-prep-other-checkbox" name="oxbridge_prep" value="Other" style="width:auto">Other</label>
+      </div>
+      <p id="oxbridge-prep-error" style="font-size:0.78rem;color:#c0392b;margin-top:0.4rem;display:none">Please select at least one.</p>
+    </div>
+    <div class="form-row" id="oxbridge-prep-other-row" style="display:none">
+      <label>Please specify <span style="color:var(--forest);font-weight:600">*</span></label>
+      <input type="text" name="oxbridge_prep_other" id="oxbridge-prep-other-input" placeholder="Please specify">
+    </div>
+    <div class="form-row" id="oxbridge-target-college-row" style="display:none">
+      <label>Target college or course <span>(optional)</span></label>
+      <input type="text" name="oxbridge_target_college" placeholder="e.g. Trinity College, Cambridge &mdash; PPE">
+    </div>
+    <div class="form-row" id="primary-detail-row" style="display:none">
+      <label>Which area(s)? <span style="color:var(--forest);font-weight:600">*</span></label>
+      <div style="display:flex;flex-wrap:wrap;gap:0.5rem 1.25rem">
+        <label style="text-transform:none;letter-spacing:normal;font-weight:400;font-size:0.88rem;color:var(--ink);display:inline-flex;align-items:center;gap:0.4rem"><input type="checkbox" name="primary_subject" value="Maths" style="width:auto">Maths</label>
+        <label style="text-transform:none;letter-spacing:normal;font-weight:400;font-size:0.88rem;color:var(--ink);display:inline-flex;align-items:center;gap:0.4rem"><input type="checkbox" name="primary_subject" value="English/Literacy" style="width:auto">English/Literacy</label>
+        <label style="text-transform:none;letter-spacing:normal;font-weight:400;font-size:0.88rem;color:var(--ink);display:inline-flex;align-items:center;gap:0.4rem"><input type="checkbox" name="primary_subject" value="Reading & Phonics" style="width:auto">Reading &amp; Phonics</label>
+        <label style="text-transform:none;letter-spacing:normal;font-weight:400;font-size:0.88rem;color:var(--ink);display:inline-flex;align-items:center;gap:0.4rem"><input type="checkbox" name="primary_subject" value="SATs Preparation" style="width:auto">SATs Preparation</label>
+      </div>
+      <p id="primary-error" style="font-size:0.78rem;color:#c0392b;margin-top:0.4rem;display:none">Please select at least one.</p>
+    </div>
+    <div class="form-row" id="multiple-subjects-detail-row" style="display:none">
+      <label>Which subjects? <span style="color:var(--forest);font-weight:600">*</span></label>
+      <input type="text" name="multiple_subjects" id="multiple-subjects-input" placeholder="e.g. GCSE Maths and A-level Spanish">
     </div>
     <div class="form-grid">
       <div><label>Year group <span style="color:var(--forest);font-weight:600">*</span></label>
@@ -447,22 +517,63 @@ src="https://www.facebook.com/tr?id=1439021704748612&ev=PageView&noscript=1"
       <div><label>Current level <span style="color:var(--forest);font-weight:600">*</span></label>
         <select name="current_level" required>
           <option value="">Select level</option>
-          <option>Needs catch-up support</option>
+          <option>Significantly below expected level</option>
+          <option>Slightly below expected level</option>
           <option>Working at expected level</option>
-          <option>Aiming for top grades</option>
+          <option>Above expected level, wants to stretch further</option>
+          <option>Aiming for top grades (8-9 / A*-A)</option>
         </select>
       </div>
     </div>
     <div class="form-row">
-      <label>Target school or grade <span>(optional)</span></label>
-      <input type="text" name="target" placeholder="e.g. Grade 7 in maths">
+      <label>What are your goals? <span style="color:var(--forest);font-weight:600">*</span></label>
+      <div style="display:flex;flex-wrap:wrap;gap:0.5rem 1.25rem">
+        <label style="text-transform:none;letter-spacing:normal;font-weight:400;font-size:0.88rem;color:var(--ink);display:inline-flex;align-items:center;gap:0.4rem"><input type="checkbox" name="goals" value="Homework support" style="width:auto">Homework support</label>
+        <label style="text-transform:none;letter-spacing:normal;font-weight:400;font-size:0.88rem;color:var(--ink);display:inline-flex;align-items:center;gap:0.4rem"><input type="checkbox" name="goals" value="Get into a target school" style="width:auto">Get into a target school</label>
+        <label style="text-transform:none;letter-spacing:normal;font-weight:400;font-size:0.88rem;color:var(--ink);display:inline-flex;align-items:center;gap:0.4rem"><input type="checkbox" name="goals" value="Catch up to expected level" style="width:auto">Catch up to expected level</label>
+        <label style="text-transform:none;letter-spacing:normal;font-weight:400;font-size:0.88rem;color:var(--ink);display:inline-flex;align-items:center;gap:0.4rem"><input type="checkbox" name="goals" value="Improve grades in upcoming exam" style="width:auto">Improve grades in upcoming exam</label>
+        <label style="text-transform:none;letter-spacing:normal;font-weight:400;font-size:0.88rem;color:var(--ink);display:inline-flex;align-items:center;gap:0.4rem"><input type="checkbox" name="goals" value="Build confidence" style="width:auto">Build confidence</label>
+        <label style="text-transform:none;letter-spacing:normal;font-weight:400;font-size:0.88rem;color:var(--ink);display:inline-flex;align-items:center;gap:0.4rem"><input type="checkbox" name="goals" value="Extend beyond the curriculum" style="width:auto">Extend</label>
+        <label style="text-transform:none;letter-spacing:normal;font-weight:400;font-size:0.88rem;color:var(--ink);display:inline-flex;align-items:center;gap:0.4rem"><input type="checkbox" name="goals" value="Develop exam technique" style="width:auto">Develop exam technique</label>
+        <label style="text-transform:none;letter-spacing:normal;font-weight:400;font-size:0.88rem;color:var(--ink);display:inline-flex;align-items:center;gap:0.4rem"><input type="checkbox" name="goals" value="Fill gaps from missed schooling" style="width:auto">Fill gaps from missed schooling</label>
+        <label style="text-transform:none;letter-spacing:normal;font-weight:400;font-size:0.88rem;color:var(--ink);display:inline-flex;align-items:center;gap:0.4rem"><input type="checkbox" id="goals-other-checkbox" name="goals" value="Other" style="width:auto">Other</label>
+      </div>
+      <p id="goals-error" style="font-size:0.78rem;color:#c0392b;margin-top:0.4rem;display:none">Please select at least one.</p>
+    </div>
+    <div class="form-row" id="goals-detail-row" style="display:none">
+      <label>Please describe <span style="color:var(--forest);font-weight:600">*</span></label>
+      <input type="text" name="goals_detail" id="goals-detail-input" placeholder="Tell us more about what you're hoping to achieve">
+    </div>
+    <div class="form-row">
+      <label>Availability <span>(optional)</span></label>
+      <input type="text" name="availability" placeholder="e.g. Weekday evenings and Saturday mornings">
+    </div>
+    <div class="form-row">
+      <label>What learning style suits your child? <span>(optional)</span></label>
+      <div style="display:flex;flex-wrap:wrap;gap:0.5rem 1.25rem">
+        <label style="text-transform:none;letter-spacing:normal;font-weight:400;font-size:0.88rem;color:var(--ink);display:inline-flex;align-items:center;gap:0.4rem"><input type="checkbox" name="learning_style" value="Visual" style="width:auto">Visual</label>
+        <label style="text-transform:none;letter-spacing:normal;font-weight:400;font-size:0.88rem;color:var(--ink);display:inline-flex;align-items:center;gap:0.4rem"><input type="checkbox" name="learning_style" value="Hands-on/practical" style="width:auto">Hands-on/practical</label>
+        <label style="text-transform:none;letter-spacing:normal;font-weight:400;font-size:0.88rem;color:var(--ink);display:inline-flex;align-items:center;gap:0.4rem"><input type="checkbox" name="learning_style" value="Talking things through" style="width:auto">Talking things through</label>
+        <label style="text-transform:none;letter-spacing:normal;font-weight:400;font-size:0.88rem;color:var(--ink);display:inline-flex;align-items:center;gap:0.4rem"><input type="checkbox" name="learning_style" value="Structured/methodical" style="width:auto">Structured/methodical</label>
+        <label style="text-transform:none;letter-spacing:normal;font-weight:400;font-size:0.88rem;color:var(--ink);display:inline-flex;align-items:center;gap:0.4rem"><input type="checkbox" name="learning_style" value="Needs regular encouragement" style="width:auto">Needs regular encouragement</label>
+      </div>
+    </div>
+    <div class="form-row">
+      <label>What tutor personality do you think would work best? <span>(optional)</span></label>
+      <select name="tutor_personality">
+        <option value="">No strong preference</option>
+        <option>Calm and patient</option>
+        <option>Warm and encouraging</option>
+        <option>Energetic and engaging</option>
+        <option>Firm and structured</option>
+      </select>
     </div>
     <div class="form-row">
       <label>Anything else we should know <span>(optional)</span></label>
-      <textarea name="notes" placeholder="Learning style, previous tutoring experience, availability, or anything else that would help us find the right fit, e.g. additional needs like ADHD or dyslexia, if relevant."></textarea>
+      <textarea name="notes" placeholder="Previous tutoring experience, or anything else that would help us find the right fit, e.g. additional needs like ADHD or dyslexia, if relevant."></textarea>
     </div>
     <input type="hidden" name="_subject" value="New enquiry - Kenwood Education">
-    <button type="submit" class="form-submit">Get in touch</button>
+    <button type="submit" class="form-submit">Get Started</button>
     <p class="form-note"><span style="color:var(--forest);font-weight:600">*</span> Required field. We&rsquo;ll be in touch within 24 hours to discuss the right match for your child.</p>
     <p class="form-note" style="margin-top:0.5rem">Don&rsquo;t see your subject or area? Get in touch anyway &mdash; we may be able to help.</p>
     </form>
@@ -537,7 +648,7 @@ src="https://www.facebook.com/tr?id=1439021704748612&ev=PageView&noscript=1"
     </details>
     <details style="background:var(--sage);border:var(--border);border-radius:var(--radius-lg);padding:1.25rem">
       <summary style="font-family:var(--sans);font-size:0.95rem;font-weight:500;color:var(--ink);list-style:none;display:flex;justify-content:space-between;align-items:center">Which subjects do you cover? <span style="color:var(--forest);font-size:1.2rem">+</span></summary>
-      <p style="font-size:0.88rem;color:var(--muted);line-height:1.8;margin-top:0.75rem">We specialise in Maths, English and Science, from primary through to A-level. GCSE is our core focus. If you need a subject not listed, get in touch and we&rsquo;ll let you know whether we can help.</p>
+      <p style="font-size:0.88rem;color:var(--muted);line-height:1.8;margin-top:0.75rem">We cover Maths, English and Sciences from primary through to A-level, as well as entrance exam preparation (7+, 11+, 13+ and Common Entrance) and Oxbridge Prep, including personal statements, interview technique and admissions tests. If you need a subject not listed, get in touch and we&rsquo;ll let you know whether we can help.</p>
     </details>
     <details style="background:var(--sage);border:var(--border);border-radius:var(--radius-lg);padding:1.25rem">
       <summary style="font-family:var(--sans);font-size:0.95rem;font-weight:500;color:var(--ink);list-style:none;display:flex;justify-content:space-between;align-items:center">What areas do you cover? <span style="color:var(--forest);font-size:1.2rem">+</span></summary>
@@ -599,11 +710,44 @@ src="https://www.facebook.com/tr?id=1439021704748612&ev=PageView&noscript=1"
   <p style="margin-top:1.25rem"><a href="privacy.html" style="color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.72rem">Privacy Notice</a> &middot; <a href="safeguarding.html" style="color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.72rem">Safeguarding</a></p>
 </footer>
 
+<a href="https://wa.me/447466641281" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp" id="whatsapp-float" style="position:fixed;bottom:1.5rem;right:1.5rem;z-index:200;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,0.25);text-decoration:none;transition:transform 0.2s" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.004 2C6.486 2 2 6.486 2 12.004c0 1.87.505 3.628 1.386 5.13L2 22l4.99-1.35a9.958 9.958 0 0 0 5.014 1.348c5.518 0 10.004-4.486 10.004-10.004C22.008 6.486 17.522 2 12.004 2zm0 18.31a8.28 8.28 0 0 1-4.223-1.155l-.303-.18-3.145.85.84-3.07-.198-.315a8.286 8.286 0 0 1-1.27-4.436c0-4.582 3.727-8.309 8.31-8.309 4.581 0 8.308 3.727 8.308 8.309 0 4.581-3.727 8.306-8.318 8.306z"/></svg>
+</a>
+
 <script>
+document.addEventListener('DOMContentLoaded', function() {
+function trackEvent(name, params) {
+  if (typeof gtag === 'function') {
+    gtag('event', name, params || {});
+  }
+}
+
 const subjectSelect = document.getElementById('subject-select');
 const relationshipSelect = document.getElementById('relationship-select');
 const relationshipDetailRow = document.getElementById('relationship-detail-row');
 const relationshipDetailInput = document.getElementById('relationship-detail-input');
+
+document.querySelectorAll('a[href="#enquiry"]').forEach(link => {
+  link.addEventListener('click', function() {
+    trackEvent('cta_click', { link_location: this.classList.contains('nav-cta') ? 'nav' : 'page_body', link_text: this.textContent.trim() });
+  });
+});
+
+document.getElementById('whatsapp-float').addEventListener('click', function() {
+  trackEvent('whatsapp_click', { link_location: 'floating_button' });
+});
+
+document.querySelectorAll('a[href^="https://wa.me/"]').forEach(link => {
+  if (link.id !== 'whatsapp-float') {
+    link.addEventListener('click', function() {
+      trackEvent('whatsapp_click', { link_location: 'inline_link' });
+    });
+  }
+});
+
+subjectSelect.addEventListener('change', function() {
+  if (this.value) trackEvent('subject_selected', { subject: this.value });
+});
 
 relationshipSelect.addEventListener('change', function() {
   const needsDetail = this.value === 'Other';
@@ -614,35 +758,170 @@ relationshipSelect.addEventListener('change', function() {
 
 const subjectDetailRow = document.getElementById('subject-detail-row');
 const subjectDetailInput = document.getElementById('subject-detail-input');
+const subjectDetailLabel = document.getElementById('subject-detail-label');
+const subjectDetailHint = document.getElementById('subject-detail-hint');
+const sciencesDetailRow = document.getElementById('sciences-detail-row');
+const sciencesCheckboxes = document.querySelectorAll('input[name="sciences"]');
+const englishDetailRow = document.getElementById('english-detail-row');
+const englishCheckboxes = document.querySelectorAll('input[name="english"]');
+const entranceExamsDetailRow = document.getElementById('entrance-exams-detail-row');
+const entranceExamRadios = document.querySelectorAll('input[name="entrance_exam"]');
+const entranceExamOtherRadio = document.getElementById('entrance-exam-other-radio');
+const entranceExamOtherRow = document.getElementById('entrance-exam-other-row');
+const entranceExamOtherInput = document.getElementById('entrance-exam-other-input');
+const oxbridgePrepDetailRow = document.getElementById('oxbridge-prep-detail-row');
+const oxbridgePrepCheckboxes = document.querySelectorAll('input[name="oxbridge_prep"]');
+const oxbridgePrepOtherCheckbox = document.getElementById('oxbridge-prep-other-checkbox');
+const oxbridgePrepOtherRow = document.getElementById('oxbridge-prep-other-row');
+const oxbridgePrepOtherInput = document.getElementById('oxbridge-prep-other-input');
+const oxbridgeTargetCollegeRow = document.getElementById('oxbridge-target-college-row');
+const oxbridgeTargetCollegeInput = oxbridgeTargetCollegeRow.querySelector('input[name="oxbridge_target_college"]');
+const primaryDetailRow = document.getElementById('primary-detail-row');
+const primaryCheckboxes = document.querySelectorAll('input[name="primary_subject"]');
+const multipleSubjectsDetailRow = document.getElementById('multiple-subjects-detail-row');
+const multipleSubjectsInput = document.getElementById('multiple-subjects-input');
+const targetSchoolRow = document.getElementById('target-school-row');
+const targetSchoolInput = targetSchoolRow.querySelector('input[name="target_school"]');
+
+entranceExamRadios.forEach(radio => {
+  radio.addEventListener('change', function() {
+    const isOther = entranceExamOtherRadio.checked;
+    entranceExamOtherRow.style.display = isOther ? 'block' : 'none';
+    entranceExamOtherInput.required = isOther;
+    if (!isOther) entranceExamOtherInput.value = '';
+    trackEvent('entrance_exam_selected', { exam_type: this.value });
+  });
+});
+
+oxbridgePrepOtherCheckbox.addEventListener('change', function() {
+  oxbridgePrepOtherRow.style.display = this.checked ? 'block' : 'none';
+  oxbridgePrepOtherInput.required = this.checked;
+  if (!this.checked) oxbridgePrepOtherInput.value = '';
+});
 
 subjectSelect.addEventListener('change', function() {
-  const needsDetail = ['Other', 'Multiple subjects', 'GCSE Other', 'A-level Other'].includes(this.value);
+  const needsDetail = ['Other', 'GCSE Other', 'A-level Other'].includes(this.value);
   subjectDetailRow.style.display = needsDetail ? 'block' : 'none';
   subjectDetailInput.required = needsDetail;
+  subjectDetailHint.style.display = needsDetail ? 'block' : 'none';
   if (!needsDetail) {
     subjectDetailInput.value = '';
-  } else if (this.value === 'Multiple subjects') {
-    subjectDetailInput.placeholder = 'e.g. Maths and Spanish';
   } else if (this.value === 'Other') {
+    subjectDetailLabel.innerHTML = 'Please tell us as much detail as possible <span style="color:var(--forest);font-weight:600">*</span>';
+    subjectDetailInput.placeholder = 'e.g. GCSE Geography';
+  } else if (this.value === 'GCSE Other' || this.value === 'A-level Other') {
+    subjectDetailLabel.innerHTML = 'Please tell us as much detail as possible <span style="color:var(--forest);font-weight:600">*</span>';
     subjectDetailInput.placeholder = 'e.g. Geography';
-  } else {
-    subjectDetailInput.placeholder = 'Please specify';
+  }
+
+  const needsSciences = ['GCSE Sciences', 'A-level Sciences'].includes(this.value);
+  sciencesDetailRow.style.display = needsSciences ? 'block' : 'none';
+  if (!needsSciences) {
+    sciencesCheckboxes.forEach(cb => cb.checked = false);
+  }
+
+  const needsEnglish = ['GCSE English', 'A-level English'].includes(this.value);
+  englishDetailRow.style.display = needsEnglish ? 'block' : 'none';
+  if (!needsEnglish) {
+    englishCheckboxes.forEach(cb => cb.checked = false);
+  }
+
+  const needsEntranceExam = this.value === 'Entrance Exams';
+  entranceExamsDetailRow.style.display = needsEntranceExam ? 'block' : 'none';
+  targetSchoolRow.style.display = needsEntranceExam ? 'block' : 'none';
+  entranceExamRadios.forEach(radio => radio.required = needsEntranceExam);
+  if (!needsEntranceExam) {
+    entranceExamRadios.forEach(cb => cb.checked = false);
+    entranceExamOtherRow.style.display = 'none';
+    entranceExamOtherInput.required = false;
+    entranceExamOtherInput.value = '';
+    targetSchoolInput.value = '';
+  }
+
+  const needsPrimary = this.value === 'Primary';
+  primaryDetailRow.style.display = needsPrimary ? 'block' : 'none';
+  if (!needsPrimary) {
+    primaryCheckboxes.forEach(cb => cb.checked = false);
+  }
+
+  const needsOxbridgePrep = this.value === 'Oxbridge Prep';
+  oxbridgePrepDetailRow.style.display = needsOxbridgePrep ? 'block' : 'none';
+  oxbridgeTargetCollegeRow.style.display = needsOxbridgePrep ? 'block' : 'none';
+  if (!needsOxbridgePrep) {
+    oxbridgePrepCheckboxes.forEach(cb => cb.checked = false);
+    oxbridgePrepOtherRow.style.display = 'none';
+    oxbridgePrepOtherInput.required = false;
+    oxbridgePrepOtherInput.value = '';
+    oxbridgeTargetCollegeInput.value = '';
+  }
+
+  const needsMultipleSubjects = this.value === 'Multiple subjects';
+  multipleSubjectsDetailRow.style.display = needsMultipleSubjects ? 'block' : 'none';
+  multipleSubjectsInput.required = needsMultipleSubjects;
+  if (!needsMultipleSubjects) {
+    multipleSubjectsInput.value = '';
   }
 });
 
-const preferredContact = document.getElementById('preferred-contact');
-const phoneInput = document.getElementById('phone-input');
-const phoneHint = document.getElementById('phone-hint');
+const goalsCheckboxes = document.querySelectorAll('input[name="goals"]');
+const goalsOtherCheckbox = document.getElementById('goals-other-checkbox');
+const goalsDetailRow = document.getElementById('goals-detail-row');
+const goalsDetailInput = document.getElementById('goals-detail-input');
 
-preferredContact.addEventListener('change', function() {
-  const needsPhone = this.value === 'Phone' || this.value === 'WhatsApp';
-  phoneInput.required = needsPhone;
-  phoneHint.textContent = needsPhone ? '(required for ' + this.value + ')' : '(optional)';
+goalsCheckboxes.forEach(cb => {
+  cb.addEventListener('change', function() {
+    if (this.checked) trackEvent('goal_selected', { goal: this.value });
+  });
 });
+
+goalsOtherCheckbox.addEventListener('change', function() {
+  goalsDetailRow.style.display = this.checked ? 'block' : 'none';
+  goalsDetailInput.required = this.checked;
+  if (!this.checked) goalsDetailInput.value = '';
+});
+
+document.querySelectorAll('input[name="learning_style"]').forEach(cb => {
+  cb.addEventListener('change', function() {
+    if (this.checked) trackEvent('learning_style_selected', { learning_style: this.value });
+  });
+});
+
+document.querySelector('select[name="tutor_personality"]').addEventListener('change', function() {
+  if (this.value) trackEvent('tutor_personality_selected', { tutor_personality: this.value });
+});
+
+function validateCheckboxGroup(row, checkboxes, errorEl) {
+  if (row.style.display === 'none') return true;
+  const anyChecked = Array.from(checkboxes).some(cb => cb.checked);
+  errorEl.style.display = anyChecked ? 'none' : 'block';
+  return anyChecked;
+}
+
+const goalsError = document.getElementById('goals-error');
+const sciencesError = document.getElementById('sciences-error');
+const englishError = document.getElementById('english-error');
+const primaryError = document.getElementById('primary-error');
+const oxbridgePrepError = document.getElementById('oxbridge-prep-error');
+const goalsRow = document.querySelector('input[name="goals"]').closest('.form-row');
 
 const form = document.getElementById('enquiry-form');
 form.addEventListener('submit', async function(e) {
   e.preventDefault();
+
+  const validations = [
+    validateCheckboxGroup(goalsRow, goalsCheckboxes, goalsError),
+    validateCheckboxGroup(sciencesDetailRow, sciencesCheckboxes, sciencesError),
+    validateCheckboxGroup(englishDetailRow, englishCheckboxes, englishError),
+    validateCheckboxGroup(primaryDetailRow, primaryCheckboxes, primaryError),
+    validateCheckboxGroup(oxbridgePrepDetailRow, oxbridgePrepCheckboxes, oxbridgePrepError)
+  ];
+  if (validations.includes(false)) {
+    const errorEls = [goalsError, sciencesError, englishError, primaryError, oxbridgePrepError];
+    const firstVisibleError = errorEls.find(el => el.style.display === 'block');
+    if (firstVisibleError) firstVisibleError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    return;
+  }
+
   const btn = form.querySelector('.form-submit');
   btn.textContent = 'Sending...';
   btn.disabled = true;
@@ -672,6 +951,7 @@ form.addEventListener('submit', async function(e) {
     btn.disabled = false;
     btn.style.background = '#c0392b';
   }
+});
 });
 </script>
 </body>
