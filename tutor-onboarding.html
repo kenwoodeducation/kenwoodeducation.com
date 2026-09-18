@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RDRT6GS1QT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-RDRT6GS1QT');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tutor Onboarding | Kenwood Education</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230F6E56'/><circle cx='16' cy='14' r='10' fill='none' stroke='white' stroke-width='1.5'/><path d='M16 5 C16 5 8 10 8 15 C8 19 11 22 16 22 C21 22 24 19 24 15 C24 10 16 5 16 5Z' fill='white' opacity='0.25'/><path d='M16 5 C16 5 8 10 8 15 C8 19 11 22 16 22 C21 22 24 19 24 15 C24 10 16 5 16 5Z' fill='none' stroke='white' stroke-width='1.3'/><line x1='16' y1='21' x2='16' y2='27' stroke='white' stroke-width='1.3' stroke-linecap='round'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --forest: #0F6E56; --forest-dark: #085041; --forest-deeper: #04342C;
+  --forest-pale: #E1F5EE; --forest-mid: #9FE1CB; --forest-border: #5DCAA5;
+  --cream: #FFFFFF; --sage: #F3F7F4; --ink: #1A2E20; --muted: #3D5247; --hint: #5A7265;
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans: 'DM Sans', system-ui, sans-serif;
+  --border: 1px solid rgba(15,110,86,0.18);
+  --radius: 8px; --radius-lg: 12px;
+}
+html { scroll-behavior: smooth; }
+body { background: var(--cream); font-family: var(--sans); color: var(--ink); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+nav { position: sticky; top: 0; z-index: 100; background: rgba(243,247,244,0.96); backdrop-filter: blur(8px); border-bottom: var(--border); padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between; }
+.section-sm { padding: 3rem 2rem; max-width: 900px; margin: 0 auto; }
+h1 { font-family: var(--serif); font-size: clamp(2rem,5vw,2.75rem); font-weight: 400; line-height: 1.15; color: var(--ink); }
+.lead { font-size: 1.02rem; font-weight: 400; color: var(--muted); line-height: 1.8; max-width: 560px; }
+.form-wrap { background: var(--sage); border: var(--border); border-radius: var(--radius-lg); padding: 2rem; max-width: 560px; margin: 0 auto; }
+.form-section-label { font-family: var(--sans); font-size: 0.68rem; font-weight: 600; color: var(--forest-dark); letter-spacing: 0.1em; text-transform: uppercase; margin: 1.5rem 0 0.85rem; padding-top: 1.25rem; border-top: 1px solid rgba(15,110,86,0.15); }
+.form-section-label:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+.form-row { margin-bottom: 1rem; }
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem; margin-bottom: 1rem; }
+.form-grid .form-row { margin-bottom: 0; }
+label { display: block; font-size: 0.75rem; font-weight: 500; color: var(--muted); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 0.4rem; }
+label span { font-weight: 400; text-transform: none; letter-spacing: 0; color: var(--hint); }
+.field-hint { font-size: 0.78rem; color: var(--hint); margin-top: 0.35rem; line-height: 1.55; text-transform: none; letter-spacing: 0; }
+input[type="text"], input[type="email"], input[type="date"], select, textarea { width: 100%; padding: 0.7rem 0.9rem; border: 1px solid rgba(15,110,86,0.22); border-radius: var(--radius); font-family: var(--sans); font-size: 0.9rem; color: var(--ink); background: var(--cream); outline: none; transition: border-color 0.2s; appearance: none; -webkit-appearance: none; }
+input:focus, select:focus, textarea:focus { border-color: var(--forest); }
+.confirm-row { background: var(--forest-pale); border: 1px solid var(--forest-border); border-radius: var(--radius); padding: 0.9rem 1.1rem; }
+.confirm-row label { text-transform: none; letter-spacing: normal; font-weight: 500; font-size: 0.9rem; color: var(--forest-dark); display: flex; align-items: flex-start; gap: 0.6rem; margin: 0; }
+.confirm-row input { width: auto; margin-top: 0.2rem; accent-color: var(--forest); cursor: pointer; }
+.field-error { font-size: 0.78rem; color: #c0392b; margin-top: 0.4rem; display: none; }
+.form-submit { width: 100%; background: var(--forest); color: white; border: none; padding: 0.9rem; font-family: var(--sans); font-size: 0.92rem; font-weight: 500; border-radius: var(--radius); cursor: pointer; transition: background 0.2s; letter-spacing: 0.03em; margin-top: 0.5rem; }
+.form-submit:hover { background: var(--forest-dark); }
+.form-submit:disabled { background: var(--forest-dark); cursor: default; }
+.form-note { font-size: 0.78rem; color: var(--hint); text-align: center; margin-top: 0.75rem; line-height: 1.6; }
+footer { background: var(--ink); padding: 2.5rem 2rem; text-align: center; }
+footer p { font-size: 0.78rem; color: white; font-weight: 300; }
+footer p + p { margin-top: 0.3rem; }
+@media (max-width: 600px) {
+  nav { padding: 0.85rem 1.25rem; }
+  .section-sm { padding: 3rem 1.25rem; }
+  .form-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo" style="display:flex;align-items:center;gap:0.65rem;text-decoration:none">
+    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="32" height="32" rx="6" fill="#0F6E56"/>
+      <circle cx="16" cy="14" r="10" fill="none" stroke="white" stroke-width="1.5"/>
+      <path d="M16 5 C16 5 8 10 8 15 C8 19 11 22 16 22 C21 22 24 19 24 15 C24 10 16 5 16 5Z" fill="white" opacity="0.25"/>
+      <path d="M16 5 C16 5 8 10 8 15 C8 19 11 22 16 22 C21 22 24 19 24 15 C24 10 16 5 16 5Z" fill="none" stroke="white" stroke-width="1.3"/>
+      <line x1="16" y1="21" x2="16" y2="27" stroke="white" stroke-width="1.3" stroke-linecap="round"/>
+    </svg>
+    <span style="display:flex;flex-direction:column;gap:1px">
+      <span style="font-family:'Cormorant Garamond',Georgia,serif;font-size:1.05rem;font-weight:500;letter-spacing:0.08em;color:#1A2E20;line-height:1">Kenwood</span>
+      <span style="font-family:'DM Sans',system-ui,sans-serif;font-size:0.58rem;font-weight:400;letter-spacing:0.25em;color:#5A7265;line-height:1;text-transform:uppercase">Education</span>
+    </span>
+  </a>
+</nav>
+
+<div class="section-sm">
+  <h1>Tutor Onboarding</h1>
+  <p class="lead" style="margin:1rem 0 2rem">A few details we need from you to begin the onboarding process.</p>
+
+  <div class="form-wrap">
+    <form id="tutor-onboarding-form">
+      <div class="form-section-label">Personal details</div>
+      <p class="field-hint" style="margin-bottom:0.75rem">Please enter your name as it appears on your official ID (passport, driving licence).</p>
+      <div class="form-grid">
+        <div class="form-row">
+          <label>First name <span style="color:var(--forest);font-weight:600">*</span></label>
+          <input type="text" name="entry.591413194" required>
+          <p class="field-error">This field is required.</p>
+        </div>
+        <div class="form-row">
+          <label>Last name <span style="color:var(--forest);font-weight:600">*</span></label>
+          <input type="text" name="entry.1826723033" required>
+          <p class="field-error">This field is required.</p>
+        </div>
+      </div>
+      <div class="form-row">
+        <label>Do you prefer to be known by another name? <span>(optional)</span></label>
+        <input type="text" name="entry.730713962">
+      </div>
+      <div class="form-row">
+        <label>Email <span style="color:var(--forest);font-weight:600">*</span></label>
+        <input type="email" name="entry.1166362924" required>
+        <p class="field-error">This field is required.</p>
+      </div>
+      <div class="form-row">
+        <label>Contact number <span style="color:var(--forest);font-weight:600">*</span></label>
+        <input type="text" name="entry.297808536" required>
+        <p class="field-error">This field is required.</p>
+      </div>
+
+      <div class="form-section-label">Address</div>
+      <div class="form-row">
+        <label>Address 1st line <span style="color:var(--forest);font-weight:600">*</span></label>
+        <input type="text" name="entry.205174274" required>
+        <p class="field-error">This field is required.</p>
+      </div>
+      <div class="form-row">
+        <label>Address 2nd line <span>(optional)</span></label>
+        <input type="text" name="entry.2144290287">
+      </div>
+      <div class="form-grid">
+        <div class="form-row">
+          <label>City <span style="color:var(--forest);font-weight:600">*</span></label>
+          <input type="text" name="entry.287885337" required>
+          <p class="field-error">This field is required.</p>
+        </div>
+        <div class="form-row">
+          <label>Postcode <span style="color:var(--forest);font-weight:600">*</span></label>
+          <input type="text" name="entry.1510472551" required>
+          <p class="field-error">This field is required.</p>
+        </div>
+      </div>
+
+      <div class="form-section-label">Background check</div>
+      <div class="form-row">
+        <label>DBS Certificate Number <span>(optional)</span></label>
+        <input type="text" name="entry.278369993">
+        <p class="field-hint">Leave blank if you do not yet hold a DBS</p>
+      </div>
+      <div class="form-row">
+        <label>Date of birth <span>(optional)</span></label>
+        <input type="date" name="entry.1510012245">
+        <p class="field-hint">This allows us to check your DBS status if it is on the update service. If it is not on the update service, please email a copy of the certificate to hello@kenwoodeducation.com.</p>
+      </div>
+
+      <div class="form-section-label">Teaching details</div>
+      <div class="form-row">
+        <label>Confirm which subjects and levels you would like to teach <span style="color:var(--forest);font-weight:600">*</span></label>
+        <input type="text" name="entry.1400467434" required>
+        <p class="field-error">This field is required.</p>
+      </div>
+      <div class="form-row">
+        <label>Desired hourly rate <span style="color:var(--forest);font-weight:600">*</span></label>
+        <input type="text" name="entry.1001086480" required>
+        <p class="field-hint">Input the amount you wish to receive per hour in &pound;/GBP. We will always try to achieve a better rate for you where possible. See our <a href="tutor-fee-guidance.html" target="_blank" style="color:var(--forest-dark)">Fee Guidance</a> document for suggested rates.</p>
+        <p class="field-error">This field is required.</p>
+      </div>
+      <div class="form-row">
+        <label>Please confirm the dates and times you are available <span style="color:var(--forest);font-weight:600">*</span></label>
+        <textarea name="entry.540947833" required></textarea>
+        <p class="field-error">This field is required.</p>
+      </div>
+
+      <div class="form-section-label">Reference 1</div>
+      <div class="form-row">
+        <label>Full name <span style="color:var(--forest);font-weight:600">*</span></label>
+        <input type="text" name="entry.254842073" required>
+        <p class="field-error">This field is required.</p>
+      </div>
+      <div class="form-row">
+        <label>Relationship to you <span style="color:var(--forest);font-weight:600">*</span></label>
+        <input type="text" name="entry.1798574444" placeholder="e.g. previous employer, tutoring agency, parent or teacher who observed you teaching" required>
+        <p class="field-error">This field is required.</p>
+      </div>
+      <div class="form-grid">
+        <div class="form-row">
+          <label>Email <span style="color:var(--forest);font-weight:600">*</span></label>
+          <input type="email" name="entry.235756187" required>
+          <p class="field-error">This field is required.</p>
+        </div>
+        <div class="form-row">
+          <label>Contact number <span>(optional)</span></label>
+          <input type="text" name="entry.580496259">
+        </div>
+      </div>
+
+      <div class="form-section-label">Reference 2</div>
+      <div class="form-row">
+        <label>Full name <span style="color:var(--forest);font-weight:600">*</span></label>
+        <input type="text" name="entry.95262704" required>
+        <p class="field-error">This field is required.</p>
+      </div>
+      <div class="form-row">
+        <label>Relationship to you <span style="color:var(--forest);font-weight:600">*</span></label>
+        <input type="text" name="entry.957008434" placeholder="e.g. previous employer, tutoring agency, parent or teacher who observed you teaching" required>
+        <p class="field-error">This field is required.</p>
+      </div>
+      <div class="form-grid">
+        <div class="form-row">
+          <label>Email <span style="color:var(--forest);font-weight:600">*</span></label>
+          <input type="email" name="entry.510332479" required>
+          <p class="field-error">This field is required.</p>
+        </div>
+        <div class="form-row">
+          <label>Contact number <span>(optional)</span></label>
+          <input type="text" name="entry.1839473563">
+        </div>
+      </div>
+
+      <div class="form-section-label">Confirmation <span style="color:var(--forest);font-weight:600">*</span></div>
+      <div class="form-row confirm-row">
+        <label>
+          <input type="checkbox" id="tutor-agreement-checkbox" required>
+          <span>I have read and agree to the <a href="tutor-agreement.html" target="_blank" style="color:var(--forest-dark)">Tutor Agreement</a> <span style="color:var(--forest);font-weight:600">*</span></span>
+        </label>
+      </div>
+      <div class="form-row confirm-row" style="margin-top:0.75rem">
+        <label>
+          <input type="checkbox" id="safeguarding-confirm-checkbox" required>
+          <span>I have read and agree to comply with Kenwood&rsquo;s <a href="tutor-safeguarding.html" target="_blank" style="color:var(--forest-dark)">Safeguarding Policy</a> <span style="color:var(--forest);font-weight:600">*</span></span>
+        </label>
+      </div>
+      <div class="form-row confirm-row" style="margin-top:0.75rem">
+        <label>
+          <input type="checkbox" id="info-read-checkbox" required>
+          <span>I have read the <a href="tutor-information.html" target="_blank" style="color:var(--forest-dark)">Information and Advice for Tutors</a> <span style="color:var(--forest);font-weight:600">*</span></span>
+        </label>
+      </div>
+      <div class="form-row confirm-row" style="margin-top:0.75rem">
+        <label>
+          <input type="checkbox" id="info-confirm-checkbox" required>
+          <span>I confirm the information provided above is accurate <span style="color:var(--forest);font-weight:600">*</span></span>
+        </label>
+      </div>
+
+      <button type="submit" class="form-submit">Submit</button>
+      <p class="form-note"><span style="color:var(--forest);font-weight:600">*</span> Required field. Thank you &mdash; we&rsquo;ll be in touch as we continue the onboarding process.</p>
+    </form>
+  </div>
+</div>
+
+<footer>
+  <div style="display:flex;align-items:center;justify-content:center;gap:0.65rem;margin-bottom:1rem">
+    <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="32" height="32" rx="6" fill="#085041"/>
+      <circle cx="16" cy="14" r="10" fill="none" stroke="#9FE1CB" stroke-width="1.5"/>
+      <path d="M16 5 C16 5 8 10 8 15 C8 19 11 22 16 22 C21 22 24 19 24 15 C24 10 16 5 16 5Z" fill="#0F6E56" opacity="0.5"/>
+      <path d="M16 5 C16 5 8 10 8 15 C8 19 11 22 16 22 C21 22 24 19 24 15 C24 10 16 5 16 5Z" fill="none" stroke="#9FE1CB" stroke-width="1.3"/>
+      <line x1="16" y1="21" x2="16" y2="27" stroke="#9FE1CB" stroke-width="1.3" stroke-linecap="round"/>
+    </svg>
+    <span style="display:flex;flex-direction:column;gap:1px">
+      <span style="font-family:'Cormorant Garamond',Georgia,serif;font-size:1rem;font-weight:500;letter-spacing:0.08em;color:rgba(255,255,255,0.65);line-height:1">Kenwood</span>
+      <span style="font-family:'DM Sans',system-ui,sans-serif;font-size:0.55rem;font-weight:400;letter-spacing:0.25em;color:rgba(255,255,255,0.35);line-height:1;text-transform:uppercase">Education</span>
+    </span>
+  </div>
+  <p>Specialist in-person tutoring &middot; North London &middot; kenwoodeducation.com</p>
+  <p>Suite 272, 17a Highgate High Street, Highgate, London N6 5JT</p>
+  <p style="margin-top:1.25rem"><a href="privacy.html" style="color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.72rem">Privacy Notice</a> &middot; <a href="safeguarding.html" style="color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.72rem">Safeguarding</a></p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+
+const GOOGLE_FORM_ACTION = 'https://docs.google.com/forms/d/e/1FAIpQLSfJcHTO7TvRjprVf3PwFqN2AFhyptua1-k6AUZ8Yk0Iqq-aUg/formResponse';
+
+const form = document.getElementById('tutor-onboarding-form');
+
+function showFieldError(field) {
+  const row = field.closest('.form-row');
+  const msg = row ? row.querySelector('.field-error') : null;
+  if (msg) msg.style.display = 'block';
+  field.style.borderColor = '#c0392b';
+}
+
+function clearFieldError(field) {
+  const row = field.closest('.form-row');
+  const msg = row ? row.querySelector('.field-error') : null;
+  if (msg) msg.style.display = 'none';
+  field.style.borderColor = '';
+}
+
+document.querySelectorAll('#tutor-onboarding-form input, #tutor-onboarding-form textarea').forEach(field => {
+  field.addEventListener('input', () => clearFieldError(field));
+  field.addEventListener('change', () => clearFieldError(field));
+});
+
+form.addEventListener('submit', async function(e) {
+  e.preventDefault();
+
+  let firstInvalid = null;
+  document.querySelectorAll('#tutor-onboarding-form input[required], #tutor-onboarding-form textarea[required]').forEach(field => {
+    if (field.type === 'checkbox') return; // handled separately below
+    if (!field.checkValidity()) {
+      showFieldError(field);
+      if (!firstInvalid) firstInvalid = field;
+    } else {
+      clearFieldError(field);
+    }
+  });
+
+  const tutorAgreementCb = document.getElementById('tutor-agreement-checkbox');
+  if (!tutorAgreementCb.checked) {
+    if (!firstInvalid) firstInvalid = tutorAgreementCb;
+  }
+
+  const safeguardingConfirmCb = document.getElementById('safeguarding-confirm-checkbox');
+  if (!safeguardingConfirmCb.checked) {
+    if (!firstInvalid) firstInvalid = safeguardingConfirmCb;
+  }
+
+  const infoReadCb = document.getElementById('info-read-checkbox');
+  if (!infoReadCb.checked) {
+    if (!firstInvalid) firstInvalid = infoReadCb;
+  }
+
+  const infoConfirmCb = document.getElementById('info-confirm-checkbox');
+  if (!infoConfirmCb.checked) {
+    if (!firstInvalid) firstInvalid = infoConfirmCb;
+  }
+
+  if (firstInvalid) {
+    firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    return;
+  }
+
+  const btn = form.querySelector('.form-submit');
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+
+  const formData = new FormData();
+  document.querySelectorAll('#tutor-onboarding-form input[name^="entry."], #tutor-onboarding-form textarea[name^="entry."]').forEach(field => {
+    formData.append(field.name, field.value);
+  });
+  formData.append('entry.666521302', 'Yes');
+
+  try {
+    await fetch(GOOGLE_FORM_ACTION, {
+      method: 'POST',
+      mode: 'no-cors',
+      body: formData
+    });
+    btn.textContent = "Thank you \u2014 we've received your details";
+    btn.style.background = '#085041';
+    form.querySelectorAll('input, select, textarea, button').forEach(el => el.disabled = true);
+    if (typeof gtag === 'function') {
+      gtag('event', 'tutor_onboarding_submitted');
+    }
+  } catch (error) {
+    btn.textContent = 'Something went wrong \u2014 please email us directly';
+    btn.disabled = false;
+    btn.style.background = '#c0392b';
+  }
+});
+
+});
+</script>
+</body>
+</html>
