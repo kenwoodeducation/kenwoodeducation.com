@@ -38,6 +38,7 @@ h1 { font-family: var(--serif); font-size: clamp(2rem,5vw,2.75rem); font-weight:
 .form-section-label:first-child { margin-top: 0; padding-top: 0; border-top: none; }
 .form-row { margin-bottom: 1rem; }
 .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem; margin-bottom: 1rem; }
+.form-grid .form-row { margin-bottom: 0; }
 label { display: block; font-size: 0.75rem; font-weight: 500; color: var(--muted); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 0.4rem; }
 label span { font-weight: 400; text-transform: none; letter-spacing: 0; color: var(--hint); }
 input[type="text"], input[type="email"], input[type="date"], select, textarea { width: 100%; padding: 0.7rem 0.9rem; border: 1px solid rgba(15,110,86,0.22); border-radius: var(--radius); font-family: var(--sans); font-size: 0.9rem; color: var(--ink); background: var(--cream); outline: none; transition: border-color 0.2s; appearance: none; -webkit-appearance: none; }
@@ -118,12 +119,12 @@ footer p + p { margin-top: 0.3rem; }
         <input type="text" name="entry.1195790267">
       </div>
       <div class="form-grid">
-        <div>
+        <div class="form-row">
           <label>City <span style="color:var(--forest);font-weight:600">*</span></label>
           <input type="text" name="entry.346639190" required>
           <p class="field-error">This field is required.</p>
         </div>
-        <div>
+        <div class="form-row">
           <label>Postcode <span style="color:var(--forest);font-weight:600">*</span></label>
           <input type="text" name="entry.272847330" required>
           <p class="field-error">This field is required.</p>
@@ -158,12 +159,12 @@ footer p + p { margin-top: 0.3rem; }
         <p class="field-error">This field is required.</p>
       </div>
       <div class="form-grid">
-        <div>
+        <div class="form-row">
           <label>Student&rsquo;s date of birth <span style="color:var(--forest);font-weight:600">*</span></label>
           <input type="date" name="entry.1605101123" required>
           <p class="field-error">This field is required.</p>
         </div>
-        <div>
+        <div class="form-row">
           <label>Year group <span style="color:var(--forest);font-weight:600">*</span></label>
           <select name="entry.744862738" required>
             <option value="">Select year</option>
