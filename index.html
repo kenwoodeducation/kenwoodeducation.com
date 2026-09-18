@@ -618,8 +618,8 @@ src="https://www.facebook.com/tr?id=1439021704748612&ev=PageView&noscript=1"
       <label>Please describe <span style="color:var(--forest);font-weight:600">*</span></label>
       <input type="text" name="goals_detail" id="goals-detail-input" placeholder="Tell us more about what you're hoping to achieve">
     </div>
-    <div class="form-row">
-      <label>Availability <span>(optional)</span></label>
+    <div class="form-row" id="availability-row">
+      <label>Availability <span style="color:var(--forest);font-weight:600">*</span></label>
       <div class="availability-wrap">
         <table class="availability-table" id="availability-table">
           <thead>
@@ -662,6 +662,7 @@ src="https://www.facebook.com/tr?id=1439021704748612&ev=PageView&noscript=1"
       <div class="availability-flexible-row">
         <label><input type="checkbox" id="availability-flexible" name="availability_flexible" value="Yes"> I am flexible</label>
       </div>
+      <p id="availability-error" style="font-size:0.78rem;color:#c0392b;margin-top:0.4rem;display:none">Please select at least one time, or tick &ldquo;I am flexible&rdquo;.</p>
     </div>
     <div class="form-row">
       <label>What learning style suits <span class="dynamic-child-text">your child</span>? <span>(optional)</span></label>
@@ -1047,6 +1048,9 @@ const goalsRow = document.querySelector('input[name="goals"]').closest('.form-ro
 
 const availabilityFlexible = document.getElementById('availability-flexible');
 const availabilityCheckboxes = document.querySelectorAll('#availability-table input[type="checkbox"]');
+const availabilityRow = document.getElementById('availability-row');
+const availabilityError = document.getElementById('availability-error');
+const availabilityAllInputs = document.querySelectorAll('#availability-table input[type="checkbox"], #availability-flexible');
 availabilityFlexible.addEventListener('change', function() {
   availabilityCheckboxes.forEach(cb => {
     cb.disabled = this.checked;
@@ -1085,7 +1089,8 @@ const stepGroupChecks = [
   { row: englishDetailRow, cbs: englishCheckboxes, err: englishError },
   { row: primaryDetailRow, cbs: primaryCheckboxes, err: primaryError },
   { row: oxbridgePrepDetailRow, cbs: oxbridgePrepCheckboxes, err: oxbridgePrepError },
-  { row: goalsRow, cbs: goalsCheckboxes, err: goalsError }
+  { row: goalsRow, cbs: goalsCheckboxes, err: goalsError },
+  { row: availabilityRow, cbs: availabilityAllInputs, err: availabilityError }
 ];
 
 function showFieldError(field) {
