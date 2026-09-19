@@ -1,26 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1439021704748612');
-fbq('track', 'PageView');
-</script>
-<noscript>
-  <img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=1439021704748612&ev=PageView&noscript=1"/>
-</noscript>
-<!-- End Meta Pixel Code -->
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -36,14 +16,24 @@ fbq('track', 'PageView');
   href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230F6E56'/><circle cx='16' cy='14' r='10' fill='none' stroke='white' stroke-width='1.5'/><path d='M16 5 C16 5 8 10 8 15 C8 19 11 22 16 22 C21 22 24 19 24 15 C24 10 16 5 16 5Z' fill='white' opacity='0.25'/><path d='M16 5 C16 5 8 10 8 15 C8 19 11 22 16 22 C21 22 24 19 24 15 C24 10 16 5 16 5Z' fill='none' stroke='white' stroke-width='1.3'/><line x1='16' y1='21' x2='16' y2='27' stroke='white' stroke-width='1.3' stroke-linecap='round'/></svg>"
 >
 
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RDRT6GS1QT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-RDRT6GS1QT');
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link
   href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap"
   rel="stylesheet"
 >
 
 <style>
+
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -68,6 +58,7 @@ fbq('track', 'PageView');
   --sans: 'DM Sans', system-ui, sans-serif;
 
   --border: 1px solid rgba(15,110,86,0.18);
+
   --radius: 8px;
   --radius-lg: 12px;
 }
@@ -85,6 +76,7 @@ body {
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
 }
+
 
 /* NAVIGATION */
 
@@ -120,21 +112,22 @@ nav {
   background: var(--forest-dark);
 }
 
-/* PRIVACY CONTENT */
 
-.section {
-  padding: 4rem 2rem 4.5rem;
+/* CONTENT */
+
+.wrap {
   max-width: 760px;
   margin: 0 auto;
+  padding: 4rem 2rem 4.5rem;
 }
 
 h1 {
   font-family: var(--serif);
   font-size: clamp(2.4rem,5vw,3.25rem);
   font-weight: 400;
-  line-height: 1.15;
   color: var(--ink);
   margin-bottom: 0.5rem;
+  line-height: 1.15;
 }
 
 h2 {
@@ -149,8 +142,8 @@ h2 {
 }
 
 p {
-  font-size: 0.95rem;
   color: var(--muted);
+  font-size: 0.95rem;
   line-height: 1.85;
   margin-bottom: 1rem;
 }
@@ -166,21 +159,43 @@ li {
   margin-bottom: 0.4rem;
 }
 
-strong {
-  color: var(--ink);
+.meta {
+  font-size: 0.78rem;
+  color: var(--forest);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
   font-weight: 500;
+  margin-bottom: 1rem;
 }
 
 .lead {
   font-size: 0.9rem;
   color: var(--hint);
-  font-style: normal;
   margin-bottom: 2rem;
 }
 
-a.inline {
-  color: var(--forest-dark);
+.contact-block {
+  background: var(--sage);
+  border: var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem 1.75rem;
+  margin-top: 1rem;
 }
+
+.contact-block p {
+  margin-bottom: 0;
+}
+
+.contact-block a {
+  color: var(--forest-dark);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contact-block a:hover {
+  text-decoration: underline;
+}
+
 
 /* FOOTER */
 
@@ -224,7 +239,8 @@ footer p + p {
   margin-top: 0.3rem;
 }
 
-/* RESPONSIVE NAV */
+
+/* RESPONSIVE */
 
 @media (max-width: 900px) {
   #nav-phone,
@@ -252,15 +268,42 @@ footer p + p {
     padding: 0.85rem 1.25rem;
   }
 
-  .section {
+  .wrap {
     padding: 3rem 1.25rem 3.5rem;
   }
 }
+
 </style>
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+
+fbq('init', '1439021704748612');
+fbq('track', 'PageView');
+</script>
+
+<noscript>
+  <img
+    height="1"
+    width="1"
+    style="display:none"
+    src="https://www.facebook.com/tr?id=1439021704748612&ev=PageView&noscript=1"
+  />
+</noscript>
+<!-- End Meta Pixel Code -->
 
 </head>
 
 <body>
+
 
 <!-- NAVIGATION -->
 
@@ -268,115 +311,43 @@ footer p + p {
 
   <div style="display:flex;align-items:center;gap:1.25rem">
 
-    <a
-      href="/"
-      style="display:flex;align-items:center;gap:0.65rem;text-decoration:none"
-    >
+    <a href="/" style="display:flex;align-items:center;gap:0.65rem;text-decoration:none">
 
-      <svg
-        width="32"
-        height="32"
-        viewBox="0 0 32 32"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect width="32" height="32" rx="6" fill="#0F6E56"/>
-        <circle
-          cx="16"
-          cy="14"
-          r="10"
-          fill="none"
-          stroke="white"
-          stroke-width="1.5"
-        />
-        <path
-          d="M16 5 C16 5 8 10 8 15 C8 19 11 22 16 22 C21 22 24 19 24 15 C24 10 16 5 16 5Z"
-          fill="white"
-          opacity="0.25"
-        />
-        <path
-          d="M16 5 C16 5 8 10 8 15 C8 19 11 22 16 22 C21 22 24 19 24 15 C24 10 16 5 16 5Z"
-          fill="none"
-          stroke="white"
-          stroke-width="1.3"
-        />
-        <line
-          x1="16"
-          y1="21"
-          x2="16"
-          y2="27"
-          stroke="white"
-          stroke-width="1.3"
-          stroke-linecap="round"
-        />
+        <circle cx="16" cy="14" r="10" fill="none" stroke="white" stroke-width="1.5"/>
+        <path d="M16 5 C16 5 8 10 8 15 C8 19 11 22 16 22 C21 22 24 19 24 15 C24 10 16 5 16 5Z" fill="white" opacity="0.25"/>
+        <path d="M16 5 C16 5 8 10 8 15 C8 19 11 22 16 22 C21 22 24 19 24 15 C24 10 16 5 16 5Z" fill="none" stroke="white" stroke-width="1.3"/>
+        <line x1="16" y1="21" x2="16" y2="27" stroke="white" stroke-width="1.3" stroke-linecap="round"/>
       </svg>
 
       <span style="display:flex;flex-direction:column;gap:1px">
 
-        <span
-          style="
-            font-family:'Cormorant Garamond',Georgia,serif;
-            font-size:1.05rem;
-            font-weight:500;
-            letter-spacing:0.08em;
-            color:#1A2E20;
-            line-height:1;
-          "
-        >
+        <span style="font-family:'Cormorant Garamond',Georgia,serif;font-size:1.05rem;font-weight:500;letter-spacing:0.08em;color:#1A2E20;line-height:1">
           Kenwood
         </span>
 
-        <span
-          style="
-            font-family:'DM Sans',system-ui,sans-serif;
-            font-size:0.58rem;
-            font-weight:400;
-            letter-spacing:0.25em;
-            color:#5A7265;
-            line-height:1;
-            text-transform:uppercase;
-          "
-        >
+        <span style="font-family:'DM Sans',system-ui,sans-serif;font-size:0.58rem;font-weight:400;letter-spacing:0.25em;color:#5A7265;line-height:1;text-transform:uppercase">
           Education
         </span>
 
       </span>
+
     </a>
+
 
     <span
       id="nav-phone-divider"
-      style="
-        width:1px;
-        height:26px;
-        background:rgba(15,110,86,0.2);
-      "
+      style="width:1px;height:26px;background:rgba(15,110,86,0.2)"
     ></span>
+
 
     <a
       href="tel:+442039515827"
       id="nav-phone"
-      style="
-        color:var(--forest-dark);
-        text-decoration:none;
-        font-size:1.05rem;
-        font-weight:600;
-        letter-spacing:-0.01em;
-        display:flex;
-        align-items:center;
-        gap:0.4rem;
-      "
+      style="color:var(--forest-dark);text-decoration:none;font-size:1.05rem;font-weight:600;letter-spacing:-0.01em;display:flex;align-items:center;gap:0.4rem"
     >
-
-      <svg
-        width="17"
-        height="17"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      >
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
       </svg>
 
@@ -385,32 +356,18 @@ footer p + p {
 
   </div>
 
-  <div
-    id="nav-links-desktop"
-    style="display:flex;align-items:center;gap:1.75rem"
-  >
 
-    <a
-      href="/guides/"
-      style="
-        color:#3D5247;
-        text-decoration:none;
-        font-size:0.88rem;
-        font-weight:500;
-      "
-    >
+  <div id="nav-links-desktop" style="display:flex;align-items:center;gap:1.75rem">
+
+    <a href="/" style="color:#3D5247;text-decoration:none;font-size:0.88rem;font-weight:500">
+      Home
+    </a>
+
+    <a href="/guides/" style="color:#3D5247;text-decoration:none;font-size:0.88rem;font-weight:500">
       Guides
     </a>
 
-    <a
-      href="/become-a-tutor"
-      style="
-        color:#3D5247;
-        text-decoration:none;
-        font-size:0.88rem;
-        font-weight:500;
-      "
-    >
+    <a href="/become-a-tutor" style="color:#3D5247;text-decoration:none;font-size:0.88rem;font-weight:500">
       Become a Tutor
     </a>
 
@@ -420,10 +377,8 @@ footer p + p {
 
   </div>
 
-  <div
-    id="nav-links-mobile"
-    style="display:none;align-items:center;gap:0.85rem"
-  >
+
+  <div id="nav-links-mobile" style="display:none;align-items:center;gap:0.85rem">
 
     <a href="/#enquiry" class="nav-cta">
       Get in touch
@@ -433,16 +388,7 @@ footer p + p {
       id="nav-burger"
       aria-label="Open menu"
       aria-expanded="false"
-      style="
-        background:none;
-        border:none;
-        padding:0.4rem;
-        cursor:pointer;
-        display:flex;
-        flex-direction:column;
-        gap:4px;
-        width:auto;
-      "
+      style="background:none;border:none;padding:0.4rem;cursor:pointer;display:flex;flex-direction:column;gap:4px;width:auto"
     >
       <span style="display:block;width:22px;height:2px;background:var(--ink);border-radius:1px"></span>
       <span style="display:block;width:22px;height:2px;background:var(--ink);border-radius:1px"></span>
@@ -453,356 +399,300 @@ footer p + p {
 
 </nav>
 
+
 <div
   id="nav-mobile-panel"
-  style="
-    display:none;
-    background:var(--cream);
-    border-bottom:var(--border);
-    padding:1rem 1.25rem;
-    flex-direction:column;
-    gap:0.85rem;
-  "
+  style="display:none;background:var(--cream);border-bottom:var(--border);padding:1rem 1.25rem;flex-direction:column;gap:0.85rem"
 >
 
   <a
     href="tel:+442039515827"
-    style="
-      color:var(--forest-dark);
-      text-decoration:none;
-      font-size:0.92rem;
-      font-weight:600;
-      display:flex;
-      align-items:center;
-      gap:0.45rem;
-    "
+    style="color:var(--forest-dark);text-decoration:none;font-size:0.92rem;font-weight:600;display:flex;align-items:center;gap:0.45rem"
   >
-
-    <svg
-      width="15"
-      height="15"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-    >
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
     </svg>
-
     020 3951 5827
-
   </a>
 
-  <a
-    href="/guides/"
-    style="
-      color:#3D5247;
-      text-decoration:none;
-      font-size:0.92rem;
-      font-weight:500;
-    "
-  >
+  <a href="/" style="color:#3D5247;text-decoration:none;font-size:0.92rem;font-weight:500">
+    Home
+  </a>
+
+  <a href="/guides/" style="color:#3D5247;text-decoration:none;font-size:0.92rem;font-weight:500">
     Guides
   </a>
 
-  <a
-    href="/become-a-tutor"
-    style="
-      color:#3D5247;
-      text-decoration:none;
-      font-size:0.92rem;
-      font-weight:500;
-    "
-  >
+  <a href="/become-a-tutor" style="color:#3D5247;text-decoration:none;font-size:0.92rem;font-weight:500">
     Become a Tutor
   </a>
 
 </div>
 
 
-<!-- PRIVACY NOTICE -->
 
-<div class="section">
+<!-- PRIVACY CONTENT -->
 
-  <h1>Privacy Notice</h1>
+<div class="wrap">
+
+  <div class="meta">
+    Kenwood Education
+  </div>
+
+  <h1>
+    Privacy Notice
+  </h1>
 
   <p class="lead">
-    Last updated: July 2026
+    Last updated July 2026
+  </p>
+
+
+  <h2>Who we are</h2>
+
+  <p>
+    Kenwood Education is the data controller responsible for the personal
+    information we collect and use.
   </p>
 
   <p>
-    Kenwood Education is a private tutoring agency based in North London.
-    We are the data controller for the personal information described in
-    this notice. You can contact us at
-    <a class="inline" href="mailto:hello@kenwoodeducation.com">hello@kenwoodeducation.com</a>
-    or Suite 272, 17a Highgate High Street, London N6 5JT.
+    You can contact us at
+    <a href="mailto:hello@kenwoodeducation.com">
+      hello@kenwoodeducation.com
+    </a>
+    or at Suite 272, 17a Highgate High Street, London N6 5JT.
   </p>
 
   <p>
-    Our ICO registration number is <strong>ZC193627</strong>.
+    Kenwood Education is registered with the Information Commissioner's Office
+    under registration number ZC193627.
   </p>
 
-  <h2>What Information We Collect</h2>
+
+  <h2>What information we collect</h2>
 
   <p>
-    Depending on your relationship with us, we may collect:
+    Depending on your relationship with Kenwood Education, we may collect:
   </p>
 
   <ul>
     <li>
-      <strong>Families</strong> — your name, contact details, your child's
-      name, year group, school, academic needs, and any information you
-      share with us to help us find a suitable tutor
+      <strong>Families:</strong> name, contact details, your child's name,
+      year group, school, academic needs, and any other information you share
+      with us so we can help find a suitable tutor.
     </li>
 
     <li>
-      <strong>Tutors</strong> — your name, contact details, qualifications,
-      references, DBS certificate outcome, bank details, and information
-      relating to your tutoring experience
+      <strong>Tutors:</strong> name, contact details, qualifications,
+      references, DBS certificate outcome, bank details, and information about
+      your tutoring and teaching experience.
     </li>
 
     <li>
-      <strong>Website visitors</strong> — general browsing information via
-      Google Analytics, to help us understand how our website is used
+      <strong>Website visitors:</strong> general browsing information collected
+      through Google Analytics.
     </li>
   </ul>
 
-  <h2>How We Use Your Information</h2>
+
+  <h2>How we use your information</h2>
+
+  <p>
+    We use personal information to:
+  </p>
 
   <ul>
-    <li>Match families with a suitable tutor</li>
+    <li>Match families with suitable tutors</li>
     <li>Vet and onboard tutors, including safeguarding checks</li>
-    <li>Manage bookings, invoicing, and payments</li>
-    <li>Communicate with you about your enquiry or ongoing arrangement</li>
+    <li>Manage bookings, invoicing and payments</li>
+    <li>Communicate with families and tutors</li>
     <li>Meet our legal and regulatory obligations</li>
   </ul>
 
-  <h2>Our Legal Basis for Processing</h2>
 
-  <ul>
-    <li>
-      <strong>Contract</strong> — to provide our matching and administrative
-      services once you engage with us
-    </li>
-
-    <li>
-      <strong>Legitimate interests</strong> — to respond to enquiries,
-      maintain our tutor roster, and run our business
-    </li>
-
-    <li>
-      <strong>Legal obligation</strong> — for safeguarding, tax, and other
-      regulatory requirements
-    </li>
-
-    <li>
-      <strong>Consent</strong> — where we ask for it specifically
-      (e.g. certain website tracking)
-    </li>
-  </ul>
-
-  <h2>Who We Share Your Information With</h2>
+  <h2>Our legal basis for using your information</h2>
 
   <p>
-    We share information, where necessary, with:
+    Depending on the circumstances, we rely on one or more of the following
+    legal bases:
   </p>
 
   <ul>
     <li>
-      <strong>TutorCruncher</strong> — our scheduling and invoicing platform
+      <strong>Contract:</strong> where processing is necessary to provide or
+      arrange tutoring services.
     </li>
 
     <li>
-      <strong>Stripe</strong> — for processing payments
+      <strong>Legitimate interests:</strong> where we have a reasonable business
+      need to process information and this does not override your rights.
     </li>
 
     <li>
-      <strong>Google Analytics</strong> — for website analytics
+      <strong>Legal obligation:</strong> where we need to process information
+      to comply with a legal or regulatory requirement.
+    </li>
+
+    <li>
+      <strong>Consent:</strong> where you have specifically agreed to a
+      particular use of your information, such as certain website tracking.
     </li>
   </ul>
 
+
+  <h2>Who we share information with</h2>
+
   <p>
-    We do not sell your personal information to any third party.
+    We only share personal information where it is necessary for providing our
+    services or running our business.
   </p>
 
-  <h2>How Long We Keep Your Information</h2>
+  <p>
+    This may include:
+  </p>
 
   <ul>
     <li>
-      <strong>Unsuccessful tutor applications</strong>: 12 months, then deleted
+      <strong>TutorCruncher</strong>, which we use for scheduling, invoicing and
+      tutor administration
     </li>
 
     <li>
-      <strong>Active tutor records</strong>: 1 year from the last date we
-      provided work-finding services to you
+      <strong>Stripe</strong>, which processes payments
     </li>
 
     <li>
-      <strong>References</strong>: 1 year following a tutor's introduction
-      to a family
-    </li>
-
-    <li>
-      <strong>Family/client records</strong>: 1 year from the last date we
-      provided services to you
-    </li>
-
-    <li>
-      <strong>Contracts and terms of business</strong>: 6 years
-    </li>
-
-    <li>
-      <strong>Invoices and financial records</strong>: 6 years, in line with
-      HMRC requirements
-    </li>
-
-    <li>
-      <strong>DBS certificate details</strong>: we retain only the outcome
-      (clear/not clear) and date checked, not the certificate content itself
+      <strong>Google Analytics</strong>, which helps us understand how visitors
+      use our website
     </li>
   </ul>
 
-  <h2>Your Rights</h2>
+  <p>
+    We do not sell personal information to third parties.
+  </p>
+
+
+  <h2>How long we keep your information</h2>
 
   <p>
-    Under UK GDPR, you have the right to:
+    We only keep personal information for as long as it is reasonably required.
+    Our general retention periods include:
+  </p>
+
+  <ul>
+    <li>
+      Unsuccessful tutor applications: 12 months, after which they are deleted
+    </li>
+
+    <li>
+      Active tutor records: 1 year from the last provision of work-finding
+      services
+    </li>
+
+    <li>
+      Tutor references: 1 year following the tutor's introduction
+    </li>
+
+    <li>
+      Family and client records: 1 year from the last provision of services
+    </li>
+
+    <li>
+      Contracts and terms and conditions: 6 years
+    </li>
+
+    <li>
+      Invoices and other financial records: 6 years
+    </li>
+  </ul>
+
+  <p>
+    For DBS checks, we record only the outcome of the check and the date it was
+    verified. We do not retain the contents of DBS certificates.
+  </p>
+
+
+  <h2>Your rights</h2>
+
+  <p>
+    Depending on the circumstances, you may have the right to:
   </p>
 
   <ul>
     <li>Access the personal information we hold about you</li>
-    <li>Request correction of inaccurate information</li>
-    <li>Request deletion of your information, where applicable</li>
-    <li>Object to or restrict certain processing</li>
-    <li>Withdraw consent, where processing is based on consent</li>
+    <li>Ask us to correct inaccurate information</li>
+    <li>Ask us to delete your information where applicable</li>
+    <li>Object to or restrict certain uses of your information</li>
+    <li>Withdraw consent where we rely on consent</li>
   </ul>
 
   <p>
-    To exercise any of these rights, contact us at
-    <a class="inline" href="mailto:hello@kenwoodeducation.com">hello@kenwoodeducation.com</a>.
-    You also have the right to complain to the
-    <a
-      class="inline"
-      href="https://ico.org.uk"
-      target="_blank"
-      rel="noopener"
-    >
-      Information Commissioner's Office
-    </a>
-    if you believe we have not handled your information properly.
+    If you are unhappy with how we handle your personal information, you also
+    have the right to complain to the Information Commissioner's Office.
   </p>
 
-  <h2>Cookies and Analytics</h2>
+
+  <h2>Cookies and analytics</h2>
 
   <p>
-    Our website uses Google Analytics to help us understand how visitors
-    use our site. This may involve cookies being placed on your device.
-    You can control or disable cookies through your browser settings.
+    Our website uses Google Analytics to help us understand how visitors use
+    the site. This may involve the use of cookies or similar technologies.
   </p>
-
-  <h2>Changes to This Notice</h2>
 
   <p>
-    We may update this notice from time to time. Any material changes will
-    be reflected here with an updated date.
+    You can control or block cookies through your browser settings.
   </p>
 
-  <h2>Contact Us</h2>
+
+  <h2>Changes to this notice</h2>
 
   <p>
-    If you have any questions about this notice or how we handle your
-    information, please contact us at
-    <a class="inline" href="mailto:hello@kenwoodeducation.com">hello@kenwoodeducation.com</a>.
+    We may update this Privacy Notice from time to time. The latest version
+    will always be published on this page.
   </p>
+
+
+  <h2>Contact us</h2>
+
+  <div class="contact-block">
+    <p>
+      If you have any questions about this Privacy Notice or how we use your
+      personal information, please contact
+      <a href="mailto:hello@kenwoodeducation.com">
+        hello@kenwoodeducation.com
+      </a>.
+    </p>
+  </div>
 
 </div>
+
 
 
 <!-- FOOTER -->
 
 <footer>
 
-  <div
-    style="
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      gap:0.65rem;
-      margin-bottom:1rem;
-    "
-  >
+  <div style="display:flex;align-items:center;justify-content:center;gap:0.65rem;margin-bottom:1rem">
 
-    <svg
-      width="28"
-      height="28"
-      viewBox="0 0 32 32"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+    <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
       <rect width="32" height="32" rx="6" fill="#085041"/>
-      <circle
-        cx="16"
-        cy="14"
-        r="10"
-        fill="none"
-        stroke="#9FE1CB"
-        stroke-width="1.5"
-      />
-      <path
-        d="M16 5 C16 5 8 10 8 15 C8 19 11 22 16 22 C21 22 24 19 24 15 C24 10 16 5 16 5Z"
-        fill="#0F6E56"
-        opacity="0.5"
-      />
-      <path
-        d="M16 5 C16 5 8 10 8 15 C8 19 11 22 16 22 C21 22 24 19 24 15 C24 10 16 5 16 5Z"
-        fill="none"
-        stroke="#9FE1CB"
-        stroke-width="1.3"
-      />
-      <line
-        x1="16"
-        y1="21"
-        x2="16"
-        y2="27"
-        stroke="#9FE1CB"
-        stroke-width="1.3"
-        stroke-linecap="round"
-      />
+      <circle cx="16" cy="14" r="10" fill="none" stroke="#9FE1CB" stroke-width="1.5"/>
+      <path d="M16 5 C16 5 8 10 8 15 C8 19 11 22 16 22 C21 22 24 19 24 15 C24 10 16 5 16 5Z" fill="#0F6E56" opacity="0.5"/>
+      <path d="M16 5 C16 5 8 10 8 15 C8 19 11 22 16 22 C21 22 24 19 24 15 C24 10 16 5 16 5Z" fill="none" stroke="#9FE1CB" stroke-width="1.3"/>
+      <line x1="16" y1="21" x2="16" y2="27" stroke="#9FE1CB" stroke-width="1.3" stroke-linecap="round"/>
     </svg>
 
     <span style="display:flex;flex-direction:column;gap:1px">
-
-      <span
-        style="
-          font-family:'Cormorant Garamond',Georgia,serif;
-          font-size:1rem;
-          font-weight:500;
-          letter-spacing:0.08em;
-          color:rgba(255,255,255,0.65);
-          line-height:1;
-        "
-      >
+      <span style="font-family:'Cormorant Garamond',Georgia,serif;font-size:1rem;font-weight:500;letter-spacing:0.08em;color:rgba(255,255,255,0.65);line-height:1">
         Kenwood
       </span>
-
-      <span
-        style="
-          font-family:'DM Sans',system-ui,sans-serif;
-          font-size:0.55rem;
-          font-weight:400;
-          letter-spacing:0.25em;
-          color:rgba(255,255,255,0.35);
-          line-height:1;
-          text-transform:uppercase;
-        "
-      >
+      <span style="font-family:'DM Sans',system-ui,sans-serif;font-size:0.55rem;font-weight:400;letter-spacing:0.25em;color:rgba(255,255,255,0.35);line-height:1;text-transform:uppercase">
         Education
       </span>
-
     </span>
 
   </div>
+
 
   <p>
     Specialist in-person tutoring &middot; North London &middot; kenwoodeducation.com
@@ -813,135 +703,57 @@ footer p + p {
   </p>
 
   <p>
-    Highgate &middot; Hampstead &middot; Muswell Hill &middot;
-    Crouch End &middot; East Finchley
+    Highgate &middot; Hampstead &middot; Muswell Hill &middot; Crouch End &middot; East Finchley
   </p>
+
 
   <p style="margin-top:1rem">
 
-    <a
-      href="tel:+442039515827"
-      style="color:white;text-decoration:none;font-size:0.75rem"
-    >
+    <a href="tel:+442039515827" style="color:white;text-decoration:none;font-size:0.75rem">
       020 3951 5827
     </a>
 
     &middot;
 
-    <a
-      href="mailto:hello@kenwoodeducation.com"
-      style="color:white;text-decoration:none;font-size:0.75rem"
-    >
+    <a href="mailto:hello@kenwoodeducation.com" style="color:white;text-decoration:none;font-size:0.75rem">
       hello@kenwoodeducation.com
     </a>
 
     &middot;
 
-    <a
-      href="https://wa.me/447466641281"
-      target="_blank"
-      rel="noopener"
-      style="color:white;text-decoration:none;font-size:0.75rem"
-    >
+    <a href="https://wa.me/447466641281" target="_blank" rel="noopener" style="color:white;text-decoration:none;font-size:0.75rem">
       WhatsApp
     </a>
 
   </p>
 
+
   <div class="social-row">
-
-    <a
-      href="https://facebook.com/kenwoodeducation"
-      target="_blank"
-      rel="noopener"
-    >
-      Facebook
-    </a>
-
-    <a
-      href="https://instagram.com/kenwoodeducation"
-      target="_blank"
-      rel="noopener"
-    >
-      Instagram
-    </a>
-
-    <a
-      href="https://linkedin.com/company/kenwoodeducation"
-      target="_blank"
-      rel="noopener"
-    >
-      LinkedIn
-    </a>
-
-    <a
-      href="https://nextdoor.co.uk/pages/kenwood-education"
-      target="_blank"
-      rel="noopener"
-    >
-      Nextdoor
-    </a>
-
+    <a href="https://facebook.com/kenwoodeducation" target="_blank" rel="noopener">Facebook</a>
+    <a href="https://instagram.com/kenwoodeducation" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://linkedin.com/company/kenwoodeducation" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://nextdoor.co.uk/pages/kenwood-education" target="_blank" rel="noopener">Nextdoor</a>
   </div>
 
-  <div
-    style="
-      margin-top:1.75rem;
-      display:flex;
-      justify-content:center;
-    "
-  >
+
+  <div style="margin-top:1.75rem;display:flex;justify-content:center">
 
     <a
       href="https://thetutorsassociation.org.uk/"
       target="_blank"
       rel="noopener"
-      style="
-        text-decoration:none;
-        text-align:center;
-        line-height:1.1;
-      "
+      style="text-decoration:none;text-align:center;line-height:1.1"
     >
 
-      <div
-        style="
-          font-family:'Cormorant Garamond',Georgia,serif;
-          font-size:1.15rem;
-          font-weight:500;
-          letter-spacing:0.04em;
-          color:var(--forest-mid);
-        "
-      >
+      <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:1.15rem;font-weight:500;letter-spacing:0.04em;color:var(--forest-mid)">
         THE TUTORS&rsquo;
       </div>
 
-      <div
-        style="
-          font-family:'Cormorant Garamond',Georgia,serif;
-          font-size:1.15rem;
-          font-weight:500;
-          letter-spacing:0.08em;
-          color:rgba(255,255,255,0.55);
-          margin-top:-2px;
-        "
-      >
+      <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:1.15rem;font-weight:500;letter-spacing:0.08em;color:rgba(255,255,255,0.55);margin-top:-2px">
         ASSOCIATION
       </div>
 
-      <div
-        style="
-          font-family:var(--sans);
-          font-size:0.62rem;
-          font-weight:500;
-          letter-spacing:0.12em;
-          color:rgba(255,255,255,0.8);
-          text-transform:uppercase;
-          margin-top:0.4rem;
-          padding-top:0.3rem;
-          border-top:1px solid rgba(255,255,255,0.3);
-          display:inline-block;
-        "
-      >
+      <div style="font-family:var(--sans);font-size:0.62rem;font-weight:500;letter-spacing:0.12em;color:rgba(255,255,255,0.8);text-transform:uppercase;margin-top:0.4rem;padding-top:0.3rem;border-top:1px solid rgba(255,255,255,0.3);display:inline-block">
         Corporate Member
       </div>
 
@@ -949,35 +761,23 @@ footer p + p {
 
   </div>
 
+
   <p style="margin-top:1.25rem">
 
-    <a
-      href="/privacy"
-      style="
-        color:rgba(255,255,255,0.6);
-        text-decoration:none;
-        font-size:0.72rem;
-      "
-    >
+    <a href="/privacy" style="color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.72rem">
       Privacy Notice
     </a>
 
     &middot;
 
-    <a
-      href="/safeguarding"
-      style="
-        color:rgba(255,255,255,0.6);
-        text-decoration:none;
-        font-size:0.72rem;
-      "
-    >
+    <a href="/safeguarding" style="color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.72rem">
       Safeguarding
     </a>
 
   </p>
 
 </footer>
+
 
 
 <!-- WHATSAPP FLOATING BUTTON -->
@@ -988,32 +788,12 @@ footer p + p {
   rel="noopener"
   aria-label="Chat with us on WhatsApp"
   id="whatsapp-float"
-  style="
-    position:fixed;
-    bottom:1.5rem;
-    right:1.5rem;
-    z-index:200;
-    width:56px;
-    height:56px;
-    background:#25D366;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    box-shadow:0 4px 14px rgba(0,0,0,0.25);
-    text-decoration:none;
-    transition:transform 0.2s;
-  "
+  style="position:fixed;bottom:1.5rem;right:1.5rem;z-index:200;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,0.25);text-decoration:none;transition:transform 0.2s"
   onmouseover="this.style.transform='scale(1.08)'"
   onmouseout="this.style.transform='scale(1)'"
 >
 
-  <svg
-    width="28"
-    height="28"
-    viewBox="0 0 24 24"
-    fill="white"
-  >
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
     <path d="M12.004 2C6.486 2 2 6.486 2 12.004c0 1.87.505 3.628 1.386 5.13L2 22l4.99-1.35a9.958 9.958 0 0 0 5.014 1.348c5.518 0 10.004-4.486 10.004-10.004C22.008 6.486 17.522 2 12.004 2zm0 18.31a8.28 8.28 0 0 1-4.223-1.155l-.303-.18-3.145.85.84-3.07-.198-.315a8.286 8.286 0 0 1-1.27-4.436c0-4.582 3.727-8.309 8.31-8.309 4.581 0 8.308 3.727 8.308 8.309 0 4.581-3.727 8.306-8.318 8.306z"/>
   </svg>
@@ -1022,21 +802,29 @@ footer p + p {
 
 
 <script>
+
 const navBurger = document.getElementById('nav-burger');
 const navMobilePanel = document.getElementById('nav-mobile-panel');
 
 if (navBurger && navMobilePanel) {
-  navBurger.addEventListener('click', function() {
-    const isOpen = navMobilePanel.style.display === 'flex';
 
-    navMobilePanel.style.display = isOpen ? 'none' : 'flex';
+  navBurger.addEventListener('click', function() {
+
+    const isOpen =
+      navMobilePanel.style.display === 'flex';
+
+    navMobilePanel.style.display =
+      isOpen ? 'none' : 'flex';
 
     navBurger.setAttribute(
       'aria-expanded',
       String(!isOpen)
     );
+
   });
+
 }
+
 </script>
 
 </body>
