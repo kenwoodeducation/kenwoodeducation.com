@@ -91,9 +91,9 @@ footer p + p { margin-top: 0.3rem; }
 
   <div class="form-wrap">
     <form id="client-info-form">
-      <div class="form-section-label">Parent / Guardian details</div>
+      <div class="form-section-label">Your details</div>
       <div class="form-row">
-        <label>Parent/Guardian full name <span style="color:var(--forest);font-weight:600">*</span></label>
+        <label>Your full name <span style="color:var(--forest);font-weight:600">*</span></label>
         <input type="text" name="entry.1336802408" required>
         <p class="field-error">This field is required.</p>
       </div>
@@ -142,6 +142,7 @@ footer p + p { margin-top: 0.3rem; }
           <label><input type="radio" name="referral_source" value="Facebook">Facebook</label>
           <label><input type="radio" name="referral_source" value="Instagram">Instagram</label>
           <label><input type="radio" name="referral_source" value="The Archer newspaper">The Archer newspaper</label>
+          <label><input type="radio" name="referral_source" value="Flyer">Flyer</label>
           <label><input type="radio" id="referral-other-radio" name="referral_source" value="__other_option__">Other</label>
         </div>
         <p class="field-error" id="referral-source-error">Please select one.</p>
@@ -334,6 +335,8 @@ form.addEventListener('submit', async function(e) {
   }
 
   formData.append('entry.1993324973', 'Yes');
+  formData.append('entry.35440290', 'Yes');
+  formData.append('entry.1922242540', 'Yes');
 
   try {
     await fetch(GOOGLE_FORM_ACTION, {
