@@ -15,7 +15,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="guides.css">
 <meta property="og:type" content="article">
 <meta property="og:title" content="What Do GCSE Grades Actually Mean? 9-1 Scale Explained">
 <meta property="og:description" content="A full guide to the 9-1 GCSE grading scale, Foundation vs Higher tier, and what a grade 4 vs grade 5 actually means for next steps.">
@@ -82,25 +81,109 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=1439021704748612&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --forest: #0F6E56; --forest-dark: #085041; --forest-deeper: #04342C;
+  --forest-pale: #E1F5EE; --forest-mid: #9FE1CB; --forest-border: #5DCAA5;
+  --cream: #FFFFFF; --sage: #F3F7F4; --ink: #1A2E20; --muted: #3D5247; --hint: #5A7265;
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans: 'DM Sans', system-ui, sans-serif;
+  --border: 1px solid rgba(15,110,86,0.18);
+  --radius: 8px; --radius-lg: 12px;
+}
+html { scroll-behavior: smooth; }
+body { background: var(--cream); font-family: var(--sans); color: var(--ink); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+nav { position: sticky; top: 0; z-index: 100; background: rgba(243,247,244,0.96); backdrop-filter: blur(8px); border-bottom: var(--border); padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between; }
+.nav-logo { font-family: var(--serif); font-size: 1rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--forest-dark); font-weight: 500; text-decoration: none; }
+.nav-cta { background: var(--forest); color: white; border: none; padding: 0.55rem 1.3rem; font-family: var(--sans); font-size: 0.82rem; font-weight: 500; border-radius: var(--radius); cursor: pointer; transition: background 0.2s; text-decoration: none; display: inline-block; }
+.nav-cta:hover { background: var(--forest-dark); }
+.section { padding: 3rem 2rem; max-width: 780px; margin: 0 auto; }
+.divider { width: 40px; height: 1px; background: rgba(15,110,86,0.2); margin: 0 auto; }
+h1 { font-family: var(--serif); font-size: clamp(2rem,4.5vw,3rem); font-weight: 400; line-height: 1.15; color: var(--ink); }
+h2 { font-family: var(--sans); font-size: clamp(1.3rem,2.5vw,1.6rem); font-weight: 500; color: var(--ink); margin: 2rem 0 1rem; letter-spacing: -0.01em; }
+p { font-size: 1.02rem; color: var(--muted); line-height: 1.85; margin-bottom: 1.1rem; }
+.lead { font-size: 1.1rem; color: var(--muted); line-height: 1.85; }
+.meta { font-size: 0.82rem; color: var(--hint); font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.75rem; }
+.badge { display: inline-block; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--forest); border: 1px solid var(--forest); padding: 0.3rem 0.9rem; border-radius: 20px; margin-bottom: 1.25rem; }
+.btn-primary { background: var(--forest); color: white; border: none; padding: 0.85rem 2rem; font-family: var(--sans); font-size: 0.9rem; font-weight: 500; border-radius: var(--radius); cursor: pointer; transition: background 0.2s; text-decoration: none; display: inline-block; }
+.btn-primary:hover { background: var(--forest-dark); }
+ul.checklist { list-style: none; margin: 1.25rem 0; }
+ul.checklist li { padding-left: 1.75rem; position: relative; margin-bottom: 0.75rem; color: var(--muted); line-height: 1.7; }
+ul.checklist li::before { content: "¹3"; position: absolute; left: 0; color: var(--forest); font-weight: 700; }
+table.data-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.92rem; }
+table.data-table th { background: var(--forest); color: white; padding: 0.7rem 1rem; text-align: left; font-weight: 500; font-size: 0.78rem; letter-spacing: 0.04em; text-transform: uppercase; }
+table.data-table td { padding: 0.65rem 1rem; border-bottom: 1px solid rgba(15,110,86,0.12); color: var(--ink); }
+table.data-table tr:nth-child(even) td { background: var(--sage); }
+.callout { background: var(--sage); border: 1px solid var(--forest-border); border-radius: var(--radius-lg); padding: 1.5rem 1.75rem; margin: 1.75rem 0; }
+.callout p:last-child { margin-bottom: 0; }
+.callout h3 { font-family: var(--sans); font-size: 1rem; font-weight: 500; color: var(--forest-dark); margin-bottom: 0.75rem; }
+.source-note { font-size: 0.82rem; color: var(--hint); margin-top: 2.5rem; padding-top: 1.25rem; border-top: var(--border); }
+.post-card { display: block; background: var(--sage); border: var(--border); border-radius: var(--radius-lg); padding: 1.5rem 1.75rem; margin-bottom: 1rem; text-decoration: none; transition: border-color 0.2s; }
+.post-card:hover { border-color: var(--forest-border); }
+.post-card .meta { margin-bottom: 0.5rem; }
+.post-card h3 { font-family: var(--serif); font-size: 1.4rem; font-weight: 400; color: var(--ink); margin-bottom: 0.5rem; }
+.post-card p { color: var(--muted); font-size: 0.95rem; margin-bottom: 0; }
+footer { background: var(--ink); padding: 2.5rem 2rem; text-align: center; }
+footer p { font-size: 0.78rem; color: white; font-weight: 300; }
+footer p + p { margin-top: 0.3rem; }
+footer a { color: white; text-decoration: none; }
+@media (max-width: 600px) {
+  nav { padding: 0.85rem 1.25rem; }
+  .section { padding: 2.5rem 1.25rem; }
+}
+@media (max-width: 900px) {
+  #nav-phone, #nav-phone-divider { display: none !important; }
+  #nav-links-desktop { display: none !important; }
+  #nav-links-mobile { display: flex !important; }
+}
+@media (min-width: 901px) {
+  #nav-mobile-panel { display: none !important; }
+}
+</style>
 </head>
 <body>
 
 <nav>
-  <a href="/" class="nav-logo" style="display:flex;align-items:center;gap:0.65rem;text-decoration:none">
-    <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect width="32" height="32" rx="6" fill="#0F6E56"/>
-      <circle cx="16" cy="14" r="10" fill="none" stroke="white" stroke-width="1.5"/>
-      <path d="M16 5 C16 5 8 10 8 15 C8 19 11 22 16 22 C21 22 24 19 24 15 C24 10 16 5 16 5Z" fill="white" opacity="0.25"/>
-      <path d="M16 5 C16 5 8 10 8 15 C8 19 11 22 16 22 C21 22 24 19 24 15 C24 10 16 5 16 5Z" fill="none" stroke="white" stroke-width="1.3"/>
-      <line x1="16" y1="21" x2="16" y2="27" stroke="white" stroke-width="1.3" stroke-linecap="round"/>
-    </svg>
-    <span style="font-family:'Cormorant Garamond',Georgia,serif;font-size:1.05rem;font-weight:500;letter-spacing:0.08em;color:#1A2E20">Kenwood Education</span>
-  </a>
-  <div class="nav-links">
-    <a href="/guides/">Guides</a>
+  <div style="display:flex;align-items:center;gap:1.25rem">
+    <a href="/" class="nav-logo" style="display:flex;align-items:center;gap:0.65rem;text-decoration:none">
+      <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="32" height="32" rx="6" fill="#0F6E56"/>
+        <circle cx="16" cy="14" r="10" fill="none" stroke="white" stroke-width="1.5"/>
+        <path d="M16 5 C16 5 8 10 8 15 C8 19 11 22 16 22 C21 22 24 19 24 15 C24 10 16 5 16 5Z" fill="white" opacity="0.25"/>
+        <path d="M16 5 C16 5 8 10 8 15 C8 19 11 22 16 22 C21 22 24 19 24 15 C24 10 16 5 16 5Z" fill="none" stroke="white" stroke-width="1.3"/>
+        <line x1="16" y1="21" x2="16" y2="27" stroke="white" stroke-width="1.3" stroke-linecap="round"/>
+      </svg>
+      <span style="font-family:'Cormorant Garamond',Georgia,serif;font-size:1.05rem;font-weight:500;letter-spacing:0.08em;color:#1A2E20">Kenwood Education</span>
+    </a>
+    <span id="nav-phone-divider" style="width:1px;height:26px;background:rgba(15,110,86,0.2)"></span>
+    <a href="tel:+442039515827" id="nav-phone" style="color:#085041;text-decoration:none;font-size:1.05rem;font-weight:600;letter-spacing:-0.01em;display:flex;align-items:center;gap:0.4rem">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      020 3951 5827
+    </a>
+  </div>
+  <div id="nav-links-desktop" style="display:flex;align-items:center;gap:1.75rem">
+    <a href="/guides/" style="color:#3D5247;text-decoration:none;font-size:0.88rem;font-weight:500">Guides</a>
+    <a href="/become-a-tutor" style="color:#3D5247;text-decoration:none;font-size:0.88rem;font-weight:500">Become a Tutor</a>
     <a href="/#enquiry" class="nav-cta">Get in touch</a>
   </div>
+  <div id="nav-links-mobile" style="display:none;align-items:center;gap:0.85rem">
+    <a href="/#enquiry" class="nav-cta">Get in touch</a>
+    <button id="nav-burger" aria-label="Open menu" aria-expanded="false" style="background:none;border:none;padding:0.4rem;cursor:pointer;display:flex;flex-direction:column;gap:4px;width:auto">
+      <span style="display:block;width:22px;height:2px;background:#1A2E20;border-radius:1px"></span>
+      <span style="display:block;width:22px;height:2px;background:#1A2E20;border-radius:1px"></span>
+      <span style="display:block;width:22px;height:2px;background:#1A2E20;border-radius:1px"></span>
+    </button>
+  </div>
 </nav>
+<div id="nav-mobile-panel" style="display:none;background:#FFFFFF;border-bottom:1px solid rgba(15,110,86,0.18);padding:1rem 1.25rem;flex-direction:column;gap:0.85rem">
+  <a href="tel:+442039515827" style="color:#085041;text-decoration:none;font-size:0.92rem;font-weight:600;display:flex;align-items:center;gap:0.45rem">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    020 3951 5827
+  </a>
+  <a href="/guides/" style="color:#3D5247;text-decoration:none;font-size:0.92rem;font-weight:500">Guides</a>
+  <a href="/become-a-tutor" style="color:#3D5247;text-decoration:none;font-size:0.92rem;font-weight:500">Become a Tutor</a>
+</div>
 
 <div class="section" style="padding-top:3rem">
   <div class="meta">27 August 2026 &middot; 6 min read</div>
@@ -166,5 +249,16 @@ src="https://www.facebook.com/tr?id=1439021704748612&ev=PageView&noscript=1"
   <p style="margin-top:0.75rem"><a href="/">kenwoodeducation.com</a></p>
 </footer>
 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const navBurger = document.getElementById('nav-burger');
+  const navMobilePanel = document.getElementById('nav-mobile-panel');
+  navBurger.addEventListener('click', function() {
+    const isOpen = navMobilePanel.style.display === 'flex';
+    navMobilePanel.style.display = isOpen ? 'none' : 'flex';
+    navBurger.setAttribute('aria-expanded', String(!isOpen));
+  });
+});
+</script>
 </body>
 </html>
