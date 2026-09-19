@@ -241,7 +241,7 @@ footer p + p { margin-top: 0.3rem; }
       </div>
 
       <button type="submit" class="form-submit">Submit</button>
-      <p class="form-note"><span style="color:var(--forest);font-weight:600">*</span> Required field. Thank you &mdash; we&rsquo;ll be in touch as we continue the onboarding process.</p>
+      <p class="form-note"><span style="color:var(--forest);font-weight:600">*</span> Required field. Thank you &mdash; please give your referees a heads-up, as we&rsquo;ll be in touch with them as part of the onboarding process.</p>
     </form>
   </div>
 </div>
@@ -339,6 +339,9 @@ form.addEventListener('submit', async function(e) {
     formData.append(field.name, field.value);
   });
   formData.append('entry.666521302', 'Yes');
+  formData.append('entry.798040793', 'Yes');
+  formData.append('entry.521556424', 'Yes');
+  formData.append('entry.924487426', 'Yes');
 
   try {
     await fetch(GOOGLE_FORM_ACTION, {
