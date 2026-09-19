@@ -1,10 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Safeguarding | Kenwood Education</title>
-<meta name="description" content="Kenwood Education's commitment to safeguarding and child welfare. How we vet every tutor, what we ask of families and tutors, and how to raise a concern.">
+
+<meta
+  name="description"
+  content="Kenwood Education's commitment to safeguarding and child welfare. How we vet every tutor, what we ask of families and tutors, and how to raise a concern."
+>
+
+<link
+  rel="icon"
+  href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230F6E56'/><circle cx='16' cy='14' r='10' fill='none' stroke='white' stroke-width='1.5'/><path d='M16 5 C16 5 8 10 8 15 C8 19 11 22 16 22 C21 22 24 19 24 15 C24 10 16 5 16 5Z' fill='white' opacity='0.25'/><path d='M16 5 C16 5 8 10 8 15 C8 19 11 22 16 22 C21 22 24 19 24 15 C24 10 16 5 16 5Z' fill='none' stroke='white' stroke-width='1.3'/><line x1='16' y1='21' x2='16' y2='27' stroke='white' stroke-width='1.3' stroke-linecap='round'/></svg>"
+>
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RDRT6GS1QT"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -12,43 +24,264 @@
   gtag('js', new Date());
   gtag('config', 'G-RDRT6GS1QT');
 </script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+  rel="stylesheet"
+>
+
 <style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 :root {
-  --forest: #0F6E56; --forest-dark: #085041;
-  --cream: #FFFFFF; --sage: #F3F7F4; --ink: #1A2E20; --muted: #3D5247; --hint: #5A7265;
+  --forest: #0F6E56;
+  --forest-dark: #085041;
+  --forest-deeper: #04342C;
+  --forest-pale: #E1F5EE;
+  --forest-mid: #9FE1CB;
+  --forest-border: #5DCAA5;
+
+  --cream: #FFFFFF;
+  --sage: #F3F7F4;
+  --ink: #1A2E20;
+  --muted: #3D5247;
+  --hint: #5A7265;
+
   --serif: 'Cormorant Garamond', Georgia, serif;
   --sans: 'DM Sans', system-ui, sans-serif;
+
   --border: 1px solid rgba(15,110,86,0.18);
-  --radius: 8px; --radius-lg: 12px;
+
+  --radius: 8px;
+  --radius-lg: 12px;
 }
-body { background: var(--cream); font-family: var(--sans); color: var(--ink); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
-nav { position: sticky; top: 0; z-index: 100; background: rgba(243,247,244,0.96); backdrop-filter: blur(8px); border-bottom: var(--border); padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between; }
-.nav-cta { background: var(--forest); color: white; border: none; padding: 0.55rem 1.3rem; font-family: var(--sans); font-size: 0.82rem; font-weight: 500; border-radius: var(--radius); cursor: pointer; transition: background 0.2s; text-decoration: none; display: inline-block; }
-.nav-cta:hover { background: var(--forest-dark); }
-.wrap { max-width: 680px; margin: 0 auto; padding: 3.5rem 2rem 5rem; }
-h1 { font-family: var(--serif); font-size: clamp(2rem,4vw,2.75rem); font-weight: 400; color: var(--ink); margin-bottom: 0.5rem; line-height: 1.15; }
-h2 { font-family: var(--sans); font-size: 1.1rem; font-weight: 500; color: var(--ink); margin: 2.5rem 0 0.75rem; letter-spacing: -0.01em; }
-p { color: var(--muted); font-size: 0.95rem; line-height: 1.85; margin-bottom: 1rem; }
-ul { margin: 0.5rem 0 1rem 0; padding-left: 0; list-style: none; }
-ul li { color: var(--muted); font-size: 0.95rem; line-height: 1.85; padding-left: 1.5rem; position: relative; margin-bottom: 0.5rem; }
-ul li::before { content: "\2013"; position: absolute; left: 0; color: var(--forest); }
-.meta { font-size: 0.78rem; color: var(--hint); text-transform: uppercase; letter-spacing: 0.06em; font-weight: 500; margin-bottom: 1.5rem; }
-.divider { width: 40px; height: 1px; background: rgba(15,110,86,0.2); margin: 0 0 2.5rem; }
-.contact-block { background: var(--sage); border: var(--border); border-radius: var(--radius-lg); padding: 1.5rem 1.75rem; margin-top: 1rem; }
-.contact-block p { margin-bottom: 0; }
-.contact-block a { color: var(--forest); text-decoration: none; font-weight: 500; }
-.contact-block a:hover { text-decoration: underline; }
-footer { background: var(--ink); padding: 2.5rem 2rem; text-align: center; }
-footer p { font-size: 0.78rem; color: white; font-weight: 300; }
-footer p + p { margin-top: 0.3rem; }
-footer a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.72rem; }
-@media (max-width: 600px) { .wrap { padding: 2.5rem 1.25rem 4rem; } nav { padding: 0.85rem 1.25rem; } }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  background: var(--cream);
+  font-family: var(--sans);
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+/* NAVIGATION */
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(243,247,244,0.96);
+  backdrop-filter: blur(8px);
+  border-bottom: var(--border);
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-cta {
+  background: var(--forest);
+  color: white;
+  border: none;
+  padding: 0.55rem 1.3rem;
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  font-weight: 500;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background 0.2s;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.nav-cta:hover {
+  background: var(--forest-dark);
+}
+
+
+/* PAGE CONTENT */
+
+.wrap {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 4rem 2rem 4.5rem;
+}
+
+h1 {
+  font-family: var(--serif);
+  font-size: clamp(2.4rem,5vw,3.25rem);
+  font-weight: 400;
+  color: var(--ink);
+  margin-bottom: 0.5rem;
+  line-height: 1.15;
+}
+
+h2 {
+  font-family: var(--sans);
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--forest-dark);
+  margin: 2.2rem 0 0.75rem;
+  letter-spacing: -0.01em;
+  border-bottom: 1px solid var(--forest-border);
+  padding-bottom: 0.4rem;
+}
+
+p {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.85;
+  margin-bottom: 1rem;
+}
+
+ul {
+  margin: 0 0 1rem 1.3rem;
+}
+
+li {
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.85;
+  margin-bottom: 0.4rem;
+}
+
+.meta {
+  font-size: 0.78rem;
+  color: var(--forest);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.lead {
+  font-size: 0.9rem;
+  color: var(--hint);
+  margin-bottom: 2rem;
+}
+
+.contact-block {
+  background: var(--sage);
+  border: var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem 1.75rem;
+  margin-top: 1rem;
+}
+
+.contact-block p {
+  margin-bottom: 0;
+}
+
+.contact-block a {
+  color: var(--forest-dark);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contact-block a:hover {
+  text-decoration: underline;
+}
+
+
+/* FOOTER */
+
+.social-row {
+  display: flex;
+  gap: 0.85rem;
+  justify-content: center;
+  margin-top: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.social-row a {
+  color: rgba(255,255,255,0.55);
+  text-decoration: none;
+  font-size: 0.75rem;
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: 0.4rem 0.9rem;
+  border-radius: 20px;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.social-row a:hover {
+  color: white;
+  border-color: rgba(255,255,255,0.5);
+}
+
+footer {
+  background: var(--ink);
+  padding: 2.5rem 2rem;
+  text-align: center;
+}
+
+footer p {
+  font-size: 0.78rem;
+  color: white;
+  font-weight: 300;
+  margin-bottom: 0;
+}
+
+footer p + p {
+  margin-top: 0.3rem;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+
+  #nav-phone,
+  #nav-phone-divider {
+    display: none !important;
+  }
+
+  #nav-links-desktop {
+    display: none !important;
+  }
+
+  #nav-links-mobile {
+    display: flex !important;
+  }
+}
+
+@media (min-width: 901px) {
+
+  #nav-mobile-panel {
+    display: none !important;
+  }
+}
+
+@media (max-width: 600px) {
+
+  nav {
+    padding: 0.85rem 1.25rem;
+  }
+
+  .wrap {
+    padding: 3rem 1.25rem 3.5rem;
+  }
+}
+
 </style>
+
+
 <!-- Meta Pixel Code -->
+
 <script>
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -58,81 +291,788 @@ n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
+
 fbq('init', '1439021704748612');
 fbq('track', 'PageView');
 </script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1439021704748612&ev=PageView&noscript=1"
-/></noscript>
+
+<noscript>
+  <img
+    height="1"
+    width="1"
+    style="display:none"
+    src="https://www.facebook.com/tr?id=1439021704748612&ev=PageView&noscript=1"
+  />
+</noscript>
+
 <!-- End Meta Pixel Code -->
+
 </head>
+
 <body>
 
+
+<!-- NAVIGATION -->
+
 <nav>
-  <a href="/" style="display:flex;align-items:center;gap:0.65rem;text-decoration:none">
-    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect width="32" height="32" rx="6" fill="#0F6E56"/>
-      <circle cx="16" cy="14" r="10" fill="none" stroke="white" stroke-width="1.5"/>
-      <path d="M16 5 C16 5 8 10 8 15 C8 19 11 22 16 22 C21 22 24 19 24 15 C24 10 16 5 16 5Z" fill="white" opacity="0.25"/>
-      <path d="M16 5 C16 5 8 10 8 15 C8 19 11 22 16 22 C21 22 24 19 24 15 C24 10 16 5 16 5Z" fill="none" stroke="white" stroke-width="1.3"/>
-      <line x1="16" y1="21" x2="16" y2="27" stroke="white" stroke-width="1.3" stroke-linecap="round"/>
-    </svg>
-    <span style="display:flex;flex-direction:column;gap:1px">
-      <span style="font-family:'Cormorant Garamond',Georgia,serif;font-size:1.05rem;font-weight:500;letter-spacing:0.08em;color:#1A2E20;line-height:1">Kenwood</span>
-      <span style="font-family:'DM Sans',system-ui,sans-serif;font-size:0.58rem;font-weight:400;letter-spacing:0.25em;color:#5A7265;line-height:1;text-transform:uppercase">Education</span>
-    </span>
-  </a>
-  <a href="/#enquiry" class="nav-cta">Get in touch</a>
+
+  <div style="display:flex;align-items:center;gap:1.25rem">
+
+    <a
+      href="/"
+      style="display:flex;align-items:center;gap:0.65rem;text-decoration:none"
+    >
+
+      <svg
+        width="32"
+        height="32"
+        viewBox="0 0 32 32"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+
+        <rect width="32" height="32" rx="6" fill="#0F6E56"/>
+
+        <circle
+          cx="16"
+          cy="14"
+          r="10"
+          fill="none"
+          stroke="white"
+          stroke-width="1.5"
+        />
+
+        <path
+          d="M16 5 C16 5 8 10 8 15 C8 19 11 22 16 22 C21 22 24 19 24 15 C24 10 16 5 16 5Z"
+          fill="white"
+          opacity="0.25"
+        />
+
+        <path
+          d="M16 5 C16 5 8 10 8 15 C8 19 11 22 16 22 C21 22 24 19 24 15 C24 10 16 5 16 5Z"
+          fill="none"
+          stroke="white"
+          stroke-width="1.3"
+        />
+
+        <line
+          x1="16"
+          y1="21"
+          x2="16"
+          y2="27"
+          stroke="white"
+          stroke-width="1.3"
+          stroke-linecap="round"
+        />
+
+      </svg>
+
+      <span style="display:flex;flex-direction:column;gap:1px">
+
+        <span
+          style="
+            font-family:'Cormorant Garamond',Georgia,serif;
+            font-size:1.05rem;
+            font-weight:500;
+            letter-spacing:0.08em;
+            color:#1A2E20;
+            line-height:1;
+          "
+        >
+          Kenwood
+        </span>
+
+        <span
+          style="
+            font-family:'DM Sans',system-ui,sans-serif;
+            font-size:0.58rem;
+            font-weight:400;
+            letter-spacing:0.25em;
+            color:#5A7265;
+            line-height:1;
+            text-transform:uppercase;
+          "
+        >
+          Education
+        </span>
+
+      </span>
+
+    </a>
+
+
+    <span
+      id="nav-phone-divider"
+      style="
+        width:1px;
+        height:26px;
+        background:rgba(15,110,86,0.2);
+      "
+    ></span>
+
+
+    <a
+      href="tel:+442039515827"
+      id="nav-phone"
+      style="
+        color:var(--forest-dark);
+        text-decoration:none;
+        font-size:1.05rem;
+        font-weight:600;
+        letter-spacing:-0.01em;
+        display:flex;
+        align-items:center;
+        gap:0.4rem;
+      "
+    >
+
+      <svg
+        width="17"
+        height="17"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+
+        <path
+          d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"
+        />
+
+      </svg>
+
+      020 3951 5827
+
+    </a>
+
+  </div>
+
+
+  <div
+    id="nav-links-desktop"
+    style="display:flex;align-items:center;gap:1.75rem"
+  >
+
+    <a
+      href="/guides/"
+      style="
+        color:#3D5247;
+        text-decoration:none;
+        font-size:0.88rem;
+        font-weight:500;
+      "
+    >
+      Guides
+    </a>
+
+    <a
+      href="/become-a-tutor"
+      style="
+        color:#3D5247;
+        text-decoration:none;
+        font-size:0.88rem;
+        font-weight:500;
+      "
+    >
+      Become a Tutor
+    </a>
+
+    <a href="/#enquiry" class="nav-cta">
+      Get in touch
+    </a>
+
+  </div>
+
+
+  <div
+    id="nav-links-mobile"
+    style="display:none;align-items:center;gap:0.85rem"
+  >
+
+    <a href="/#enquiry" class="nav-cta">
+      Get in touch
+    </a>
+
+    <button
+      id="nav-burger"
+      aria-label="Open menu"
+      aria-expanded="false"
+      style="
+        background:none;
+        border:none;
+        padding:0.4rem;
+        cursor:pointer;
+        display:flex;
+        flex-direction:column;
+        gap:4px;
+        width:auto;
+      "
+    >
+
+      <span style="display:block;width:22px;height:2px;background:var(--ink);border-radius:1px"></span>
+      <span style="display:block;width:22px;height:2px;background:var(--ink);border-radius:1px"></span>
+      <span style="display:block;width:22px;height:2px;background:var(--ink);border-radius:1px"></span>
+
+    </button>
+
+  </div>
+
 </nav>
 
-<div class="wrap">
-  <div class="meta">Kenwood Education</div>
-  <h1>Safeguarding</h1>
-  <p style="color:var(--hint);font-size:0.85rem;margin-bottom:2rem">Our commitment to families</p>
-  <div class="divider"></div>
 
-  <h2>Our commitment</h2>
-  <p>Kenwood Education is committed to safeguarding and promoting the welfare of every child and young person we work with. Every tutor on our roster is vetted thoroughly before being introduced to any family, and we take any safeguarding concern seriously and act on it promptly.</p>
+<div
+  id="nav-mobile-panel"
+  style="
+    display:none;
+    background:var(--cream);
+    border-bottom:var(--border);
+    padding:1rem 1.25rem;
+    flex-direction:column;
+    gap:0.85rem;
+  "
+>
 
-  <h2>How we vet every tutor</h2>
-  <p>Before any tutor is introduced to your family, they will have completed:</p>
-  <ul>
-    <li>A structured interview assessing their experience, approach, and suitability to work with children</li>
-    <li>Two references, including someone who has directly observed them teaching, tutoring, or working with children or young people</li>
-    <li>An enhanced DBS check, registered on the Update Service where possible, re-verified every year, not just once</li>
-    <li>Identity verification, carried out as part of the DBS application process</li>
-  </ul>
+  <a
+    href="tel:+442039515827"
+    style="
+      color:var(--forest-dark);
+      text-decoration:none;
+      font-size:0.92rem;
+      font-weight:600;
+      display:flex;
+      align-items:center;
+      gap:0.45rem;
+    "
+  >
 
-  <h2>While your tutor is in your home</h2>
-  <p>We ask every family to:</p>
-  <ul>
-    <li>Ensure a responsible adult is present in the property throughout any session involving a student under 18</li>
-  </ul>
-  <p>We ask every tutor to:</p>
-  <ul>
-    <li>Maintain clear, professional boundaries at all times</li>
-    <li>Avoid any private or unsupervised contact with a student outside agreed sessions</li>
-    <li>Never contact a student directly via personal social media or messaging outside the context of agreed tutoring</li>
-  </ul>
+    <svg
+      width="15"
+      height="15"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+    </svg>
 
-  <h2>If you ever have a concern</h2>
-  <p>Please contact us directly and as soon as possible. We will listen, take it seriously, and act, whether that means a conversation with the tutor, additional support, or ending a placement entirely.</p>
-  <p>If a child is ever in immediate danger, please call 999 first.</p>
+    020 3951 5827
 
-  <h2>Questions</h2>
-  <div class="contact-block">
-    <p>If you'd like to know more about our safeguarding practices, please get in touch at <a href="mailto:hello@kenwoodeducation.com">hello@kenwoodeducation.com</a>.</p>
-  </div>
+  </a>
+
+  <a
+    href="/guides/"
+    style="
+      color:#3D5247;
+      text-decoration:none;
+      font-size:0.92rem;
+      font-weight:500;
+    "
+  >
+    Guides
+  </a>
+
+  <a
+    href="/become-a-tutor"
+    style="
+      color:#3D5247;
+      text-decoration:none;
+      font-size:0.92rem;
+      font-weight:500;
+    "
+  >
+    Become a Tutor
+  </a>
+
 </div>
 
-<footer>
-  <p>Kenwood Education &middot; Specialist in-person tutoring &middot; North London</p>
-  <p style="margin-top:0.75rem">
-    <a href="privacy">Privacy Notice</a>
-    <span style="color:rgba(255,255,255,0.3);margin:0 0.5rem">&middot;</span>
-    <a href="safeguarding">Safeguarding</a>
+
+
+<!-- SAFEGUARDING CONTENT -->
+
+<div class="wrap">
+
+  <div class="meta">
+    Kenwood Education
+  </div>
+
+  <h1>
+    Safeguarding
+  </h1>
+
+  <p class="lead">
+    Our commitment to families
   </p>
+
+
+  <h2>
+    Our commitment
+  </h2>
+
+  <p>
+    Kenwood Education is committed to safeguarding and promoting the welfare
+    of every child and young person we work with. Every tutor on our roster
+    is vetted thoroughly before being introduced to any family, and we take
+    any safeguarding concern seriously and act on it promptly.
+  </p>
+
+
+  <h2>
+    How we vet every tutor
+  </h2>
+
+  <p>
+    Before any tutor is introduced to your family, they will have completed:
+  </p>
+
+  <ul>
+
+    <li>
+      A structured interview assessing their experience, approach, and
+      suitability to work with children
+    </li>
+
+    <li>
+      Two references, including someone who has directly observed them
+      teaching, tutoring, or working with children or young people
+    </li>
+
+    <li>
+      An enhanced DBS check, registered on the Update Service where possible,
+      re-verified every year, not just once
+    </li>
+
+    <li>
+      Identity verification, carried out as part of the DBS application process
+    </li>
+
+  </ul>
+
+
+  <h2>
+    While your tutor is in your home
+  </h2>
+
+  <p>
+    We ask every family to:
+  </p>
+
+  <ul>
+
+    <li>
+      Ensure a responsible adult is present in the property throughout any
+      session involving a student under 18
+    </li>
+
+  </ul>
+
+  <p>
+    We ask every tutor to:
+  </p>
+
+  <ul>
+
+    <li>
+      Maintain clear, professional boundaries at all times
+    </li>
+
+    <li>
+      Avoid any private or unsupervised contact with a student outside agreed
+      sessions
+    </li>
+
+    <li>
+      Never contact a student directly via personal social media or messaging
+      outside the context of agreed tutoring
+    </li>
+
+  </ul>
+
+
+  <h2>
+    If you ever have a concern
+  </h2>
+
+  <p>
+    Please contact us directly and as soon as possible. We will listen, take
+    it seriously, and act, whether that means a conversation with the tutor,
+    additional support, or ending a placement entirely.
+  </p>
+
+  <p>
+    If a child is ever in immediate danger, please call 999 first.
+  </p>
+
+
+  <h2>
+    Questions
+  </h2>
+
+  <div class="contact-block">
+
+    <p>
+      If you'd like to know more about our safeguarding practices, please get
+      in touch at
+      <a href="mailto:hello@kenwoodeducation.com">
+        hello@kenwoodeducation.com
+      </a>.
+    </p>
+
+  </div>
+
+</div>
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+  <div
+    style="
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:0.65rem;
+      margin-bottom:1rem;
+    "
+  >
+
+    <svg
+      width="28"
+      height="28"
+      viewBox="0 0 32 32"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+
+      <rect width="32" height="32" rx="6" fill="#085041"/>
+
+      <circle
+        cx="16"
+        cy="14"
+        r="10"
+        fill="none"
+        stroke="#9FE1CB"
+        stroke-width="1.5"
+      />
+
+      <path
+        d="M16 5 C16 5 8 10 8 15 C8 19 11 22 16 22 C21 22 24 19 24 15 C24 10 16 5 16 5Z"
+        fill="#0F6E56"
+        opacity="0.5"
+      />
+
+      <path
+        d="M16 5 C16 5 8 10 8 15 C8 19 11 22 16 22 C21 22 24 19 24 15 C24 10 16 5 16 5Z"
+        fill="none"
+        stroke="#9FE1CB"
+        stroke-width="1.3"
+      />
+
+      <line
+        x1="16"
+        y1="21"
+        x2="16"
+        y2="27"
+        stroke="#9FE1CB"
+        stroke-width="1.3"
+        stroke-linecap="round"
+      />
+
+    </svg>
+
+
+    <span style="display:flex;flex-direction:column;gap:1px">
+
+      <span
+        style="
+          font-family:'Cormorant Garamond',Georgia,serif;
+          font-size:1rem;
+          font-weight:500;
+          letter-spacing:0.08em;
+          color:rgba(255,255,255,0.65);
+          line-height:1;
+        "
+      >
+        Kenwood
+      </span>
+
+      <span
+        style="
+          font-family:'DM Sans',system-ui,sans-serif;
+          font-size:0.55rem;
+          font-weight:400;
+          letter-spacing:0.25em;
+          color:rgba(255,255,255,0.35);
+          line-height:1;
+          text-transform:uppercase;
+        "
+      >
+        Education
+      </span>
+
+    </span>
+
+  </div>
+
+
+  <p>
+    Specialist in-person tutoring &middot; North London &middot;
+    kenwoodeducation.com
+  </p>
+
+  <p>
+    Suite 272, 17a Highgate High Street, Highgate, London N6 5JT
+  </p>
+
+  <p>
+    Highgate &middot; Hampstead &middot; Muswell Hill &middot;
+    Crouch End &middot; East Finchley
+  </p>
+
+
+  <p style="margin-top:1rem">
+
+    <a
+      href="tel:+442039515827"
+      style="color:white;text-decoration:none;font-size:0.75rem"
+    >
+      020 3951 5827
+    </a>
+
+    &middot;
+
+    <a
+      href="mailto:hello@kenwoodeducation.com"
+      style="color:white;text-decoration:none;font-size:0.75rem"
+    >
+      hello@kenwoodeducation.com
+    </a>
+
+    &middot;
+
+    <a
+      href="https://wa.me/447466641281"
+      target="_blank"
+      rel="noopener"
+      style="color:white;text-decoration:none;font-size:0.75rem"
+    >
+      WhatsApp
+    </a>
+
+  </p>
+
+
+  <div class="social-row">
+
+    <a
+      href="https://facebook.com/kenwoodeducation"
+      target="_blank"
+      rel="noopener"
+    >
+      Facebook
+    </a>
+
+    <a
+      href="https://instagram.com/kenwoodeducation"
+      target="_blank"
+      rel="noopener"
+    >
+      Instagram
+    </a>
+
+    <a
+      href="https://linkedin.com/company/kenwoodeducation"
+      target="_blank"
+      rel="noopener"
+    >
+      LinkedIn
+    </a>
+
+    <a
+      href="https://nextdoor.co.uk/pages/kenwood-education"
+      target="_blank"
+      rel="noopener"
+    >
+      Nextdoor
+    </a>
+
+  </div>
+
+
+  <div
+    style="
+      margin-top:1.75rem;
+      display:flex;
+      justify-content:center;
+    "
+  >
+
+    <a
+      href="https://thetutorsassociation.org.uk/"
+      target="_blank"
+      rel="noopener"
+      style="
+        text-decoration:none;
+        text-align:center;
+        line-height:1.1;
+      "
+    >
+
+      <div
+        style="
+          font-family:'Cormorant Garamond',Georgia,serif;
+          font-size:1.15rem;
+          font-weight:500;
+          letter-spacing:0.04em;
+          color:var(--forest-mid);
+        "
+      >
+        THE TUTORS&rsquo;
+      </div>
+
+      <div
+        style="
+          font-family:'Cormorant Garamond',Georgia,serif;
+          font-size:1.15rem;
+          font-weight:500;
+          letter-spacing:0.08em;
+          color:rgba(255,255,255,0.55);
+          margin-top:-2px;
+        "
+      >
+        ASSOCIATION
+      </div>
+
+      <div
+        style="
+          font-family:var(--sans);
+          font-size:0.62rem;
+          font-weight:500;
+          letter-spacing:0.12em;
+          color:rgba(255,255,255,0.8);
+          text-transform:uppercase;
+          margin-top:0.4rem;
+          padding-top:0.3rem;
+          border-top:1px solid rgba(255,255,255,0.3);
+          display:inline-block;
+        "
+      >
+        Corporate Member
+      </div>
+
+    </a>
+
+  </div>
+
+
+  <p style="margin-top:1.25rem">
+
+    <a
+      href="/privacy"
+      style="
+        color:rgba(255,255,255,0.6);
+        text-decoration:none;
+        font-size:0.72rem;
+      "
+    >
+      Privacy Notice
+    </a>
+
+    &middot;
+
+    <a
+      href="/safeguarding"
+      style="
+        color:rgba(255,255,255,0.6);
+        text-decoration:none;
+        font-size:0.72rem;
+      "
+    >
+      Safeguarding
+    </a>
+
+  </p>
+
 </footer>
+
+
+
+<!-- WHATSAPP FLOATING BUTTON -->
+
+<a
+  href="https://wa.me/447466641281"
+  target="_blank"
+  rel="noopener"
+  aria-label="Chat with us on WhatsApp"
+  id="whatsapp-float"
+  style="
+    position:fixed;
+    bottom:1.5rem;
+    right:1.5rem;
+    z-index:200;
+    width:56px;
+    height:56px;
+    background:#25D366;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 4px 14px rgba(0,0,0,0.25);
+    text-decoration:none;
+    transition:transform 0.2s;
+  "
+  onmouseover="this.style.transform='scale(1.08)'"
+  onmouseout="this.style.transform='scale(1)'"
+>
+
+  <svg
+    width="28"
+    height="28"
+    viewBox="0 0 24 24"
+    fill="white"
+  >
+
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+
+    <path d="M12.004 2C6.486 2 2 6.486 2 12.004c0 1.87.505 3.628 1.386 5.13L2 22l4.99-1.35a9.958 9.958 0 0 0 5.014 1.348c5.518 0 10.004-4.486 10.004-10.004C22.008 6.486 17.522 2 12.004 2zm0 18.31a8.28 8.28 0 0 1-4.223-1.155l-.303-.18-3.145.85.84-3.07-.198-.315a8.286 8.286 0 0 1-1.27-4.436c0-4.582 3.727-8.309 8.31-8.309 4.581 0 8.308 3.727 8.308 8.309 0 4.581-3.727 8.306-8.318 8.306z"/>
+
+  </svg>
+
+</a>
+
+
+
+<script>
+
+const navBurger = document.getElementById('nav-burger');
+const navMobilePanel = document.getElementById('nav-mobile-panel');
+
+if (navBurger && navMobilePanel) {
+
+  navBurger.addEventListener('click', function() {
+
+    const isOpen =
+      navMobilePanel.style.display === 'flex';
+
+    navMobilePanel.style.display =
+      isOpen ? 'none' : 'flex';
+
+    navBurger.setAttribute(
+      'aria-expanded',
+      String(!isOpen)
+    );
+
+  });
+
+}
+
+</script>
 
 </body>
 </html>
