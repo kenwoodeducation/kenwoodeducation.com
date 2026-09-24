@@ -1202,6 +1202,9 @@ form.addEventListener('submit', async function(e) {
       if (typeof fbq === 'function') {
         fbq('track', 'Lead');
       }
+      setTimeout(function() {
+        window.location.href = 'thank-you';
+      }, 400);
     } else {
       btn.textContent = 'Something went wrong - please email us directly';
       btn.disabled = false;
