@@ -945,9 +945,6 @@ form.addEventListener('submit', async function(e) {
       headers: { 'Accept': 'application/json' }
     });
     if (response.ok) {
-      if (typeof gtag === 'function') {
-        gtag('event', 'generate_lead', { 'form_name': 'enquiry_form' });
-      }
       if (typeof fbq === 'function') {
         fbq('track', 'Lead');
       }
