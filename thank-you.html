@@ -1,4 +1,5 @@
 ---
+sitemap: false
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -56,7 +57,7 @@ footer p + p { margin-top: 0.3rem; }
   .section-sm { padding: 3rem 1.25rem; }
 }
 .social-row { display: flex; gap: 0.85rem; justify-content: center; margin-top: 1.25rem; }
-.social-row a { color: rgba(255,255,255,0.55); text-decoration: none; font-size: 0.75rem; border: 1px solid rgba(255,255,255,0.2); padding: 0.4rem 0.9rem; border-radius: 20px; transition: color 0.2s, border-color 0.2s; }
+.social-row a { color: rgba(255,255,255,0.78); text-decoration: none; font-size: 0.75rem; border: 1px solid rgba(255,255,255,0.3); padding: 0.4rem 0.9rem; border-radius: 20px; transition: color 0.2s, border-color 0.2s; }
 .social-row a:hover { color: white; border-color: rgba(255,255,255,0.5); }
 @media (max-width: 900px) {
   #nav-phone, #nav-phone-divider { display: none !important; }
@@ -162,6 +163,13 @@ document.addEventListener('DOMContentLoaded', function() {
     navBurger.setAttribute('aria-expanded', String(!isOpen));
   });
 });
+</script>
+
+<!-- Google tag (gtag.js) event -->
+<script>
+  gtag('event', 'generate_lead', {
+    'form_name': 'enquiry_form'
+  });
 </script>
 
 </body>
