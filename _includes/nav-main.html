@@ -47,3 +47,20 @@
   <a href="/guides/" style="color:{% if page.url contains '/guides' %}var(--forest-dark){% else %}#3D5247{% endif %};text-decoration:none;font-size:0.92rem;font-weight:{% if page.url contains '/guides' %}700{% else %}500{% endif %}"{% if page.url contains '/guides' %} aria-current="page"{% endif %}>Guides</a>
   <a href="/become-a-tutor" style="color:{% if page.url contains 'become-a-tutor' %}var(--forest-dark){% else %}#3D5247{% endif %};text-decoration:none;font-size:0.92rem;font-weight:{% if page.url contains 'become-a-tutor' %}700{% else %}500{% endif %}"{% if page.url contains 'become-a-tutor' %} aria-current="page"{% endif %}>Become a Tutor</a>
 </div>
+<script>
+(function() {
+  var burger = document.getElementById('nav-burger');
+  var panel = document.getElementById('nav-mobile-panel');
+  if (!burger || !panel) return;
+  // Registered first, so it also stops any older per-page handler from double-toggling.
+  burger.addEventListener('click', function(e) {
+    e.stopImmediatePropagation();
+    var isOpen = panel.style.display === 'flex';
+    panel.style.display = isOpen ? 'none' : 'flex';
+    burger.setAttribute('aria-expanded', String(!isOpen));
+  });
+  panel.querySelectorAll('a').forEach(function(a) {
+    a.addEventListener('click', function() { panel.style.display = 'none'; burger.setAttribute('aria-expanded', 'false'); });
+  });
+})();
+</script>
