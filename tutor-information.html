@@ -1,4 +1,5 @@
 ---
+sitemap: false
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -54,8 +55,15 @@ footer { background: var(--ink); padding: 2.5rem 2rem; text-align: center; }
 footer p { font-size: 0.78rem; color: white; font-weight: 300; }
 footer p + p { margin-top: 0.3rem; }
 .social-row { display: flex; gap: 0.85rem; justify-content: center; margin-top: 1.25rem; flex-wrap: wrap; }
-.social-row a { color: rgba(255,255,255,0.55); text-decoration: none; font-size: 0.75rem; border: 1px solid rgba(255,255,255,0.2); padding: 0.4rem 0.9rem; border-radius: 20px; transition: color 0.2s, border-color 0.2s; }
+.social-row a { color: rgba(255,255,255,0.78); text-decoration: none; font-size: 0.75rem; border: 1px solid rgba(255,255,255,0.3); padding: 0.4rem 0.9rem; border-radius: 20px; transition: color 0.2s, border-color 0.2s; }
 .social-row a:hover { color: white; border-color: rgba(255,255,255,0.5); }
+.legal-block ol { margin: 0.4rem 0 0.4rem 1.25rem; }
+.legal-block li ul { margin: 0.4rem 0 0.4rem 1.25rem; }
+.bookmark-note { background: var(--forest-pale); border: 1px solid var(--forest-border); border-radius: var(--radius); padding: 0.85rem 1.1rem; font-size: 0.9rem; color: var(--forest-dark); margin-bottom: 1.75rem; line-height: 1.7; }
+.report-example { background: var(--cream); border: var(--border); border-left: 3px solid var(--forest); border-radius: var(--radius); padding: 1rem 1.25rem; margin: 0.85rem 0 1.1rem; }
+.report-example .example-label { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--forest-dark); margin-bottom: 0.4rem; }
+.report-example p { font-size: 0.9rem; color: var(--muted); line-height: 1.8; margin-bottom: 0.6rem; }
+.report-example p:last-child { margin-bottom: 0; }
 @media (max-width: 600px) {
   nav { padding: 0.85rem 1.25rem; }
   .section-sm { padding: 2.5rem 1.25rem; }
@@ -85,34 +93,71 @@ footer p + p { margin-top: 0.3rem; }
 
 <div class="section-sm">
   <h1>Information and Advice for Tutors</h1>
-  <p class="lead">Everything you need to know about how Kenwood works day to day — fees, scheduling, payment, and what's expected of you as a tutor.</p>
+  <p class="lead">Everything you need to know about how Kenwood works day to day: fees, scheduling, payment, and what's expected of you as a tutor.</p>
+
+  <p class="bookmark-note"><strong>Please bookmark this page.</strong> It&rsquo;s a handy reference to come back to while you&rsquo;re tutoring with us.</p>
 
   <div class="legal-block">
     <h2>How Kenwood Works</h2>
-    <p>Kenwood acts as your agent. We find families who need a tutor, match you based on subject, level, and location, and handle admin &mdash; invoicing and payment collection &mdash; so you can focus on teaching. You remain self-employed throughout, responsible for your own tax and National Insurance, and free to work with other agencies or private students alongside us.</p>
+    <p>Kenwood acts as your agent. We find families who need a tutor, match you based on subject, level, and location, and handle admin (invoicing and payment collection) so you can focus on teaching. You remain self-employed throughout, responsible for your own tax and National Insurance, and free to work with other agencies or private students alongside us.</p>
 
     <h2>Setting Your Fee</h2>
-    <p>You set your own hourly rate. We add a margin on top when we invoice the family, so what you charge is exactly what you receive. See our separate <a href="tutor-fee-guidance" target="_blank" style="color:var(--forest-dark)">Tutor Fee Guidance</a> document for suggested rates based on experience. Once agreed, your rate can be changed but requires our written consent &mdash; this keeps things consistent and avoids confusion with families.</p>
+    <p>You set your own hourly rate. We add a margin on top when we invoice the family, so what you charge is exactly what you receive. See our separate <a href="tutor-fee-guidance" target="_blank" style="color:var(--forest-dark)">Tutor Fee Guidance</a> document for suggested rates based on experience. Once agreed, your rate can be changed but requires our written consent. This keeps things consistent and avoids confusion with families.</p>
 
     <h2>The Trial Lesson</h2>
-    <p>Every new family&rsquo;s first lesson is offered to them at half price. This doesn&rsquo;t affect you &mdash; you&rsquo;re paid your full agreed rate for the trial lesson as normal. Kenwood covers the difference between what the family pays and your full fee ourselves, as a cost of winning new families.</p>
+    <p>Every new family&rsquo;s first lesson is offered to them at half price. This doesn&rsquo;t affect you, as you&rsquo;re paid your full agreed rate for the trial lesson as normal. Kenwood covers the difference between what the family pays and your full fee ourselves, as a cost of winning new families.</p>
 
     <h2>Getting Matched</h2>
     <p>When a family enquiry looks like a good fit, we&rsquo;ll contact you directly to check you&rsquo;re interested and available before saying anything to the family. You&rsquo;re never obliged to accept a match, and we&rsquo;re not obliged to offer you a fixed amount of work.</p>
-    <p>Most of our tutors work with other agencies or private students alongside Kenwood &mdash; that&rsquo;s completely normal, and we don&rsquo;t expect to be your only source of work.</p>
+    <p>Most of our tutors work with other agencies or private students alongside Kenwood. That&rsquo;s completely normal, and we don&rsquo;t expect to be your only source of work.</p>
 
     <h2>Getting Started with a Family</h2>
     <p>Once you&rsquo;re matched, the family will sign our Client Agreement before we share your contact details with them. Once that&rsquo;s done, you&rsquo;re free to get in touch directly to arrange your first session.</p>
 
+    <h2>Your Trial Lesson, Step by Step</h2>
+    <p>Once you&rsquo;re matched, we&rsquo;ll send you a brief about the family.</p>
+
+    <p><strong>When you receive your brief</strong></p>
+    <ul>
+      <li>Read the brief carefully before you call the family, and make sure it comes across on the call that you&rsquo;re aware of the details. It goes a long way in building the family&rsquo;s confidence in you.</li>
+      <li>Call the family as soon as you can to arrange the trial lesson, then let us know the date and time you&rsquo;ve agreed so we can add it to TutorCruncher.</li>
+      <li>We&rsquo;ll set up your TutorCruncher account, so you should receive an email notification. There&rsquo;s no need to fill out your profile.</li>
+      <li>Set up your payouts account in TutorCruncher before the trial, so you&rsquo;re ready to invoice and receive payment.</li>
+      <li>The trial is half price for the family as standard, but you still receive your full fee. The first lesson works like this:
+        <ul>
+          <li>TutorCruncher will show roughly half of your usual fee</li>
+          <li>We&rsquo;ll transfer you the remainder after the lesson</li>
+          <li>Together, these bring your payment to your full agreed rate</li>
+        </ul>
+      </li>
+    </ul>
+
+    <p><strong>After the trial lesson</strong></p>
+    <ul>
+      <li>We&rsquo;ll follow up with the family to check they&rsquo;d like to continue. If they ask about continuing while you&rsquo;re at the trial lesson, feel free to agree a lesson schedule with them and let us know.</li>
+      <li><strong>After every lesson,</strong> please do the following:
+        <ol>
+          <li>Mark the lesson as complete in TutorCruncher</li>
+          <li>Add a short lesson report covering what you worked on, what&rsquo;s next and how the student is getting on (see Writing Lesson Reports below)</li>
+          <li>Go to Actions &rarr; Raise Invoice</li>
+        </ol>
+        Raising the invoice is what triggers the family being charged and sent the lesson report. If this step is missed, the family won&rsquo;t be billed and you won&rsquo;t be paid.
+      </li>
+      <li>When you raise the invoice, the family receives a notification with the payment amount, with your lesson report attached.</li>
+      <li>The family&rsquo;s card is charged automatically 5 days after each invoice is raised.</li>
+      <li>You can withdraw your earnings once a month.</li>
+      <li>Once the trial goes well, you&rsquo;ll be able to schedule and manage future lessons directly in TutorCruncher. The family automatically receives a notification when a lesson is scheduled, and a reminder 48 hours before each one.</li>
+    </ul>
+
     <h2>Scheduling</h2>
-    <p>You and the family arrange your regular session time directly between yourselves &mdash; we&rsquo;re not the go-between for day-to-day logistics. Once agreed, this is managed through TutorCruncher, where you&rsquo;ll have full scheduling permissions (families can&rsquo;t self-book or reschedule through the platform &mdash; they&rsquo;ll always come to you directly).</p>
+    <p>You and the family arrange your regular session time directly between yourselves, as we&rsquo;re not the go-between for day-to-day logistics. Once agreed, this is managed through TutorCruncher, where, once a trial has gone well, you&rsquo;ll have full scheduling permissions (the trial itself is set up by us, and families can&rsquo;t book or edit lessons through the platform, so they&rsquo;ll always come to you directly to change a time).</p>
     <p>If a session needs to change or be cancelled, this is arranged directly between you and the family. Please keep TutorCruncher up to date with any changes.</p>
 
     <h2>Cancellations</h2>
-    <p>If a family cancels a session with less than 24 hours&rsquo; notice, you&rsquo;re entitled to be paid in full regardless. You&rsquo;re welcome to waive this yourself, at your own discretion, if the cancellation was due to genuine illness or an emergency &mdash; that&rsquo;s your call to make.</p>
+    <p>If a family cancels a session with less than 24 hours&rsquo; notice, you&rsquo;re entitled to be paid in full regardless. You&rsquo;re welcome to waive this yourself, at your own discretion, if the cancellation was due to genuine illness or an emergency. That&rsquo;s your call to make.</p>
 
     <h2>Running Late</h2>
-    <p>If you&rsquo;re running late for a session, it&rsquo;s your responsibility to arrange to make up the lost time with the family directly &mdash; usually at the end of the same session, or at the next lesson if that&rsquo;s not possible. If a dispute about this can&rsquo;t be resolved directly with the family, let us know.</p>
+    <p>If you&rsquo;re running late for a session, it&rsquo;s your responsibility to arrange to make up the lost time with the family directly, usually at the end of the same session, or at the next lesson if that&rsquo;s not possible. If a dispute about this can&rsquo;t be resolved directly with the family, let us know.</p>
 
     <h2>Using TutorCruncher</h2>
     <p>You&rsquo;ll use TutorCruncher to:</p>
@@ -120,25 +165,74 @@ footer p + p { margin-top: 0.3rem; }
       <li>Schedule, reschedule, and manage your sessions</li>
       <li>Mark lessons complete once delivered</li>
       <li>Submit a short lesson report after each session</li>
+      <li>Raise an invoice after each lesson (Actions &rarr; Raise Invoice)</li>
       <li>Track your payments</li>
     </ul>
-    <p>Please log each lesson and submit your report within 24 hours of the session &mdash; this feeds directly into invoicing, and late logging may delay your payment.</p>
+    <p>Please log each lesson, submit your report and raise the invoice within 24 hours of the session. This feeds directly into billing, and late logging may delay your payment.</p>
 
-    <h2>Post-Lesson Notes for Families</h2>
-    <p>After each session, submit your lesson report in TutorCruncher as usual &mdash; families can view this as their record of what was covered.</p>
+    <h2>Family Access to TutorCruncher</h2>
+    <p>Some families can be given access to TutorCruncher if they ask for it. With access, a family can:</p>
+    <ul>
+      <li>See your lesson schedule</li>
+      <li>Cancel a lesson</li>
+      <li>Read your lesson reports</li>
+      <li>See their billing details</li>
+    </ul>
+    <p>Families can&rsquo;t edit or rebook a lesson. They can only cancel. Any change to a time still comes through you, so please keep your schedule in TutorCruncher accurate. If a family cancels a lesson through TutorCruncher, the cancellation terms above still apply.</p>
+
+    <h2>Writing Lesson Reports</h2>
+    <p>Your lesson report is the family&rsquo;s record of what was covered, and families with TutorCruncher access can read it directly. Write it with the parent and student in mind. A good report is usually one or two short paragraphs, and covers:</p>
+    <ul>
+      <li><strong>What you worked on</strong>: the specific topics or skills, not just the subject</li>
+      <li><strong>How the student got on</strong>: what they grasped, where they made progress, and what is still developing</li>
+      <li><strong>What comes next</strong>: anything you&rsquo;ll return to next lesson</li>
+      <li><strong>Homework or prep</strong>, if you&rsquo;ve set any, as a short list at the end</li>
+    </ul>
+    <p>A few things to keep in mind:</p>
+    <ul>
+      <li>Be specific. &ldquo;Worked on factorising and algebraic fractions&rdquo; is far more useful than &ldquo;did some algebra&rdquo;.</li>
+      <li>Be honest but constructive. Where a student is finding something hard, say what you did about it and what you&rsquo;ll do next, rather than just that they struggled.</li>
+      <li>Keep it factual and professional. Avoid comparing the student to others, or commenting on the family.</li>
+      <li>If you have a wider concern about a student&rsquo;s wellbeing, don&rsquo;t put it in the report. Follow our <a href="tutor-safeguarding" target="_blank" style="color:var(--forest-dark)">Safeguarding Policy</a> and contact us directly.</li>
+    </ul>
+    <p>Here are three examples of good reports. Student names have been removed.</p>
+
+    <div class="report-example">
+      <p class="example-label">Maths</p>
+      <p>[Student] and I began by recapping trigonometry and probability questions to reinforce the skills they&rsquo;ve been building up in these areas. We then focused on reviewing factorising before applying this skill to simplifying algebraic fractions, which they made great progress in, but which we will return to next lesson to continue strengthening.</p>
+    </div>
+
+    <div class="report-example">
+      <p class="example-label">English</p>
+      <p>This week, [Student] was introduced to argumentative writing for GCSE and examined several exemplar responses, developing a stronger understanding of how to structure ideas and write effectively and persuasively.</p>
+      <p>They also demonstrated excellent recall of the literary devices covered so far. We briefly touched on descriptive writing and reviewed the importance of &ldquo;show, not tell&rdquo;, focusing on how detailed description and imagery can make writing more vivid and engaging.</p>
+      <p>[Student] should continue reviewing the literary devices sheet regularly and begin applying the techniques discussed when practising argumentative and descriptive writing.</p>
+      <p><strong>Homework/Prep</strong></p>
+      <ul>
+        <li>Complete one piece of argumentative writing (select from the past papers we have been through)</li>
+      </ul>
+    </div>
+
+    <div class="report-example">
+      <p class="example-label">Physics</p>
+      <p>[Student] mentioned that they really struggled with units and we went through how to correctly derive the common units from SI, including N, J and Pa. They were able to solve a few by themselves using the examples given.</p>
+      <p>We then looked at 1D and 2D suvat. They do not have a good method for these yet, so we went through how to lay out the problem on a couple of 1D problems and [Student] was able to apply the method successfully. We then looked at a 2D example, going through how to set up the problem, use trig to find initial velocity and how the acceleration is determined. They were able to understand the problem and solve a couple of standard 2D problems.</p>
+    </div>
+
+    <p>Please submit each report in TutorCruncher within 24 hours of the lesson, as covered above.</p>
 
     <h2>Getting Paid</h2>
-    <p>Families are invoiced per lesson, automatically, the moment you mark a session complete in TutorCruncher. Once a family pays, funds are automatically split between Kenwood and you at the point of payment &mdash; you don&rsquo;t need to wait for us to process anything manually. The exact timing for funds reaching your account, and how often you can withdraw to your bank, is set by TutorCruncher&rsquo;s payment system (typically around 7 days for funds to become available, with automatic payout monthly, plus one manual payout available per month if you want funds sooner).</p>
+    <p>Families are invoiced per lesson. Once you&rsquo;ve marked a session complete and added your lesson report, raise the invoice (Actions &rarr; Raise Invoice) and the family is notified and charged automatically 5 days later. If you don&rsquo;t raise the invoice, the family isn&rsquo;t billed and you aren&rsquo;t paid. Once a family pays, funds are automatically split between Kenwood and you at the point of payment, so you don&rsquo;t need to wait for us to process anything manually. The exact timing for funds reaching your account, and how often you can withdraw to your bank, is set by TutorCruncher&rsquo;s payment system (typically around 7 days for funds to become available, with automatic payout monthly, plus one manual payout available per month if you want funds sooner).</p>
 
     <h2>Expenses</h2>
-    <p>Any expenses &mdash; travel, resources, materials &mdash; must be agreed with the family before you incur them. We&rsquo;re not able to arrange reimbursement for anything that wasn&rsquo;t agreed in advance.</p>
+    <p>Any expenses (travel, resources, materials) must be agreed with the family before you incur them. We&rsquo;re not able to arrange reimbursement for anything that wasn&rsquo;t agreed in advance.</p>
 
     <h2>DBS Checks</h2>
-    <p>You&rsquo;ll need a valid enhanced DBS check, before you can be matched with any family. If you don&rsquo;t already hold one, we can apply on your behalf &mdash; only an agency can apply for an enhanced check for you, you can&rsquo;t apply yourself. This is a cost you&rsquo;d need to cover, and typically takes up to two weeks, so there may be a short gap before placements can begin.</p>
-    <p>We recheck DBS status annually. We&rsquo;ll be in touch when yours is due for renewal &mdash; please let us know immediately if your circumstances change in the meantime.</p>
+    <p>You&rsquo;ll need a valid enhanced DBS check, before you can be matched with any family. If you don&rsquo;t already hold one, we can apply on your behalf. Only an agency can apply for an enhanced check for you, you can&rsquo;t apply yourself. This is a cost you&rsquo;d need to cover, and typically takes up to two weeks, so there may be a short gap before placements can begin.</p>
+    <p>We recheck DBS status annually. We&rsquo;ll be in touch when yours is due for renewal. Please let us know immediately if your circumstances change in the meantime.</p>
 
     <h2>Confidentiality</h2>
-    <p>Please don&rsquo;t share anything about Kenwood&rsquo;s business, our clients, or other tutors with anyone outside the company &mdash; this applies while you&rsquo;re working with us, and for 3 years afterwards.</p>
+    <p>Please don&rsquo;t share anything about Kenwood&rsquo;s business, our clients, or other tutors with anyone outside the company. This applies while you&rsquo;re working with us, and for 3 years afterwards.</p>
 
     <h2>Referring Someone to Us</h2>
     <p>If you refer a new family or a new tutor to Kenwood, and they complete 10 sessions, we&rsquo;ll send you a &pound;50 gift card as thanks.</p>
@@ -149,11 +243,11 @@ footer p + p { margin-top: 0.3rem; }
       <li>Maintain appropriate, professional boundaries with students at all times</li>
       <li>Don&rsquo;t contact students directly outside of agreed sessions via personal social media</li>
       <li>Don&rsquo;t provide any service beyond agreed tuition (e.g. mentoring, consultancy) without checking with us first</li>
-      <li>Report any safeguarding concern immediately &mdash; see our <a href="tutor-safeguarding" target="_blank" style="color:var(--forest-dark)">Safeguarding Policy</a> for full details</li>
+      <li>Report any safeguarding concern immediately: see our <a href="tutor-safeguarding" target="_blank" style="color:var(--forest-dark)">Safeguarding Policy</a> for full details</li>
     </ul>
 
     <h2>If Something Isn&rsquo;t Working</h2>
-    <p>If a placement isn&rsquo;t going well &mdash; a concern about a student, a dispute you can&rsquo;t resolve directly, or anything else &mdash; please contact us as early as possible.</p>
+    <p>If a placement isn&rsquo;t going well (a concern about a student, a dispute you can&rsquo;t resolve directly, or anything else), please contact us as early as possible.</p>
 
     <h2>Questions?</h2>
     <p>Get in touch:<br>Email: hello@kenwoodeducation.com<br>Phone and WhatsApp: 07466 641 281</p>
