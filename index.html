@@ -916,8 +916,8 @@ form.addEventListener('submit', async function(e) {
     { name: 'Highgate',      pc: 'N6',  lat: 51.5717, lng: -0.1477, r: 850, key: true,  url: 'areas/highgate.html' },
     { name: 'Hampstead',     pc: 'NW3', lat: 51.5565, lng: -0.1780, r: 850, key: true,  url: 'areas/hampstead.html' },
     { name: 'Muswell Hill',  pc: 'N10', lat: 51.5906, lng: -0.1436, r: 850, key: true,  url: 'areas/muswell-hill.html' },
-    { name: 'Crouch End',    pc: 'N8',  lat: 51.5795, lng: -0.1230, r: 700, key: false, url: 'areas/crouch-end.html' },
-    { name: 'East Finchley', pc: 'N2',  lat: 51.5874, lng: -0.1650, r: 700, key: false, url: 'areas/east-finchley.html' }
+    { name: 'Crouch End',    pc: 'N8',  lat: 51.5795, lng: -0.1230, r: 700, key: false },
+    { name: 'East Finchley', pc: 'N2',  lat: 51.5874, lng: -0.1650, r: 700, key: false }
   ];
   var started = false;
   function init() {
@@ -928,10 +928,8 @@ form.addEventListener('submit', async function(e) {
     map.setView([51.5735, -0.152], 13);
     var group = L.featureGroup();
     areas.forEach(function(a) {
-      var c = L.circle([a.lat, a.lng], { radius: a.r, color: '#0F6E56', weight: a.key ? 2 : 1.5, fillColor: '#0F6E56', fillOpacity: a.key ? 0.28 : 0.16 }).addTo(group);
+      var c = L.circle([a.lat, a.lng], { radius: a.r, color: '#0F6E56', weight: a.key ? 2 : 1.5, fillColor: '#0F6E56', fillOpacity: a.key ? 0.28 : 0.16, interactive: false }).addTo(group);
       c.bindTooltip(a.name, { permanent: true, direction: 'center', className: 'area-label' + (a.key ? ' key' : '') });
-      c.bindPopup('<strong>' + a.name + ' &middot; ' + a.pc + '</strong><br><a href="' + a.url + '">Tutors in ' + a.name + ' &rarr;</a>');
-      c.on('click', function() { if (typeof trackEvent === 'function') trackEvent('area_map_click', { area: a.name }); });
     });
     group.addTo(map);
     map.fitBounds(group.getBounds(), { padding: [30, 30] });
