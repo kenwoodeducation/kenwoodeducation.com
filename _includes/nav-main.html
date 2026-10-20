@@ -5,7 +5,11 @@
   #nav-links-mobile{display:flex!important}
   #nav-mobile-panel[style*="flex"]{display:flex!important}
 }
+#site-header{position:sticky;top:0;z-index:100}
+#site-header nav{position:static!important}
+#nav-mobile-panel{max-height:calc(100vh - 72px);overflow-y:auto}
 </style>
+<div id="site-header">
 <nav>
   <div style="display:flex;align-items:center;gap:1.25rem">
     <a href="/" style="display:flex;align-items:center;gap:0.65rem;text-decoration:none">
@@ -56,6 +60,7 @@
   <a href="/#faq" style="color:#3D5247;text-decoration:none;font-size:0.92rem;font-weight:500">FAQ</a>
   <a href="/guides/" style="color:{% if page.url contains '/guides' %}var(--forest-dark){% else %}#3D5247{% endif %};text-decoration:none;font-size:0.92rem;font-weight:{% if page.url contains '/guides' %}700{% else %}500{% endif %}"{% if page.url contains '/guides' %} aria-current="page"{% endif %}>Guides</a>
   <a href="/become-a-tutor" style="color:{% if page.url contains 'become-a-tutor' %}var(--forest-dark){% else %}#3D5247{% endif %};text-decoration:none;font-size:0.92rem;font-weight:{% if page.url contains 'become-a-tutor' %}700{% else %}500{% endif %}"{% if page.url contains 'become-a-tutor' %} aria-current="page"{% endif %}>Become a Tutor</a>
+</div>
 </div>
 <script>
 (function() {
