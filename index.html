@@ -109,6 +109,7 @@ h2 { font-family: var(--sans); font-size: clamp(1.5rem,3vw,1.9rem); font-weight:
 .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem; margin-bottom: 1rem; }
 label { display: block; font-size: 0.75rem; font-weight: 500; color: var(--muted); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 0.4rem; }
 label span { font-weight: 400; text-transform: none; letter-spacing: 0; color: var(--hint); }
+input[type="checkbox"] { flex: 0 0 16px; width: 16px !important; height: 16px; min-width: 16px; margin: 0; }
 input[type="text"], input[type="email"], select, textarea { width: 100%; padding: 0.7rem 0.9rem; border: 1px solid rgba(15,110,86,0.22); border-radius: var(--radius); font-family: var(--sans); font-size: 0.9rem; color: var(--ink); background: var(--cream); outline: none; transition: border-color 0.2s; appearance: none; -webkit-appearance: none; }
 input:focus, select:focus, textarea:focus { border-color: var(--forest); }
 textarea { height: 85px; resize: none; }
@@ -520,7 +521,7 @@ src="https://www.facebook.com/tr?id=1439021704748612&ev=PageView&noscript=1"
       <div style="display:flex;flex-direction:column;gap:0.55rem">
         <label style="text-transform:none;letter-spacing:normal;font-weight:400;font-size:0.88rem;color:var(--ink);display:inline-flex;align-items:center;gap:0.4rem"><input type="checkbox" name="tutor_level" value="Graduate (£60-£70/hr)" style="width:auto">Graduate (&pound;60 &ndash; &pound;70 per hour)</label>
         <label style="text-transform:none;letter-spacing:normal;font-weight:400;font-size:0.88rem;color:var(--ink);display:inline-flex;align-items:center;gap:0.4rem"><input type="checkbox" name="tutor_level" value="Experienced (£70-£85/hr)" style="width:auto">Experienced (&pound;70 &ndash; &pound;85 per hour)</label>
-        <label style="text-transform:none;letter-spacing:normal;font-weight:400;font-size:0.88rem;color:var(--ink);display:inline-flex;align-items:center;gap:0.4rem"><input type="checkbox" name="tutor_level" value="Senior or qualified teacher (£85-£100/hr)" style="width:auto">Senior or qualified teacher (&pound;85 &ndash; &pound;100 per hour)</label>
+        <label style="text-transform:none;letter-spacing:normal;font-weight:400;font-size:0.88rem;color:var(--ink);display:inline-flex;align-items:center;gap:0.4rem"><input type="checkbox" name="tutor_level" value="Senior (£85-£100/hr)" style="width:auto">Senior (&pound;85 &ndash; &pound;100 per hour)</label>
         <label style="text-transform:none;letter-spacing:normal;font-weight:400;font-size:0.88rem;color:var(--ink);display:inline-flex;align-items:center;gap:0.4rem"><input type="checkbox" name="tutor_level" value="Specialist (£100+/hr)" style="width:auto">Specialist (&pound;100+ per hour)</label>
       </div>
       <p class="form-note" style="margin-top:0.6rem;text-align:left">Select any you&rsquo;re open to, or leave blank and we&rsquo;ll recommend what suits your child. Your first lesson is 50% off.</p>
