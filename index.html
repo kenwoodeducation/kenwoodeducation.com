@@ -647,7 +647,16 @@ const subjectSelect = document.getElementById('subject-select');
 
 document.querySelectorAll('a[href="#enquiry"]').forEach(link => {
   link.addEventListener('click', function() {
-    trackEvent('cta_click', { link_location: this.classList.contains('nav-cta') ? 'nav' : 'page_body', link_text: this.textContent.trim() });
+    let section = 'other';
+    if (this.closest('nav, #nav-mobile-panel')) section = 'nav';
+    else if (this.closest('.hero-content')) section = 'hero';
+    else if (this.closest('[id]')) section = this.closest('[id]').id;
+    else if (this.closest('div[style*="forest-pale"]')) section = 'cta_band';
+    trackEvent('cta_click', {
+      link_location: this.classList.contains('nav-cta') ? 'nav' : 'page_body',
+      cta_section: section,
+      link_text: this.textContent.trim()
+    });
   });
 });
 
@@ -882,27 +891,44 @@ form.addEventListener('submit', async function(e) {
   btn.textContent = 'Sending...';
   btn.disabled = true;
   try {
+    const fd = new FormData(form);
     const response = await fetch(form.action, {
       method: 'POST',
-      body: new FormData(form),
+      body: fd,
       headers: { 'Accept': 'application/json' }
     });
     if (response.ok) {
       if (typeof fbq === 'function') {
         fbq('track', 'Lead');
       }
-      setTimeout(function() {
+      let redirected = false;
+      const goToThankYou = function() {
+        if (redirected) return;
+        redirected = true;
         window.location.href = 'thank-you';
-      }, 400);
+      };
+      if (typeof gtag === 'function') {
+        gtag('event', 'generate_lead', {
+          form_name: 'enquiry_form',
+          area: fd.get('area'),
+          subject: fd.get('enquiry_subject'),
+          year_group: fd.get('year_group'),
+          event_callback: goToThankYou
+        });
+      }
+      // Fallback so the redirect still happens if GA is blocked or slow
+      setTimeout(goToThankYou, 800);
     } else {
       btn.textContent = 'Something went wrong - please email us directly';
       btn.disabled = false;
       btn.style.background = '#c0392b';
+      trackEvent('form_submit_error', { form_name: 'enquiry_form' });
     }
   } catch (error) {
     btn.textContent = 'Something went wrong - please email us directly';
     btn.disabled = false;
     btn.style.background = '#c0392b';
+    trackEvent('form_submit_error', { form_name: 'enquiry_form' });
   }
 });
 });
