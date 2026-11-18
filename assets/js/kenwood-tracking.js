@@ -1,4 +1,4 @@
-/* Kenwood Education: additional GA4 tracking (v2)
+/* Kenwood Education: additional GA4 tracking (v2.1)
  *
  * Designed to be loaded ONCE from the shared layout, deferred, on every page:
  *   <script defer src="/assets/js/kenwood-tracking.js"></script>
@@ -64,7 +64,7 @@
     d.addEventListener('toggle', function () {
       if (!d.open) return;
       var s = d.querySelector('summary');
-      send('faq_open', { question: s ? s.childNodes[0].textContent.trim().slice(0, 90) : 'unknown' });
+      send('faq_open', { faq_question: s ? s.childNodes[0].textContent.trim().slice(0, 90) : 'unknown' });
     });
   });
 
@@ -78,7 +78,7 @@
     });
     form.addEventListener('submit', function () { attempted = true; });
     form.addEventListener('invalid', function (e) {
-      send('form_validation_error', { field: (e.target && e.target.name) || 'unknown' });
+      send('form_validation_error', { field_name: (e.target && e.target.name) || 'unknown' });
     }, true);
     function reportAbandon() {
       if (started && !attempted && !abandonSent) {
@@ -86,14 +86,15 @@
         send('enquiry_form_abandon', { last_field: lastField, transport_type: 'beacon' });
       }
     }
-    document.addEventListener('visibilitychange', function () {
-      if (document.visibilityState === 'hidden') reportAbandon();
-    });
+    /* pagehide only: 'visibilitychange' also fires when someone briefly switches tab or app
+       (e.g. to check a calendar) and then comes back and submits, which would log a false abandon. */
     window.addEventListener('pagehide', reportAbandon);
   }
 
   /* 6. JavaScript errors, so a broken form doesn't fail silently */
+  var jsErrors = 0;
   window.addEventListener('error', function (e) {
+    if (++jsErrors > 5) return; /* cap per page so a repeating error can't flood GA */
     send('js_error', { message: String(e.message).slice(0, 100), source: String(e.filename || '').slice(-60) });
   });
 })();
