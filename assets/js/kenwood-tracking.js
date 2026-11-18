@@ -26,8 +26,8 @@
       send('phone_click', { link_location: where });
     } else if (href.indexOf('mailto:') === 0) {
       send('email_click', { link_location: where });
-    } else if (href.indexOf('wa.me') !== -1 && !document.getElementById('whatsapp-float')) {
-      /* pages without the homepage handler (e.g. /thank-you, guides) */
+    } else if (href.indexOf('wa.me') !== -1 && !document.getElementById('enquiry-form')) {
+      /* every page except the homepage, which already has its own whatsapp_click handler */
       send('whatsapp_click', { link_location: where });
     } else if (href.indexOf('guides/') !== -1) {
       send('guide_click', { link_url: href.slice(0, 100), link_location: where });
