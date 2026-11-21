@@ -23,6 +23,7 @@
   // ---- Settings -----------------------------------------------------------
   var GA_ID = 'G-RDRT6GS1QT';   // Google Analytics 4
   var ADS_ID = '';              // Google Ads tag, e.g. 'AW-123456789'. Leave '' if you import conversions from GA4.
+  var META_PIXEL_ID = '1439021704748612'; // Meta (Facebook/Instagram) Pixel, loaded only with advertising consent
   var PRIVACY_URL = '/privacy#cookies';
   var STORAGE_KEY = 'kw_consent_v1';
   var MAX_AGE_DAYS = 365;
@@ -75,6 +76,22 @@
     if (ADS_ID) gtag('config', ADS_ID);
   }
 
+  var metaLoaded = false;
+
+  function loadMetaPixel() {
+    if (metaLoaded || !META_PIXEL_ID) return;
+    metaLoaded = true;
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    window.fbq('init', META_PIXEL_ID);
+    window.fbq('track', 'PageView');
+  }
+
   // Removes Google cookies already set if a visitor withdraws consent.
   function deleteCookies(prefix) {
     var host = window.location.hostname.replace(/^www\./, '');
@@ -89,7 +106,7 @@
 
   function applyChoice(c) {
     if (!c.analytics) deleteCookies('_ga');
-    if (!c.ads) deleteCookies('_gcl');
+    if (!c.ads) { deleteCookies('_gcl'); deleteCookies('_fbp'); deleteCookies('_fbc'); }
     gtag('consent', 'update', {
       analytics_storage: c.analytics ? 'granted' : 'denied',
       ad_storage: c.ads ? 'granted' : 'denied',
@@ -97,6 +114,7 @@
       ad_personalization: c.ads ? 'granted' : 'denied'
     });
     if (c.analytics || c.ads) loadGoogleTags();
+    if (c.ads) loadMetaPixel();
   }
 
   var stored = readChoice();
@@ -150,7 +168,7 @@
     banner.innerHTML =
       '<h2 id="kw-cc-title">Cookies on our website</h2>' +
       '<p>We use essential storage to make this site work. With your permission, we would also like to use ' +
-      'Google Analytics to understand how the site is used, and Google Ads cookies to measure our advertising. ' +
+      'Google Analytics to understand how the site is used, and advertising cookies from Google and Meta to measure our adverts. ' +
       'You can change your mind at any time using the Cookie settings link at the bottom of the page. ' +
       '<a href="' + PRIVACY_URL + '">Read our privacy notice</a>.</p>' +
       '<div class="kw-cc-btns">' +
