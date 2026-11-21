@@ -43,6 +43,24 @@ h1 { font-family: var(--serif); font-size: clamp(1.9rem,4.5vw,2.5rem); font-weig
 .guide-link h3 { font-family: var(--sans); font-size: 0.88rem; font-weight: 500; color: var(--forest-dark); margin-bottom: 0.15rem; }
 .guide-link p { font-size: 0.8rem; color: var(--hint); }
 .back-link { display: inline-block; margin-top: 2.5rem; color: var(--muted); text-decoration: none; font-size: 0.85rem; font-weight: 500; }
+.form-row { margin-bottom: 1rem; }
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem; margin-bottom: 1rem; }
+label { display: block; font-size: 0.75rem; font-weight: 500; color: var(--muted); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 0.4rem; }
+label span { font-weight: 400; text-transform: none; letter-spacing: 0; color: var(--hint); }
+input[type="checkbox"], input[type="radio"] { width: 16px; height: 16px; margin: 0; flex: 0 0 16px; accent-color: var(--forest); }
+.choice { text-transform: none; letter-spacing: normal; font-weight: 400; font-size: 0.88rem; color: var(--ink); display: inline-flex; align-items: center; gap: 0.4rem; margin: 0; }
+.choices { display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; }
+input[type="text"], select, textarea { width: 100%; padding: 0.7rem 0.9rem; border: 1px solid rgba(15,110,86,0.22); border-radius: var(--radius); font-family: var(--sans); font-size: 0.9rem; color: var(--ink); background: var(--cream); outline: none; transition: border-color 0.2s; appearance: none; -webkit-appearance: none; }
+input:focus, select:focus, textarea:focus { border-color: var(--forest); }
+.detail-block { background: var(--sage); border: var(--border); border-radius: var(--radius-lg); padding: 1.75rem; margin-top: 2.5rem; text-align: left; }
+.detail-block h2 { font-family: var(--serif); font-size: 1.5rem; font-weight: 400; color: var(--ink); margin-bottom: 0.35rem; }
+.detail-lead { font-size: 0.9rem; color: var(--muted); margin-bottom: 1rem; }
+.detail-recap { font-size: 0.85rem; color: var(--forest-dark); background: var(--forest-pale); border: 1px solid var(--forest-mid); border-radius: var(--radius); padding: 0.7rem 0.9rem; margin-bottom: 1.25rem; }
+.detail-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; margin-top: 0.5rem; }
+.detail-submit { flex: 1 1 180px; background: var(--forest); color: white; border: none; padding: 0.85rem; font-family: var(--sans); font-size: 0.9rem; font-weight: 500; border-radius: var(--radius); cursor: pointer; }
+.detail-submit:hover { background: var(--forest-dark); }
+.detail-done { font-size: 0.95rem; color: var(--forest-dark); text-align: center; }
+@media (max-width: 600px) { .form-grid { grid-template-columns: 1fr; } }
 footer { background: var(--ink); padding: 2.5rem 2rem; text-align: center; }
 footer p { font-size: 0.78rem; color: white; font-weight: 300; }
 footer p + p { margin-top: 0.3rem; }
@@ -61,6 +79,7 @@ footer p + p { margin-top: 0.3rem; }
 @media (min-width: 901px) {
   #nav-mobile-panel { display: none !important; }
 }
+#offer-banner, .nav-cta { display: none !important; }
 </style>
 </head>
 <body>
@@ -72,18 +91,82 @@ footer p + p { margin-top: 0.3rem; }
   <div class="check-badge">
     <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0F6E56" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
   </div>
-  <h1>Thank you &mdash; we&rsquo;ve got your enquiry</h1>
-  <p class="lead">We&rsquo;ll be in touch within 24 hours to find the right match for your child. If you can&rsquo;t wait, you can reach us via the methods below:</p>
+  <h1>Thank you, we&rsquo;ve got your enquiry</h1>
+  <p class="lead">We&rsquo;ll be in touch to talk through the right tutor for the student. If you can&rsquo;t wait, WhatsApp is the quickest way to reach us.</p>
 
   <div class="contact-row">
-    <a href="tel:+442039515827" class="contact-pill">020 3951 5827</a>
     <a href="mailto:hello@kenwoodeducation.com" class="contact-pill">hello@kenwoodeducation.com</a>
-    <a href="https://wa.me/447466641281" class="contact-pill">WhatsApp us</a>
+    <a href="https://wa.me/447466641281?text=Hi%20Kenwood%20Education%2C%20I%27m%20looking%20for%20a%20tutor.%20My%20child%20needs%20help%20with%20" class="contact-pill">WhatsApp us (quickest)</a>
+  </div>
+
+
+  <div class="detail-block" id="detail-block" style="display:none">
+    <div id="detail-ask">
+      <h2>Help us match the right tutor</h2>
+      <p class="detail-lead">A few details help us match the right tutor faster.</p>
+            <form id="detail-form" method="POST">
+        <input type="hidden" name="first_name">
+        <input type="hidden" name="email">
+        <input type="hidden" name="phone">
+        <div class="form-row">
+          <label for="d-rel">Your relationship to the student</label>
+          <select id="d-rel" name="relationship">
+            <option value="">Choose</option><option>Parent</option><option>Guardian</option><option>Grandparent</option><option>I&rsquo;m the student</option><option>Other</option>
+          </select>
+        </div>
+        <div class="form-grid">
+          <div><label for="d-child">Student&rsquo;s first name</label><input type="text" id="d-child" name="student_first_name" placeholder="Alex"></div>
+          <div><label for="d-year">Year group</label>
+            <select id="d-year" name="year_group">
+              <option value="">Choose</option>
+              <option>Reception</option><option>Year 1</option><option>Year 2</option><option>Year 3</option><option>Year 4</option><option>Year 5</option><option>Year 6</option>
+              <option>Year 7</option><option>Year 8</option><option>Year 9</option><option>Year 10</option><option>Year 11</option><option>Year 12</option><option>Year 13</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-grid">
+          <div><label for="d-postcode">Postcode</label><input type="text" id="d-postcode" name="postcode" placeholder="e.g. N10 1AB" autocomplete="postal-code" style="text-transform:uppercase"></div>
+          <div><label for="d-school">Current school</label><input type="text" id="d-school" name="current_school" placeholder="Highgate School"></div>
+        </div>
+
+        <div class="form-row" id="subject-row">
+          <label for="d-subject">Describe what you need help with</label>
+          <input type="text" id="d-subject" name="subject_description" placeholder="e.g. 11+ maths, GCSE Chemistry and Physics, A-Level Economics catch-up">
+        </div>
+        <div class="form-row">
+          <label for="d-needs">Any additional needs?</label>
+          <input type="text" id="d-needs" name="additional_needs" placeholder="e.g. dyslexia, ADHD, exam anxiety">
+        </div>
+        <div class="form-row" id="target-school-row">
+          <label for="d-target">Target schools <span>(if preparing for entrance exams)</span></label>
+          <input type="text" id="d-target" name="target_school" placeholder="e.g. Highgate School">
+        </div>
+
+        <div class="form-row">
+          <label for="d-avail">When suits you for lessons?</label>
+          <input type="text" id="d-avail" name="availability" placeholder="Weekday evenings, Saturday mornings">
+        </div>
+        <div class="form-row">
+          <label for="d-level">Tutor level <span>(or leave it to us)</span></label>
+          <select id="d-level" name="tutor_level">
+            <option value="">Not sure, please recommend</option>
+            <option>Scholar (&pound;60 to &pound;70 per hour)</option>
+            <option>Experienced (&pound;70 to &pound;85 per hour)</option>
+            <option>Senior (&pound;85 to &pound;100 per hour)</option>
+            <option>Specialist (&pound;100+ per hour)</option>
+          </select>
+        </div>
+        <div class="detail-actions">
+          <button type="submit" class="detail-submit">Send details</button>
+        </div>
+      </form>
+    </div>
+    <p class="detail-done" id="detail-done" style="display:none"></p>
   </div>
 
   <div class="guides-block">
     <h2>While you wait, a few things worth reading</h2>
-    <a href="guides/what-gcse-grades-mean" class="guide-link">
+    <a href="guides/what-gcse-grades-mean" class="guide-link" data-for="exams">
       <h3>What Do GCSE Grades Actually Mean?</h3>
       <p>The full 9-1 scale explained, and the one distinction most explainers miss</p>
     </a>
@@ -91,7 +174,7 @@ footer p + p { margin-top: 0.3rem; }
       <h3>Why Re-Reading Notes Doesn&rsquo;t Work</h3>
       <p>What the research actually says about effective revision</p>
     </a>
-    <a href="guides/gcse-results-2026-independent-schools" class="guide-link">
+    <a href="guides/gcse-results-2026-independent-schools" class="guide-link" data-for="exams">
       <h3>GCSE Results 2026: North London Independent Schools</h3>
       <p>How common top grades have become, and what that means for A-level planning</p>
     </a>
@@ -102,7 +185,7 @@ footer p + p { margin-top: 0.3rem; }
 
 {% include footer-main.html %}
 
-<a href="https://wa.me/447466641281" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp" id="whatsapp-float" style="position:fixed;bottom:1.5rem;right:1.5rem;z-index:200;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,0.25);text-decoration:none;transition:transform 0.2s" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+<a href="https://wa.me/447466641281?text=Hi%20Kenwood%20Education%2C%20I%27m%20looking%20for%20a%20tutor.%20My%20child%20needs%20help%20with%20" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp" id="whatsapp-float" style="position:fixed;bottom:1.5rem;right:1.5rem;z-index:200;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,0.25);text-decoration:none;transition:transform 0.2s" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
   <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.004 2C6.486 2 2 6.486 2 12.004c0 1.87.505 3.628 1.386 5.13L2 22l4.99-1.35a9.958 9.958 0 0 0 5.014 1.348c5.518 0 10.004-4.486 10.004-10.004C22.008 6.486 17.522 2 12.004 2zm0 18.31a8.28 8.28 0 0 1-4.223-1.155l-.303-.18-3.145.85.84-3.07-.198-.315a8.286 8.286 0 0 1-1.27-4.436c0-4.582 3.727-8.309 8.31-8.309 4.581 0 8.308 3.727 8.308 8.309 0 4.581-3.727 8.306-8.318 8.306z"/></svg>
 </a>
 
@@ -114,6 +197,66 @@ document.addEventListener('DOMContentLoaded', function() {
     const isOpen = navMobilePanel.style.display === 'flex';
     navMobilePanel.style.display = isOpen ? 'none' : 'flex';
     navBurger.setAttribute('aria-expanded', String(!isOpen));
+  });
+
+  /* Optional detail form: only shown after an enquiry from the homepage form, never asks for anything twice */
+  function track(name, params) { if (typeof gtag === 'function') gtag('event', name, params || {}); }
+  let enquiry = null;
+  try { enquiry = JSON.parse(sessionStorage.getItem('kw_enquiry')); } catch (e) {}
+  if (!enquiry || !enquiry.email) return;
+
+  const block = document.getElementById('detail-block');
+  const ask = document.getElementById('detail-ask');
+  const done = document.getElementById('detail-done');
+  const form = document.getElementById('detail-form');
+  block.style.display = 'block';
+
+  function finish(message) {
+    ask.style.display = 'none';
+    done.textContent = message;
+    done.style.display = 'block';
+    try { sessionStorage.removeItem('kw_enquiry'); } catch (e) {}
+  }
+
+  ['first_name', 'email', 'phone'].forEach(function(k) { form.elements[k].value = enquiry[k] || ''; });
+
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const btn = form.querySelector('.detail-submit');
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+    try {
+      /* Answers go to the "Client Enquiry (Thank You Page)" Google Form, so they land in its Google Sheet */
+      const GOOGLE_FORM_ACTION = 'https://docs.google.com/forms/d/16scaTh3TgWpA-fdEXOtx5XhImFopa-iexkFnofbbrn0/formResponse';
+      const fieldMap = {
+        first_name: 'entry.551646776',
+        email: 'entry.1310816836',
+        phone: 'entry.339460820',
+        relationship: 'entry.163322571',
+        student_first_name: 'entry.1017162848',
+        year_group: 'entry.1816186609',
+        postcode: 'entry.1501773216',
+        current_school: 'entry.224309576',
+        subject_description: 'entry.1424031801',
+        additional_needs: 'entry.336886368',
+        target_school: 'entry.716921577',
+        availability: 'entry.885611481',
+        tutor_level: 'entry.1731637344'
+      };
+      const body = new URLSearchParams();
+      Object.keys(fieldMap).forEach(function(k) {
+        const el = form.elements[k];
+        if (el && el.value.trim()) body.append(fieldMap[k], el.value.trim());
+      });
+      /* Google doesn't let the site read the reply (no-cors), so a network error is the only failure we can see */
+      await fetch(GOOGLE_FORM_ACTION, { method: 'POST', mode: 'no-cors', body: body });
+      track('enquiry_details_submitted');
+      finish('Thanks, that\u2019s really helpful.');
+    } catch (err) {
+      btn.textContent = 'Send details';
+      btn.disabled = false;
+      finish('Sorry, that didn\u2019t send. Don\u2019t worry, your enquiry reached us and we\u2019ll cover the details on the call.');
+    }
   });
 });
 </script>
