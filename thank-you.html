@@ -216,6 +216,10 @@ document.addEventListener('DOMContentLoaded', function() {
     done.textContent = message;
     done.style.display = 'block';
     try { sessionStorage.removeItem('kw_enquiry'); } catch (e) {}
+    /* The form collapses, so bring the confirmation into view */
+    done.setAttribute('tabindex', '-1');
+    block.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    done.focus({ preventScroll: true });
   }
 
   ['first_name', 'email', 'phone'].forEach(function(k) { form.elements[k].value = enquiry[k] || ''; });
