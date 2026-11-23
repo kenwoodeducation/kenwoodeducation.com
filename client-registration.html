@@ -99,10 +99,15 @@ footer p + p { margin-top: 0.3rem; }
       </div>
       <div class="form-row">
         <label>Your relationship to the student <span style="color:var(--forest);font-weight:600">*</span></label>
-        <select name="entry.1709458121" required>
+        <select name="entry.1709458121" id="relationship-select" required>
           <option value="">Select</option>
           <option>Parent</option><option>Guardian</option><option>Grandparent</option><option>I&rsquo;m the student</option><option>Other</option>
         </select>
+        <p class="field-error">This field is required.</p>
+      </div>
+      <div class="form-row" id="relationship-other-row" style="display:none">
+        <label for="relationship-other-input">Please describe <span style="color:var(--forest);font-weight:600">*</span></label>
+        <input type="text" id="relationship-other-input" placeholder="e.g. aunt, family friend, nanny">
         <p class="field-error">This field is required.</p>
       </div>
       <div class="form-row">
@@ -276,6 +281,17 @@ referralRadios.forEach(radio => {
   });
 });
 
+/* Relationship "Other" opens a box to describe it */
+const relationshipSelect = document.getElementById('relationship-select');
+const relationshipOtherRow = document.getElementById('relationship-other-row');
+const relationshipOtherInput = document.getElementById('relationship-other-input');
+relationshipSelect.addEventListener('change', function() {
+  const isOther = this.value === 'Other';
+  relationshipOtherRow.style.display = isOther ? 'block' : 'none';
+  relationshipOtherInput.required = isOther;
+  if (!isOther) { relationshipOtherInput.value = ''; clearFieldError(relationshipOtherInput); }
+});
+
 /* Optional second student: fields are only switched on (and required) once added */
 const secondStudent = document.getElementById('second-student');
 const addStudentBtn = document.getElementById('add-student-btn');
@@ -362,6 +378,10 @@ form.addEventListener('submit', async function(e) {
     if (field.disabled) return;
     formData.append(field.name, field.value);
   });
+
+  if (relationshipSelect.value === 'Other') {
+    formData.set('entry.1709458121', 'Other: ' + relationshipOtherInput.value.trim());
+  }
 
   const referralValue = Array.from(referralRadios).find(r => r.checked).value;
   formData.append('entry.1381444538', referralValue);
