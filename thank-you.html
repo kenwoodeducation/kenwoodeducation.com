@@ -110,10 +110,15 @@ footer p + p { margin-top: 0.3rem; }
         <input type="hidden" name="phone">
         <div class="form-row">
           <label for="d-rel">Your relationship to the student</label>
-          <select id="d-rel" name="relationship">
+          <select id="d-rel" name="relationship_choice">
             <option value="">Choose</option><option>Parent</option><option>Guardian</option><option>Grandparent</option><option>I&rsquo;m the student</option><option>Other</option>
           </select>
         </div>
+        <div class="form-row" id="d-rel-other-row" style="display:none">
+          <label for="d-rel-other">Please describe</label>
+          <input type="text" id="d-rel-other" placeholder="e.g. aunt, family friend, nanny">
+        </div>
+        <input type="hidden" name="relationship">
         <div class="form-grid">
           <div><label for="d-child">Student&rsquo;s first name</label><input type="text" id="d-child" name="student_first_name" placeholder="Alex"></div>
           <div><label for="d-year">Year group</label>
@@ -224,8 +229,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
   ['first_name', 'email', 'phone'].forEach(function(k) { form.elements[k].value = enquiry[k] || ''; });
 
+  /* Relationship "Other" opens a box to describe it; the answer sent combines both */
+  const relSelect = document.getElementById('d-rel');
+  const relOtherRow = document.getElementById('d-rel-other-row');
+  const relOther = document.getElementById('d-rel-other');
+  relSelect.addEventListener('change', function() {
+    relOtherRow.style.display = this.value === 'Other' ? '' : 'none';
+    if (this.value !== 'Other') relOther.value = '';
+  });
+
   form.addEventListener('submit', async function(e) {
     e.preventDefault();
+    form.elements['relationship'].value = relSelect.value === 'Other' && relOther.value.trim()
+      ? 'Other: ' + relOther.value.trim() : relSelect.value;
     const btn = form.querySelector('.detail-submit');
     btn.textContent = 'Sending...';
     btn.disabled = true;
