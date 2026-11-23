@@ -46,6 +46,10 @@ input:focus, select:focus, textarea:focus { border-color: var(--forest); }
 .confirm-row label { text-transform: none; letter-spacing: normal; font-weight: 500; font-size: 0.9rem; color: var(--forest-dark); display: flex; align-items: flex-start; gap: 0.6rem; margin: 0; }
 .confirm-row input { flex: 0 0 18px; width: 18px; height: 18px; margin-top: 0.2rem; accent-color: var(--forest); cursor: pointer; }
 .field-error { font-size: 0.78rem; color: #c0392b; margin-top: 0.4rem; display: none; }
+.add-student-btn { display: inline-block; background: none; border: 1px dashed var(--forest-border); color: var(--forest-dark); font-family: var(--sans); font-size: 0.88rem; font-weight: 500; padding: 0.7rem 1rem; border-radius: var(--radius); cursor: pointer; width: 100%; margin-top: 0.25rem; }
+.add-student-btn:hover { background: var(--forest-pale); }
+.second-student-label { display: flex; justify-content: space-between; align-items: center; }
+.remove-student-btn { background: none; border: none; color: var(--forest-dark); font-family: var(--sans); font-size: 0.78rem; text-decoration: underline; text-transform: none; letter-spacing: normal; cursor: pointer; padding: 0; }
 .form-submit { width: 100%; background: var(--forest); color: white; border: none; padding: 0.9rem; font-family: var(--sans); font-size: 0.92rem; font-weight: 500; border-radius: var(--radius); cursor: pointer; transition: background 0.2s; letter-spacing: 0.03em; margin-top: 0.5rem; }
 .form-submit:hover { background: var(--forest-dark); }
 .form-submit:disabled { background: var(--forest-dark); cursor: default; }
@@ -91,6 +95,14 @@ footer p + p { margin-top: 0.3rem; }
       <div class="form-row">
         <label>Your full name <span style="color:var(--forest);font-weight:600">*</span></label>
         <input type="text" name="entry.1336802408" required>
+        <p class="field-error">This field is required.</p>
+      </div>
+      <div class="form-row">
+        <label>Your relationship to the student <span style="color:var(--forest);font-weight:600">*</span></label>
+        <select name="entry.1709458121" required>
+          <option value="">Select</option>
+          <option>Parent</option><option>Guardian</option><option>Grandparent</option><option>I&rsquo;m the student</option><option>Other</option>
+        </select>
         <p class="field-error">This field is required.</p>
       </div>
       <div class="form-row">
@@ -180,6 +192,40 @@ footer p + p { margin-top: 0.3rem; }
         <p class="field-error">This field is required.</p>
       </div>
 
+      <button type="button" class="add-student-btn" id="add-student-btn">+ Add a second student</button>
+      <div id="second-student" style="display:none">
+        <div class="form-section-label second-student-label">Second student <button type="button" class="remove-student-btn" id="remove-student-btn">Remove</button></div>
+        <div class="form-row">
+          <label>Second student&rsquo;s full name <span style="color:var(--forest);font-weight:600">*</span></label>
+          <input type="text" name="entry.1807024980" class="second-field" disabled>
+          <p class="field-error">This field is required.</p>
+        </div>
+        <div class="form-grid">
+          <div class="form-row">
+            <label>Date of birth <span style="color:var(--forest);font-weight:600">*</span></label>
+            <input type="date" name="entry.1086166233" class="second-field" disabled>
+            <p class="field-error">This field is required.</p>
+          </div>
+          <div class="form-row">
+            <label>Year group <span style="color:var(--forest);font-weight:600">*</span></label>
+            <select name="entry.2118550738" class="second-field" disabled>
+            <option value="">Select year</option>
+            <option value="Reception">Reception</option>
+            <option value="1">Year 1</option><option value="2">Year 2</option>
+            <option value="3">Year 3</option><option value="4">Year 4</option><option value="5">Year 5</option><option value="6">Year 6</option>
+            <option value="7">Year 7</option><option value="8">Year 8</option><option value="9">Year 9</option><option value="10">Year 10</option>
+            <option value="11">Year 11</option><option value="12">Year 12</option><option value="13">Year 13</option>
+            </select>
+            <p class="field-error">This field is required.</p>
+          </div>
+        </div>
+        <div class="form-row">
+          <label>Current school <span style="color:var(--forest);font-weight:600">*</span></label>
+          <input type="text" name="entry.841699201" class="second-field" disabled>
+          <p class="field-error">This field is required.</p>
+        </div>
+      </div>
+
       <div class="form-section-label">Confirmation <span style="color:var(--forest);font-weight:600">*</span></div>
       <div class="form-row confirm-row">
         <label>
@@ -229,6 +275,22 @@ referralRadios.forEach(radio => {
     referralSourceError.style.display = 'none';
   });
 });
+
+/* Optional second student: fields are only switched on (and required) once added */
+const secondStudent = document.getElementById('second-student');
+const addStudentBtn = document.getElementById('add-student-btn');
+function setSecondStudent(on) {
+  secondStudent.style.display = on ? 'block' : 'none';
+  addStudentBtn.style.display = on ? 'none' : '';
+  secondStudent.querySelectorAll('.second-field').forEach(function(f) {
+    f.disabled = !on;
+    f.required = on;
+    if (!on) { f.value = ''; clearFieldError(f); }
+  });
+  if (on) secondStudent.querySelector('.second-field').focus();
+}
+addStudentBtn.addEventListener('click', function() { setSecondStudent(true); });
+document.getElementById('remove-student-btn').addEventListener('click', function() { setSecondStudent(false); });
 
 function showFieldError(field) {
   const row = field.closest('.form-row');
@@ -297,6 +359,7 @@ form.addEventListener('submit', async function(e) {
 
   const formData = new FormData();
   document.querySelectorAll('#client-info-form input[name^="entry."], #client-info-form select[name^="entry."]').forEach(field => {
+    if (field.disabled) return;
     formData.append(field.name, field.value);
   });
 
@@ -316,14 +379,14 @@ form.addEventListener('submit', async function(e) {
       mode: 'no-cors',
       body: formData
     });
-    btn.textContent = "Thank you \u2014 we've received your details";
+    btn.textContent = "Thank you, we've received your details";
     btn.style.background = '#085041';
     form.querySelectorAll('input, select, textarea, button').forEach(el => el.disabled = true);
     if (typeof gtag === 'function') {
       gtag('event', 'client_information_submitted');
     }
   } catch (error) {
-    btn.textContent = 'Something went wrong \u2014 please email us directly';
+    btn.textContent = 'Something went wrong. Please email us directly';
     btn.disabled = false;
     btn.style.background = '#c0392b';
   }
