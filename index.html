@@ -185,6 +185,19 @@ footer p + p { margin-top: 0.3rem; }
 .subject-list li.featured { background: var(--forest-pale); }
 @media (max-width: 600px) { .subject-list li { grid-template-columns: 1fr; gap: 0.15rem; } }
 @media (max-width: 600px) { .compare-table { min-width: 0; } .compare-table th:nth-child(n+4), .compare-table td:nth-child(n+4) { display: none; } }
+.faq-list { border-top: var(--border); }
+.faq-item { border-bottom: var(--border); }
+.faq-item summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1.5rem; padding: 1.2rem 0.25rem; font-size: 1rem; font-weight: 500; color: var(--ink); }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary:hover { color: var(--forest-dark); }
+.faq-toggle { position: relative; flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--forest-border); }
+.faq-toggle::before, .faq-toggle::after { content: ""; position: absolute; left: 50%; top: 50%; width: 11px; height: 1.6px; background: var(--forest); transform: translate(-50%, -50%); transition: transform 0.2s; }
+.faq-toggle::after { transform: translate(-50%, -50%) rotate(90deg); }
+.faq-item[open] .faq-toggle { background: var(--forest-pale); }
+.faq-item[open] .faq-toggle::after { transform: translate(-50%, -50%) rotate(0deg); }
+.faq-item p { font-size: 0.94rem; color: var(--muted); line-height: 1.8; padding: 0 3rem 1.35rem 0.25rem; }
+.faq-item p a { color: var(--forest-dark); }
+@media (max-width: 600px) { .faq-item p { padding-right: 0.25rem; } }
 </style>
 <script type="application/ld+json">
 {
@@ -208,6 +221,62 @@ footer p + p { margin-top: 0.3rem; }
     {"@type": "Place", "name": "Crouch End, London"},
     {"@type": "Place", "name": "East Finchley, London"},
         {"@type": "Place", "name": "North London"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much does it cost, and is there anything to pay upfront?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Each tutor’s rate depends on their experience. See our pricing for typical rates. There’s no registration fee and nothing to pay upfront: your first lesson is half price, and you only add a card afterwards. Each lesson is then invoiced once it’s taken place and paid by card through Stripe."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What’s your cancellation policy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We ask for at least 24 hours’ notice to cancel or move a lesson. Lessons cancelled with less notice may be charged in full, as your tutor will have kept that time free for you."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you keep my child safe?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Every tutor has an interview, two references and an enhanced DBS check, the highest level of UK background check, before they meet any family. Every tutor also agrees to our Safeguarding Policy and Code of Conduct. If anything ever feels wrong, we want to hear about it straight away."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where do lessons take place?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In your home. We specialise in in-person tutoring because a tutor in the same room gets better results for most children, especially those who need confidence as much as content. For students under 18, a responsible adult must be at home throughout the lesson."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if the tutor isn’t the right fit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Just tell us, whether it’s after the first lesson or further down the line, and we’ll suggest other tutors for you to choose from."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why use an agency rather than finding a tutor yourself?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A tutor found through a Facebook group or Nextdoor post hasn’t been checked by anyone. We vet every tutor, shortlist the ones who fit your child, and arrange the first lesson for you."
+      }
+    }
   ]
 }
 </script>
@@ -401,26 +470,30 @@ footer p + p { margin-top: 0.3rem; }
 
 <div class="section-sm" id="faq">
   <h2 style="text-align:center">Frequently asked questions</h2>
-  <div style="margin:0 auto;display:grid;gap:0.75rem">
-    <details style="background:var(--sage);border:var(--border);border-radius:var(--radius-lg);padding:1.25rem">
-      <summary style="font-family:var(--sans);font-size:0.95rem;font-weight:500;color:var(--ink);list-style:none;display:flex;justify-content:space-between;align-items:center">Why use an agency rather than finding a tutor yourself? <span style="color:var(--forest);font-size:1.2rem">+</span></summary>
-      <p style="font-size:0.88rem;color:var(--muted);line-height:1.8;margin-top:0.75rem">A tutor found through a Facebook group or Nextdoor post hasn&rsquo;t been checked by anyone. We interview every tutor, check their references and enhanced DBS, and shortlist the ones who fit your child for you to choose from. If the first tutor isn&rsquo;t right, we find you someone else.</p>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary>How much does it cost, and is there anything to pay upfront?<span class="faq-toggle" aria-hidden="true"></span></summary>
+      <p>Each tutor&rsquo;s rate depends on their experience. See <a href="#pricing">our pricing</a> for typical rates. There&rsquo;s no registration fee and nothing to pay upfront: your first lesson is half price, and you only add a card afterwards. Each lesson is then invoiced once it&rsquo;s taken place and paid by card through Stripe.</p>
     </details>
-    <details style="background:var(--sage);border:var(--border);border-radius:var(--radius-lg);padding:1.25rem">
-      <summary style="font-family:var(--sans);font-size:0.95rem;font-weight:500;color:var(--ink);list-style:none;display:flex;justify-content:space-between;align-items:center">What is your approach to safeguarding? <span style="color:var(--forest);font-size:1.2rem">+</span></summary>
-      <p style="font-size:0.88rem;color:var(--muted);line-height:1.8;margin-top:0.75rem">An enhanced DBS check, the highest level of UK government background check, is required for every tutor before they meet any family. On top of that, every tutor agrees to our Safeguarding Policy and Code of Conduct, and for students under 18 a responsible adult must be at home throughout the lesson. If anything ever feels wrong, we want to hear about it straight away.</p>
+    <details class="faq-item">
+      <summary>What&rsquo;s your cancellation policy?<span class="faq-toggle" aria-hidden="true"></span></summary>
+      <p>We ask for at least 24 hours&rsquo; notice to cancel or move a lesson. Lessons cancelled with less notice may be charged in full, as your tutor will have kept that time free for you.</p>
     </details>
-    <details style="background:var(--sage);border:var(--border);border-radius:var(--radius-lg);padding:1.25rem">
-      <summary style="font-family:var(--sans);font-size:0.95rem;font-weight:500;color:var(--ink);list-style:none;display:flex;justify-content:space-between;align-items:center">Do you only offer in-person tutoring? <span style="color:var(--forest);font-size:1.2rem">+</span></summary>
-      <p style="font-size:0.88rem;color:var(--muted);line-height:1.8;margin-top:0.75rem">Yes. We believe a tutor in the same room gets better results for most children, especially those who need confidence as much as content. We focus on doing in-person well.</p>
+    <details class="faq-item">
+      <summary>How do you keep my child safe?<span class="faq-toggle" aria-hidden="true"></span></summary>
+      <p>Every tutor has an interview, two references and an enhanced DBS check, the highest level of UK background check, before they meet any family. Every tutor also agrees to our Safeguarding Policy and Code of Conduct. If anything ever feels wrong, we want to hear about it straight away.</p>
     </details>
-    <details style="background:var(--sage);border:var(--border);border-radius:var(--radius-lg);padding:1.25rem">
-      <summary style="font-family:var(--sans);font-size:0.95rem;font-weight:500;color:var(--ink);list-style:none;display:flex;justify-content:space-between;align-items:center">How does payment work? Is there anything to pay upfront? <span style="color:var(--forest);font-size:1.2rem">+</span></summary>
-      <p style="font-size:0.88rem;color:var(--muted);line-height:1.8;margin-top:0.75rem">Nothing upfront and no registration fee. Your first lesson is half price, and you only add a card afterwards. Each lesson is then invoiced automatically once it&rsquo;s taken place, and paid by card through Stripe. There&rsquo;s no subscription or separate agency fee.</p>
+    <details class="faq-item">
+      <summary>Where do lessons take place?<span class="faq-toggle" aria-hidden="true"></span></summary>
+      <p>In your home. We specialise in in-person tutoring because a tutor in the same room gets better results for most children, especially those who need confidence as much as content. For students under 18, a responsible adult must be at home throughout the lesson.</p>
     </details>
-    <details style="background:var(--sage);border:var(--border);border-radius:var(--radius-lg);padding:1.25rem">
-      <summary style="font-family:var(--sans);font-size:0.95rem;font-weight:500;color:var(--ink);list-style:none;display:flex;justify-content:space-between;align-items:center">What if the tutor isn&rsquo;t the right fit? <span style="color:var(--forest);font-size:1.2rem">+</span></summary>
-      <p style="font-size:0.88rem;color:var(--muted);line-height:1.8;margin-top:0.75rem">That&rsquo;s why your first lesson is 50% off. If it isn&rsquo;t right, tell us and we&rsquo;ll find someone better.</p>
+    <details class="faq-item">
+      <summary>What if the tutor isn&rsquo;t the right fit?<span class="faq-toggle" aria-hidden="true"></span></summary>
+      <p>Just tell us, whether it&rsquo;s after the first lesson or further down the line, and we&rsquo;ll suggest other tutors for you to choose from.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Why use an agency rather than finding a tutor yourself?<span class="faq-toggle" aria-hidden="true"></span></summary>
+      <p>A tutor found through a Facebook group or Nextdoor post hasn&rsquo;t been checked by anyone. We vet every tutor, shortlist the ones who fit your child, and arrange the first lesson for you.</p>
     </details>
   </div>
 </div>
