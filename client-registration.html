@@ -56,6 +56,12 @@ input:focus, select:focus, textarea:focus { border-color: var(--forest); }
 .form-submit { width: 100%; background: var(--forest); color: white; border: none; padding: 0.9rem; font-family: var(--sans); font-size: 0.92rem; font-weight: 500; border-radius: var(--radius); cursor: pointer; transition: background 0.2s; letter-spacing: 0.03em; margin-top: 0.5rem; }
 .form-submit:hover { background: var(--forest-dark); }
 .form-submit:disabled { background: var(--forest-dark); cursor: default; }
+.reg-done { text-align: center; padding: 1.5rem 1rem; outline: none; }
+.reg-done-icon { width: 52px; height: 52px; margin: 0 auto 1rem; border-radius: 50%; background: var(--forest); color: white; display: flex; align-items: center; justify-content: center; }
+.reg-done h2 { font-family: var(--serif); font-size: 2rem; font-weight: 400; color: var(--ink); margin-bottom: 0.6rem; }
+.reg-done p { color: var(--forest-deeper); font-size: 0.95rem; line-height: 1.8; }
+.reg-done .reg-done-small { margin-top: 0.75rem; font-size: 0.85rem; color: var(--muted); }
+.reg-done a { color: var(--forest-dark); font-weight: 500; }
 .form-note { font-size: 0.78rem; color: var(--hint); text-align: center; margin-top: 0.75rem; line-height: 1.6; }
 footer { background: var(--ink); padding: 2.5rem 2rem; text-align: center; }
 footer p { font-size: 0.78rem; color: white; font-weight: 300; }
@@ -124,7 +130,7 @@ footer p + p { margin-top: 0.3rem; }
         <p class="field-error">This field is required.</p>
       </div>
 
-      <div class="form-section-label">Address</div>
+      <div class="form-section-label">Where lessons will take place</div>
       <div class="form-row">
         <label>Address Line 1 <span style="color:var(--forest);font-weight:600">*</span></label>
         <input type="text" name="entry.1480886483" required>
@@ -257,6 +263,12 @@ footer p + p { margin-top: 0.3rem; }
       <button type="submit" class="form-submit">Submit</button>
       <p class="form-note"><span style="color:var(--forest);font-weight:600">*</span> Required field. Thank you for choosing Kenwood Education. We&rsquo;ll be in touch shortly to confirm next steps.</p>
     </form>
+    <div id="reg-done" class="reg-done" style="display:none" role="status" aria-live="polite" tabindex="-1">
+      <span class="reg-done-icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+      <h2>Thank you<span id="reg-done-name"></span></h2>
+      <p>We&rsquo;ve received your details. We&rsquo;ll be in touch shortly to confirm the next steps.</p>
+      <p class="reg-done-small">Any questions in the meantime? Email <a href="mailto:hello@kenwoodeducation.com">hello@kenwoodeducation.com</a> or call <a href="tel:+447466641281">07466 641281</a>.</p>
+    </div>
   </div>
 </div>
 
@@ -402,9 +414,14 @@ form.addEventListener('submit', async function(e) {
       mode: 'no-cors',
       body: formData
     });
-    btn.textContent = "Thank you, we've received your details";
-    btn.style.background = '#085041';
-    form.querySelectorAll('input, select, textarea, button').forEach(el => el.disabled = true);
+    const fullName = (form.querySelector('[name="entry.1336802408"]').value || '').trim();
+    const firstName = fullName.split(/\s+/)[0] || '';
+    document.getElementById('reg-done-name').textContent = firstName ? ', ' + firstName : '';
+    form.style.display = 'none';
+    const done = document.getElementById('reg-done');
+    done.style.display = 'block';
+    done.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    done.focus({ preventScroll: true });
     if (typeof gtag === 'function') {
       gtag('event', 'client_information_submitted');
     }
