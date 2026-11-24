@@ -57,6 +57,11 @@ table.data-table tr:nth-child(even) td { background: var(--sage); }
 .callout p:last-child { margin-bottom: 0; }
 .callout h3 { font-family: var(--sans); font-size: 1rem; font-weight: 500; color: var(--forest-dark); margin-bottom: 0.75rem; }
 .source-note { font-size: 0.82rem; color: var(--hint); margin-top: 2.5rem; padding-top: 1.25rem; border-top: var(--border); }
+.post-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.post-grid .post-card { margin-bottom: 0; display: flex; flex-direction: column; }
+.post-grid .post-card:first-child { grid-column: 1 / -1; }
+.tag { display: inline-block; background: var(--forest-pale); color: var(--forest-dark); border: 1px solid var(--forest-mid); border-radius: 20px; padding: 0.1rem 0.6rem; font-size: 0.68rem; letter-spacing: 0.06em; margin-right: 0.6rem; vertical-align: 1px; }
+@media (max-width: 700px) { .post-grid { grid-template-columns: 1fr; } }
 .post-card { display: block; background: var(--sage); border: var(--border); border-radius: var(--radius-lg); padding: 1.5rem 1.75rem; margin-bottom: 1rem; text-decoration: none; transition: border-color 0.2s; }
 .post-card:hover { border-color: var(--forest-border); }
 .post-card .meta { margin-bottom: 0.5rem; }
@@ -112,37 +117,39 @@ footer a { color: white; text-decoration: none; }
 <div class="divider"></div>
 
 <div class="section" style="padding-top:2.5rem">
+<div class="post-grid">
 
   <a href="a-level-results-2026-independent-schools" class="post-card">
-    <div class="meta">31 October 2026</div>
+    <div class="meta"><span class="tag">A-level</span>31 October 2026 &middot; 3 min read</div>
     <h3>A-Level Results 2026: Independent Schools In and Around North London</h3>
     <p>A*, A*/A and A*-B percentages from eight selective independent schools, and what they mean for university applications.</p>
   </a>
 
   <a href="hardest-gcse-subjects-grade-7" class="post-card">
-    <div class="meta">2 October 2026</div>
+    <div class="meta"><span class="tag">GCSE</span>2 October 2026 &middot; 5 min read</div>
     <h3>Which GCSE Subjects Are Hardest to Get a Grade 7 In?</h3>
     <p>National 2026 results data on how common a grade 7 actually is by subject, and why Maths and English are statistically tougher to score a 7 in than the sciences.</p>
   </a>
 
   <a href="active-recall-vs-re-reading" class="post-card">
-    <div class="meta">1 September 2026</div>
+    <div class="meta"><span class="tag">Revision</span>1 September 2026 &middot; 6 min read</div>
     <h3>Why Re-Reading Notes Doesn't Work (And What Does)</h3>
     <p>Most students revise by re-reading and highlighting. A well-known study found students using active recall retained 80% of material after one week, versus 36% with re-reading. Here's what that means in practice.</p>
   </a>
 
   <a href="what-gcse-grades-mean" class="post-card">
-    <div class="meta">27 August 2026</div>
+    <div class="meta"><span class="tag">GCSE</span>27 August 2026 &middot; 6 min read</div>
     <h3>What Do GCSE Grades Actually Mean?</h3>
     <p>A full guide to the 9-1 grading scale, Foundation vs Higher tier, and why the gap between a 4 and a 5 matters more than most people realise.</p>
   </a>
 
   <a href="gcse-results-2026-independent-schools" class="post-card">
-    <div class="meta">27 August 2026</div>
+    <div class="meta"><span class="tag">GCSE</span>27 August 2026 &middot; 5 min read</div>
     <h3>GCSE Results 2026: Independent Schools In and Around North London</h3>
     <p>Grade 9 and grade 8-9 percentages from eight selective independent schools, and what the numbers actually mean for A-level subject choices.</p>
   </a>
 
+</div>
 </div>
 
 <section class="g-close">
