@@ -70,10 +70,13 @@ h2 { font-family: var(--sans); font-size: clamp(1.5rem,3vw,1.9rem); font-weight:
 .dark-section { background: var(--ink); padding: 4rem 2rem; }
 .dark-section h2 { color: white; }
 .dark-section .lead { color: rgba(255,255,255,0.82); max-width: 580px; font-size: 1rem; font-weight: 400; }
-.why-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.25rem; margin-top: 2rem; }
-.why-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--radius-lg); padding: 1.5rem; flex: 1 1 420px; max-width: 440px; }
-.why-card h4 { font-family: var(--sans); font-size: 1rem; color: white; margin-bottom: 0.5rem; font-weight: 500; letter-spacing: -0.01em; }
-.why-card p { font-size: 0.9rem; color: rgba(255,255,255,0.8); line-height: 1.8; font-weight: 400; }
+.why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 2.25rem; }
+.why-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-top: 3px solid var(--forest-border); border-radius: var(--radius-lg); padding: 1.5rem 1.35rem; }
+.why-card .why-stat { font-family: var(--serif); font-size: 2rem; line-height: 1.1; color: var(--forest-mid); font-weight: 500; margin-bottom: 0.35rem; }
+.why-card h4 { font-family: var(--sans); font-size: 0.95rem; color: white; margin-bottom: 0.6rem; font-weight: 500; letter-spacing: -0.01em; }
+.why-card p { font-size: 0.88rem; color: rgba(255,255,255,0.8); line-height: 1.75; font-weight: 400; }
+@media (max-width: 900px) { .why-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .why-grid { grid-template-columns: 1fr; } }
 .steps { display: grid; gap: 0.85rem; }
 @media (min-width: 761px) { .steps { grid-template-columns: repeat(3, 1fr); } .step { flex-direction: column; gap: 0.6rem; } }
 .step { display: flex; gap: 1.25rem; background: var(--sage); border: var(--border); border-radius: var(--radius-lg); padding: 1.35rem; align-items: flex-start; }
@@ -230,20 +233,24 @@ footer p + p { margin-top: 0.3rem; }
     <p class="lead" style="text-align:center;margin-left:auto;margin-right:auto">We do the vetting so you don&rsquo;t have to.</p>
     <div class="why-grid">
       <div class="why-card">
-        <h4>We accept 1 in 18 applicants</h4>
-        <p>Every tutor goes through a structured interview, reference checks and an enhanced DBS check, the highest level of UK background check, before they meet any family. You&rsquo;re inviting someone into your home, so they need to be someone you can trust.</p>
+        <p class="why-stat">1 in 18</p>
+        <h4>applicants make it through</h4>
+        <p>A structured interview, reference checks and an enhanced DBS check before any tutor meets a family.</p>
       </div>
       <div class="why-card">
-        <h4>Oxbridge &amp; Russell Group-educated tutors</h4>
-        <p>Our tutors are Oxbridge or Russell Group-educated with a strong academic record, or bring extensive teaching experience as qualified teachers, heads of department or examiners.</p>
+        <p class="why-stat">Top-tier</p>
+        <h4>graduates &amp; teachers</h4>
+        <p>Oxbridge and Russell Group graduates, or qualified teachers, heads of department and examiners.</p>
       </div>
       <div class="why-card">
-        <h4>Personally matched to your child</h4>
-        <p>We don&rsquo;t post jobs on a board for tutors to bid on. We take the time to understand your child&rsquo;s goals, learning style and personality, then choose the tutor we believe is the right fit.</p>
+        <p class="why-stat">Local</p>
+        <h4>tutors who stay</h4>
+        <p>Our tutors live nearby, so they can keep coming week after week, right through exam years.</p>
       </div>
       <div class="why-card">
-        <h4>Experienced with dyslexia, ADHD &amp; SEN</h4>
-        <p>A number of our tutors have training or hands-on experience supporting children with learning differences. Where it&rsquo;s relevant, it shapes who we match your child with.</p>
+        <p class="why-stat">Specialist</p>
+        <h4>entrance exams &amp; dyslexia</h4>
+        <p>Focused preparation for 7+, 11+ and 13+, and tutors experienced with dyslexia, ADHD and SEN.</p>
       </div>
     </div>
   </div>
