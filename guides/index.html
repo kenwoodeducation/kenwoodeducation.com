@@ -81,6 +81,22 @@ footer a { color: white; text-decoration: none; }
 @media (min-width: 901px) {
   #nav-mobile-panel { display: none !important; }
 }
+
+/* Guide links and closing band (Nov 2026) */
+.section a:not(.btn-primary):not(.post-card) { color: var(--forest-dark); text-decoration-color: rgba(8,80,65,0.35); text-underline-offset: 2px; }
+.section a:not(.btn-primary):not(.post-card):hover { text-decoration-color: var(--forest-dark); }
+.g-close { background: var(--forest-pale); border-top: 1px solid var(--forest-border); border-bottom: 1px solid var(--forest-border); padding: 3rem 2rem; text-align: center; }
+.g-close h2 { font-family: var(--sans); font-size: clamp(1.35rem,3vw,1.7rem); font-weight: 500; color: var(--ink); margin: 0 0 0.6rem; letter-spacing: -0.01em; border: none; padding: 0; }
+.g-close > p { color: var(--forest-dark); font-size: 0.95rem; margin: 0 auto 1.5rem; max-width: 560px; line-height: 1.75; }
+.g-close p a { color: var(--forest-dark); }
+.g-actions { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }
+.g-close .btn-primary { background: var(--forest); color: white; padding: 0.8rem 1.6rem; font-family: var(--sans); font-size: 0.9rem; font-weight: 500; border-radius: var(--radius); text-decoration: none; display: inline-block; }
+.g-close .btn-primary:hover { background: var(--forest-dark); }
+.btn-wa { display: inline-flex; align-items: center; gap: 0.5rem; background: white; color: var(--forest-dark); border: 1.5px solid #25D366; padding: 0.75rem 1.5rem; font-family: var(--sans); font-size: 0.9rem; font-weight: 500; border-radius: var(--radius); text-decoration: none; }
+.btn-wa:hover { background: #f1fbf4; }
+.g-close > p.g-small { margin: 1.1rem auto 0; font-size: 0.82rem; color: var(--hint); line-height: 1.7; }
+.g-small a { color: var(--forest-dark); }
+@media (max-width: 600px) { .g-close { padding: 2.5rem 1.25rem; } }
 </style>
 </head>
 <body>
@@ -112,7 +128,7 @@ footer a { color: white; text-decoration: none; }
   <a href="active-recall-vs-re-reading" class="post-card">
     <div class="meta">1 September 2026</div>
     <h3>Why Re-Reading Notes Doesn't Work (And What Does)</h3>
-    <p>Most students revise by re-reading and highlighting. Research shows students using active recall retain 80% of material after one week, versus 36% with re-reading. Here's what that means in practice.</p>
+    <p>Most students revise by re-reading and highlighting. A well-known study found students using active recall retained 80% of material after one week, versus 36% with re-reading. Here's what that means in practice.</p>
   </a>
 
   <a href="what-gcse-grades-mean" class="post-card">
@@ -128,6 +144,16 @@ footer a { color: white; text-decoration: none; }
   </a>
 
 </div>
+
+<section class="g-close">
+  <h2>Looking for a tutor?</h2>
+  <p>Tell us what your child needs, and we&rsquo;ll recommend a local tutor who teaches in your home.</p>
+  <div class="g-actions">
+    <a href="/#enquiry" class="btn-primary" data-cta="guides_index_enquiry">Get in touch</a>
+    <a href="https://wa.me/447466641281?text=Hi%20Kenwood%20Education%2C%20I%27m%20looking%20for%20a%20tutor.%20My%20child%20needs%20help%20with%20" target="_blank" rel="noopener" class="btn-wa" data-cta="guides_index_whatsapp"><svg width="18" height="18" viewBox="0 0 24 24" fill="#25D366" aria-hidden="true"><path d="M12.004 2C6.486 2 2 6.486 2 12.004c0 1.87.505 3.628 1.386 5.13L2 22l4.99-1.35a9.958 9.958 0 0 0 5.014 1.348c5.518 0 10.004-4.486 10.004-10.004C22.008 6.486 17.522 2 12.004 2zm5.468 12.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg> WhatsApp us</a>
+  </div>
+  <p class="g-small">Or call <a href="tel:+447466641281">07466 641281</a>.<br>We cover <a href="/areas/highgate">Highgate</a>, <a href="/areas/hampstead">Hampstead</a>, <a href="/areas/muswell-hill">Muswell Hill</a>, <a href="/areas/crouch-end">Crouch End</a> and <a href="/areas/east-finchley">East Finchley</a>.</p>
+</section>
 
 {% include footer-main.html %}
 
