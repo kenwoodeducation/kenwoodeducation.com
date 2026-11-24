@@ -40,23 +40,6 @@ h2 { font-family: var(--sans); font-size: clamp(1.5rem,3vw,1.9rem); font-weight:
 .badge { display: inline-block; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--forest); border: 1px solid var(--forest); padding: 0.3rem 0.9rem; border-radius: 20px; margin-bottom: 1.5rem; }
 .btn-primary { background: var(--forest); color: white; border: none; padding: 0.85rem 2rem; font-family: var(--sans); font-size: 0.9rem; font-weight: 500; border-radius: var(--radius); cursor: pointer; transition: background 0.2s; text-decoration: none; display: inline-block; }
 .btn-primary:hover { background: var(--forest-dark); }
-.dark-section { background: var(--ink); padding: 4rem 2rem; }
-.dark-section h2 { color: white; }
-.dark-section .lead { color: rgba(255,255,255,0.7); max-width: 580px; font-size: 1rem; font-weight: 400; }
-.why-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; margin-top: 2rem; }
-@media (max-width: 640px) { .why-grid { grid-template-columns: 1fr; } }
-.why-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--radius-lg); padding: 1.5rem; }
-.why-card h4 { font-family: var(--sans); font-size: 1rem; color: white; margin-bottom: 0.5rem; font-weight: 500; letter-spacing: -0.01em; }
-.why-card p { font-size: 0.9rem; color: rgba(255,255,255,0.65); line-height: 1.8; font-weight: 400; }
-.inperson-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; }
-.inperson-card { background: var(--sage); border: var(--border); border-radius: var(--radius-lg); padding: 1.35rem; flex: 1 1 260px; max-width: 320px; }
-.inperson-card h4 { font-family: var(--sans); font-size: 1rem; color: var(--ink); margin-bottom: 0.4rem; font-weight: 500; letter-spacing: -0.01em; }
-.inperson-card p { font-size: 0.9rem; color: var(--muted); line-height: 1.8; }
-.steps { display: grid; gap: 0.85rem; }
-.step { display: flex; gap: 1.25rem; background: var(--sage); border: var(--border); border-radius: var(--radius-lg); padding: 1.35rem; align-items: flex-start; }
-.step-num { font-family: var(--serif); font-size: 1.75rem; color: var(--forest); opacity: 0.35; font-weight: 400; line-height: 1; min-width: 1.5rem; flex-shrink: 0; }
-.step h4 { font-family: var(--sans); font-size: 1rem; color: var(--ink); margin-bottom: 0.35rem; font-weight: 500; letter-spacing: -0.01em; }
-.step p { font-size: 0.9rem; color: var(--muted); line-height: 1.75; font-weight: 400; }
 .doc-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.85rem; margin-top: 1.5rem; }
 .doc-card { background: var(--sage); border: var(--border); border-radius: var(--radius); padding: 1rem 1.25rem; text-align: center; flex: 1 1 200px; max-width: 240px; text-decoration: none; transition: border-color 0.2s; }
 .doc-card:hover { border-color: var(--forest-border); }
@@ -70,8 +53,7 @@ footer p + p { margin-top: 0.3rem; }
 @media (max-width: 600px) {
   nav { padding: 0.85rem 1.25rem; }
   .section, .section-sm { padding: 3rem 1.25rem; }
-  .dark-section { padding: 3rem 1.25rem; }
-}
+  }
 @media (max-width: 900px) {
   #nav-phone, #nav-phone-divider { display: none !important; }
   #nav-links-desktop { display: none !important; }
@@ -80,97 +62,134 @@ footer p + p { margin-top: 0.3rem; }
 @media (min-width: 901px) {
   #nav-mobile-panel { display: none !important; }
 }
+/* Area page layout (Nov 2026) */
+.ap-why { background: var(--sage); padding: 4rem 2rem; }
+.ap-why-wrap { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 3rem; align-items: start; }
+.ap-why-intro h2 { font-family: var(--serif); font-size: clamp(1.9rem, 3.2vw, 2.4rem); font-weight: 400; line-height: 1.15; margin-bottom: 1rem; }
+.ap-why-intro p { font-size: 0.98rem; color: var(--muted); line-height: 1.8; }
+.ap-why-list { display: grid; }
+.ap-why-item { display: flex; gap: 1.1rem; padding: 1.3rem 0; border-bottom: var(--border); }
+.ap-why-item:first-child { padding-top: 0.25rem; }
+.ap-why-item:last-child { border-bottom: none; padding-bottom: 0; }
+.ap-why-icon { flex-shrink: 0; width: 44px; height: 44px; border-radius: 50%; background: white; border: 1px solid var(--forest-border); color: var(--forest); display: flex; align-items: center; justify-content: center; }
+.ap-why-item h3, .bt-look h3 { font-family: var(--sans); font-size: 1rem; font-weight: 600; color: var(--ink); margin-bottom: 0.3rem; }
+.ap-why-item p { font-size: 0.92rem; color: var(--muted); line-height: 1.75; }
+.ap-why-item p a { color: var(--forest-dark); }
+.ap-sub { text-align: center; color: var(--muted); font-size: 0.95rem; max-width: 640px; margin: -0.5rem auto 1.75rem; line-height: 1.8; }
+.ap-note { text-align: center; color: var(--muted); font-size: 0.9rem; max-width: 640px; margin: 1.75rem auto 0; line-height: 1.8; }
+.ap-note a { color: var(--forest-dark); }
+.ap-close { background: var(--forest-pale); border-top: 1px solid var(--forest-border); border-bottom: 1px solid var(--forest-border); padding: 3rem 2rem; text-align: center; }
+.ap-close h2 { margin-bottom: 0.6rem; }
+.ap-close p { color: var(--forest-dark); font-size: 0.95rem; margin-bottom: 1.5rem; }
+ol.steps { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; position: relative; }
+ol.steps::before { content: ""; position: absolute; top: 22px; left: calc(100% / 6); right: calc(100% / 6); height: 2px; background: var(--forest-mid); z-index: 0; }
+ol.steps .step { position: relative; z-index: 1; text-align: center; display: block; background: none; border: none; padding: 0; }
+ol.steps .step-num { width: 46px; height: 46px; margin: 0 auto 1.1rem; border-radius: 50%; background: var(--forest); color: white; font-family: var(--serif); font-size: 1.45rem; line-height: 1; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 6px white; opacity: 1; min-width: 0; }
+ol.steps .step h4 { font-size: 1.02rem; font-weight: 600; margin-bottom: 0.45rem; }
+ol.steps .step p { font-size: 0.92rem; color: var(--muted); line-height: 1.75; }
+@media (max-width: 760px) {
+  .ap-why-wrap { grid-template-columns: 1fr; gap: 1.5rem; }
+  .ap-why { padding: 3rem 1.25rem; }
+  ol.steps { grid-template-columns: 1fr; gap: 1.5rem; }
+  ol.steps::before { display: none; }
+  ol.steps .step:not(:last-child)::after { content: ""; position: absolute; left: 22px; top: 46px; bottom: -1.5rem; width: 2px; background: var(--forest-mid); }
+  ol.steps .step { text-align: left; padding-left: 4.25rem; min-height: 46px; }
+  ol.steps .step-num { position: absolute; left: 0; top: 0; margin: 0; }
+}
+.btn-wa { display: inline-flex; align-items: center; gap: 0.5rem; background: white; color: var(--forest-dark); border: 1.5px solid #25D366; padding: 0.8rem 1.6rem; font-family: var(--sans); font-size: 0.9rem; font-weight: 500; border-radius: var(--radius); text-decoration: none; transition: background 0.2s; }
+.btn-wa:hover { background: #f1fbf4; }
+.ap-contact { margin-top: 0.9rem; font-size: 0.82rem; color: var(--hint); }
+.ap-contact a { color: var(--forest-dark); }
+
+/* Become a Tutor layout (Nov 2026) */
+.bt-hero { text-align: center; padding: 5rem 2rem 4rem; max-width: 900px; margin: 0 auto; }
+.bt-hero .lead { margin: 1.25rem auto 0; }
+.bt-actions { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem; }
+.ap-close .bt-actions { margin-top: 0; }
+.bt-sign { margin-top: 1rem; font-family: var(--serif); font-style: italic; font-size: 1.15rem !important; color: var(--forest-dark) !important; }
+.ap-why-intro p + p:not(.bt-sign) { margin-top: 0.9rem; }
+.bt-look { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; text-align: center; }
+.bt-look .ap-why-icon { margin: 0 auto 1rem; background: var(--forest-pale); border-color: var(--forest-border); }
+.bt-look h3 { font-family: var(--sans); font-size: 1rem; font-weight: 600; color: var(--ink); margin-bottom: 0.4rem; }
+.bt-look p { font-size: 0.92rem; color: var(--muted); line-height: 1.75; }
+.bt-apply { border-top: var(--border); }
+ol.bt-steps { grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+ol.bt-steps::before { left: 12.5%; right: 12.5%; }
+@media (max-width: 760px) {
+  .bt-hero { padding: 3.5rem 1.25rem 3rem; }
+  .bt-look { grid-template-columns: 1fr; gap: 1.75rem; }
+  ol.bt-steps { grid-template-columns: 1fr; }
+  .ap-close { padding: 2.5rem 1.25rem; }
+}
 </style>
 </head>
 <body>
 
 {% include nav-main.html %}
 
-<div class="section" style="text-align:center;padding-top:5rem;padding-bottom:4rem">
+<section class="bt-hero">
   <span class="badge">Tutor with us in North London</span>
   <h1>Tutor on your <em>own terms</em>,<br>with families who value it</h1>
-  <p class="lead" style="margin:1.25rem auto 0">Kenwood Education introduces vetted tutors to families across North London. You set your own rate, choose the work you take on, and we handle the admin &mdash; matching, invoicing, and payment &mdash; so you can focus on teaching. We&rsquo;re a Corporate Member of The Tutors&rsquo; Association.</p>
-  <div style="margin-top:2rem">
-    <a href="mailto:hello@kenwoodeducation.com?subject=Tutor%20Application" class="btn-primary">Email Us Your CV</a>
+  <p class="lead">Kenwood Education introduces vetted tutors to local families across North London. You set your own rate and choose the work you take on, and we handle the matching, invoicing and payments, so you can focus on teaching.</p>
+  <div class="bt-actions">
+    <a href="mailto:hello@kenwoodeducation.com?subject=Tutor%20Application" class="btn-primary" data-cta="tutor_hero_cv">Email us your CV</a>
+    <a href="https://wa.me/447466641281?text=Hi%20Kenwood%20Education%2C%20I%27m%20a%20tutor%20and%20I%27d%20like%20to%20find%20out%20more%20about%20joining." target="_blank" rel="noopener" class="btn-wa" data-cta="tutor_hero_whatsapp"><svg width="18" height="18" viewBox="0 0 24 24" fill="#25D366" aria-hidden="true"><path d="M12.004 2C6.486 2 2 6.486 2 12.004c0 1.87.505 3.628 1.386 5.13L2 22l4.99-1.35a9.958 9.958 0 0 0 5.014 1.348c5.518 0 10.004-4.486 10.004-10.004C22.008 6.486 17.522 2 12.004 2zm5.468 12.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg> Ask us a question</a>
   </div>
-</div>
+  <p class="ap-contact">Corporate Member of The Tutors&rsquo; Association</p>
+</section>
 
-<div class="divider"></div>
+<section class="ap-why">
+  <div class="ap-why-wrap">
+    <div class="ap-why-intro">
+      <h2>Why tutor with Kenwood</h2>
+      <p>I started out as a full-time tutor, so I know what makes the work sustainable: fair pay, short journeys and families who stay. Kenwood is built around those things.</p>
+      <p class="bt-sign">Ondi, Founder</p>
+    </div>
+    <div class="ap-why-list">
+      <div class="ap-why-item"><span class="ap-why-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M14.5 9a2.5 2.5 0 0 0-2.5-1.5c-1.4 0-2.5.8-2.5 2s1.1 1.7 2.5 2 2.5.8 2.5 2-1.1 2-2.5 2A2.5 2.5 0 0 1 9.5 15"/><path d="M12 6v1.5M12 16.5V18"/></svg></span>
+        <div><h3>Set your own rate</h3><p>You decide your hourly rate, and that&rsquo;s exactly what you receive. We add our margin on top when invoicing the family, and our margins are among the lowest of any tutoring agency or platform, in person or online. If you&rsquo;d like a steer on where to pitch your rate, just ask.</p></div>
+      </div>
+      <div class="ap-why-item"><span class="ap-why-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M10 21v-6h4v6"/></svg></span>
+        <div><h3>Teach close to home</h3><p>We match you with families near where you live, so you&rsquo;re not crossing London between lessons. Shorter journeys mean more time teaching, and it&rsquo;s easier to keep working with the same students for the long term.</p></div>
+      </div>
+      <div class="ap-why-item"><span class="ap-why-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></span>
+        <div><h3>We handle the admin</h3><p>Matching, invoicing and payment collection all run through TutorCruncher, and your earnings are paid out to you monthly, so you never have to chase an invoice.</p></div>
+      </div>
+      <div class="ap-why-item"><span class="ap-why-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+        <div><h3>Work on your terms</h3><p>You&rsquo;re never obliged to accept a match, and we&rsquo;re not obliged to offer a fixed amount of work. Many of our tutors also work with other agencies or private students.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-<div class="section-sm">
+<section class="section">
   <h2 style="text-align:center">What we look for</h2>
-  <p style="text-align:center;color:var(--muted);font-size:0.95rem;max-width:600px;margin:0 auto 2rem;line-height:1.85">We&rsquo;re selective about who joins us. Our tutors bring strong academic credentials (many from Oxbridge and Russell Group universities), real teaching experience, or both. Some are qualified teachers, heads of department or examiners. We also welcome current university students and newer tutors with an excellent academic record, vetted in exactly the same way.</p>
-  <div class="inperson-grid">
-    <div class="inperson-card">
-      <h4>Maths, English, Science and entrance exams</h4>
-      <p>These are the subjects families ask us for most, so we especially want to hear from tutors who teach them, including 11+ and 13+. We welcome applications in other subjects too.</p>
-    </div>
-    <div class="inperson-card">
-      <h4>Based locally</h4>
-      <p>We only work with tutors local to the areas we serve &mdash; Highgate, Hampstead, Muswell Hill, Crouch End, East Finchley and surrounding North London.</p>
-    </div>
-    <div class="inperson-card">
-      <h4>Genuinely engaging with students</h4>
-      <p>Patient, encouraging, and able to adapt to how a particular student learns best &mdash; not just deep subject knowledge, but the ability to bring it to life.</p>
-    </div>
+  <p class="ap-sub">We&rsquo;re selective about who joins us. Our tutors bring strong academic credentials (many from Oxbridge and Russell Group universities), real teaching experience, or both. Some are qualified teachers, heads of department or examiners. We also welcome current university students and newer tutors with an excellent academic record, vetted in exactly the same way.</p>
+  <div class="bt-look">
+    <div><span class="ap-why-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span><h3>Maths, English, Science and entrance exams</h3><p>The subjects families ask us for most, including 11+ and 13+. We welcome applications in other subjects too.</p></div>
+    <div><span class="ap-why-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></span><h3>Based locally</h3><p>You live in or near Highgate, Hampstead, Muswell Hill, Crouch End or East Finchley.</p></div>
+    <div><span class="ap-why-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.6L19.5 10l-5.6 1.9L12 17.5l-1.9-5.6L4.5 10l5.6-1.4z"/></svg></span><h3>Genuinely engaging</h3><p>Patient and encouraging, and able to adapt to how each student learns best, not just deep subject knowledge.</p></div>
   </div>
-</div>
+</section>
 
-<div class="divider"></div>
-
-<div class="dark-section">
-  <div style="max-width:900px;margin:0 auto">
-    <h2>Why tutor with Kenwood</h2>
-    <p class="lead">A straightforward, well-supported way to build a tutoring practice.</p>
-    <div class="why-grid">
-      <div class="why-card">
-        <h4>Set your own rate</h4>
-        <p>You decide your hourly rate. We add a margin when invoicing the family &mdash; what you charge is exactly what you receive. Our margins are among the lowest of any tutoring agency or platform, in person or online. If you&rsquo;d like a steer on where to pitch your rate, just ask, but the final number is always your choice.</p>
-      </div>
-      <div class="why-card">
-        <h4>We handle the admin</h4>
-        <p>Matching, invoicing, and payment collection all run through TutorCruncher, and your earnings are paid out to you monthly, so you never have to chase an invoice.</p>
-      </div>
-      <div class="why-card">
-        <h4>Work on your terms</h4>
-        <p>You're never obliged to accept a match, and we're not obliged to offer a fixed amount of work. Most of our tutors work with other agencies or private students alongside Kenwood.</p>
-      </div>
-      <div class="why-card">
-        <h4>Teach close to home</h4>
-        <p>We match you with families near where you live, so you&rsquo;re not crossing London between lessons. Shorter journeys mean more time teaching, and it&rsquo;s easier to keep working with the same students for the long term.</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="divider"></div>
-
-<div class="section-sm">
+<section class="section bt-apply">
   <h2 style="text-align:center">How to apply</h2>
-  <div class="steps">
-    <div class="step">
-      <span class="step-num">1</span>
-      <div><h4>Email us your CV</h4><p>Send your CV to hello@kenwoodeducation.com, along with the subjects and levels you'd like to teach.</p></div>
-    </div>
-    <div class="step">
-      <span class="step-num">2</span>
-      <div><h4>Structured interview</h4><p>We'll assess your experience, approach, and suitability to work with children, and talk through how Kenwood works day to day.</p></div>
-    </div>
-    <div class="step">
-      <span class="step-num">3</span>
-      <div><h4>Full details, references and DBS check</h4><p>If it's a good fit, we'll send you our onboarding form to complete. We'll verify both references, and confirm your enhanced DBS check &mdash; or apply on your behalf if you don't already hold one.</p></div>
-    </div>
-    <div class="step">
-      <span class="step-num">4</span>
-      <div><h4>Matched with families</h4><p>Once approved, we&rsquo;ll let you know whenever a family looks like a good fit for your subjects, level and location. If the family chooses you, you get in touch with them the same day to arrange the first lesson.</p></div>
-    </div>
-  </div>
-  <div style="text-align:center;margin-top:2rem">
-    <a href="mailto:hello@kenwoodeducation.com?subject=Tutor%20Application" class="btn-primary">Email Us Your CV</a>
-  </div>
-</div>
+  <ol class="steps bt-steps">
+    <li class="step"><span class="step-num">1</span><h4>Email us your CV</h4><p>Send it to us with the subjects and levels you<p>Send it to hello@kenwoodeducation.com with the subjects and levels you&rsquo;d like to teach.</p>rsquo;d like to teach.</p></li>
+    <li class="step"><span class="step-num">2</span><h4>Interview</h4><p>We&rsquo;ll talk through your experience, your approach and your suitability to work with children, and how Kenwood works day to day.</p></li>
+    <li class="step"><span class="step-num">3</span><h4>References and DBS</h4><p>You complete our onboarding form. We verify two references and your enhanced DBS check, or apply for one on your behalf.</p></li>
+    <li class="step"><span class="step-num">4</span><h4>Matched with families</h4><p>We let you know when a family is a good fit. If they choose you, you get in touch the same day to arrange the first lesson.</p></li>
+  </ol>
+</section>
 
-<div class="divider"></div>
+<section class="ap-close">
+  <h2>Ready to apply?</h2>
+  <p>Send us your CV and the subjects and levels you teach.</p>
+  <div class="bt-actions">
+    <a href="mailto:hello@kenwoodeducation.com?subject=Tutor%20Application" class="btn-primary" data-cta="tutor_closing_cv">Email us your CV</a>
+    <a href="https://wa.me/447466641281?text=Hi%20Kenwood%20Education%2C%20I%27m%20a%20tutor%20and%20I%27d%20like%20to%20find%20out%20more%20about%20joining." target="_blank" rel="noopener" class="btn-wa" data-cta="tutor_closing_whatsapp"><svg width="18" height="18" viewBox="0 0 24 24" fill="#25D366" aria-hidden="true"><path d="M12.004 2C6.486 2 2 6.486 2 12.004c0 1.87.505 3.628 1.386 5.13L2 22l4.99-1.35a9.958 9.958 0 0 0 5.014 1.348c5.518 0 10.004-4.486 10.004-10.004C22.008 6.486 17.522 2 12.004 2zm5.468 12.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg> Ask us a question</a>
+  </div>
+</section>
 
 {% include footer-main.html %}
 
