@@ -43,8 +43,9 @@ h2 { font-family: var(--sans); font-size: clamp(1.5rem,3vw,1.9rem); font-weight:
 .dark-section { background: var(--ink); padding: 4rem 2rem; }
 .dark-section h2 { color: white; }
 .dark-section .lead { color: rgba(255,255,255,0.7); max-width: 580px; font-size: 1rem; font-weight: 400; }
-.why-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.25rem; margin-top: 2rem; }
-.why-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--radius-lg); padding: 1.5rem; flex: 1 1 260px; max-width: 320px; }
+.why-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; margin-top: 2rem; }
+@media (max-width: 640px) { .why-grid { grid-template-columns: 1fr; } }
+.why-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--radius-lg); padding: 1.5rem; }
 .why-card h4 { font-family: var(--sans); font-size: 1rem; color: white; margin-bottom: 0.5rem; font-weight: 500; letter-spacing: -0.01em; }
 .why-card p { font-size: 0.9rem; color: rgba(255,255,255,0.65); line-height: 1.8; font-weight: 400; }
 .inperson-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; }
@@ -86,9 +87,9 @@ footer p + p { margin-top: 0.3rem; }
 {% include nav-main.html %}
 
 <div class="section" style="text-align:center;padding-top:5rem;padding-bottom:4rem">
-  <span class="badge">Join our tutor roster, North London</span>
+  <span class="badge">Tutor with us in North London</span>
   <h1>Tutor on your <em>own terms</em>,<br>with families who value it</h1>
-  <p class="lead" style="margin:1.25rem auto 0">Kenwood Education introduces vetted tutors to families across North London. You set your own rate, choose the work you take on, and we handle the admin &mdash; matching, invoicing, and payment &mdash; so you can focus on teaching.</p>
+  <p class="lead" style="margin:1.25rem auto 0">Kenwood Education introduces vetted tutors to families across North London. You set your own rate, choose the work you take on, and we handle the admin &mdash; matching, invoicing, and payment &mdash; so you can focus on teaching. We&rsquo;re a Corporate Member of The Tutors&rsquo; Association.</p>
   <div style="margin-top:2rem">
     <a href="mailto:hello@kenwoodeducation.com?subject=Tutor%20Application" class="btn-primary">Email Us Your CV</a>
   </div>
@@ -98,11 +99,11 @@ footer p + p { margin-top: 0.3rem; }
 
 <div class="section-sm">
   <h2 style="text-align:center">What we look for</h2>
-  <p style="text-align:center;color:var(--muted);font-size:0.95rem;max-width:600px;margin:0 auto 2rem;line-height:1.85">We&rsquo;re selective about who joins us. Every tutor on our roster is either Oxbridge or Russell Group educated with a strong academic track record, or brings genuine, extensive teaching experience &mdash; some as qualified teachers, heads of department, or examiners.</p>
+  <p style="text-align:center;color:var(--muted);font-size:0.95rem;max-width:600px;margin:0 auto 2rem;line-height:1.85">We&rsquo;re selective about who joins us. Our tutors bring strong academic credentials (many from Oxbridge and Russell Group universities), real teaching experience, or both. Some are qualified teachers, heads of department or examiners. We also welcome current university students and newer tutors with an excellent academic record, vetted in exactly the same way.</p>
   <div class="inperson-grid">
     <div class="inperson-card">
-      <h4>Strong academic credentials, or real experience</h4>
-      <p>We're looking for tutors who are either Oxbridge or Russell Group educated, or who bring a genuine, proven track record of teaching or tutoring success.</p>
+      <h4>Maths, English, Science and entrance exams</h4>
+      <p>These are the subjects families ask us for most, so we especially want to hear from tutors who teach them, including 11+ and 13+. We welcome applications in other subjects too.</p>
     </div>
     <div class="inperson-card">
       <h4>Based locally</h4>
@@ -124,19 +125,19 @@ footer p + p { margin-top: 0.3rem; }
     <div class="why-grid">
       <div class="why-card">
         <h4>Set your own rate</h4>
-        <p>You decide your hourly rate. We add a margin when invoicing the family &mdash; what you charge is exactly what you receive. Our margins are among the lowest of any tutoring agency or platform, in person or online. Our Fee Guidance document offers suggested rates based on experience, but the final number is always your choice.</p>
+        <p>You decide your hourly rate. We add a margin when invoicing the family &mdash; what you charge is exactly what you receive. Our margins are among the lowest of any tutoring agency or platform, in person or online. If you&rsquo;d like a steer on where to pitch your rate, just ask, but the final number is always your choice.</p>
       </div>
       <div class="why-card">
         <h4>We handle the admin</h4>
-        <p>Matching, invoicing, and payment collection all run through TutorCruncher. Funds split automatically the moment a family pays &mdash; no chasing invoices yourself.</p>
+        <p>Matching, invoicing, and payment collection all run through TutorCruncher, and your earnings are paid out to you monthly, so you never have to chase an invoice.</p>
       </div>
       <div class="why-card">
         <h4>Work on your terms</h4>
         <p>You're never obliged to accept a match, and we're not obliged to offer a fixed amount of work. Most of our tutors work with other agencies or private students alongside Kenwood.</p>
       </div>
       <div class="why-card">
-        <h4>A supported professional community</h4>
-        <p>Kenwood is a Corporate Member of The Tutors' Association. We're responsive, and you're never navigating a placement alone.</p>
+        <h4>Teach close to home</h4>
+        <p>We match you with families near where you live, so you&rsquo;re not crossing London between lessons. Shorter journeys mean more time teaching, and it&rsquo;s easier to keep working with the same students for the long term.</p>
       </div>
     </div>
   </div>
@@ -161,7 +162,7 @@ footer p + p { margin-top: 0.3rem; }
     </div>
     <div class="step">
       <span class="step-num">4</span>
-      <div><h4>Matched with families</h4><p>Once approved, we'll contact you directly whenever a family looks like a good fit for your subjects, level, and location.</p></div>
+      <div><h4>Matched with families</h4><p>Once approved, we&rsquo;ll let you know whenever a family looks like a good fit for your subjects, level and location. If the family chooses you, you get in touch with them the same day to arrange the first lesson.</p></div>
     </div>
   </div>
   <div style="text-align:center;margin-top:2rem">
@@ -173,16 +174,5 @@ footer p + p { margin-top: 0.3rem; }
 
 {% include footer-main.html %}
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  const navBurger = document.getElementById('nav-burger');
-  const navMobilePanel = document.getElementById('nav-mobile-panel');
-  navBurger.addEventListener('click', function() {
-    const isOpen = navMobilePanel.style.display === 'flex';
-    navMobilePanel.style.display = isOpen ? 'none' : 'flex';
-    navBurger.setAttribute('aria-expanded', String(!isOpen));
-  });
-});
-</script>
 </body>
 </html>
