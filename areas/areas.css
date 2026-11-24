@@ -132,3 +132,8 @@ footer p + p { margin-top: 0.3rem; }
 
 @media (max-width: 900px) { .school-grid, .explore-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 520px) { .school-grid, .explore-grid { grid-template-columns: 1fr; } }
+.subject-list { list-style: none; margin: 0 auto; border-top: var(--border); }
+.subject-list li { display: grid; grid-template-columns: 260px 1fr; gap: 1rem; padding: 0.85rem 0.75rem; border-bottom: var(--border); font-size: 0.92rem; }
+.subject-list li strong { font-weight: 500; color: var(--ink); }
+.subject-list li span { color: var(--muted); }
+@media (max-width: 600px) { .subject-list li { grid-template-columns: 1fr; gap: 0.15rem; } }
