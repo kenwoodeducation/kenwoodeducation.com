@@ -30,8 +30,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
-<script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
@@ -77,6 +75,7 @@ h2 { font-family: var(--sans); font-size: clamp(1.5rem,3vw,1.9rem); font-weight:
 .why-card h4 { font-family: var(--sans); font-size: 1rem; color: white; margin-bottom: 0.5rem; font-weight: 500; letter-spacing: -0.01em; }
 .why-card p { font-size: 0.9rem; color: rgba(255,255,255,0.8); line-height: 1.8; font-weight: 400; }
 .steps { display: grid; gap: 0.85rem; }
+@media (min-width: 761px) { .steps { grid-template-columns: repeat(3, 1fr); } .step { flex-direction: column; gap: 0.6rem; } }
 .step { display: flex; gap: 1.25rem; background: var(--sage); border: var(--border); border-radius: var(--radius-lg); padding: 1.35rem; align-items: flex-start; }
 .step-num { font-family: var(--serif); font-size: 1.75rem; color: var(--forest); opacity: 0.35; font-weight: 400; line-height: 1; min-width: 1.5rem; flex-shrink: 0; }
 .step h4 { font-family: var(--sans); font-size: 1rem; color: var(--ink); margin-bottom: 0.35rem; font-weight: 500; letter-spacing: -0.01em; }
@@ -92,13 +91,6 @@ h2 { font-family: var(--sans); font-size: clamp(1.5rem,3vw,1.9rem); font-weight:
 .compare-table tr:nth-child(even) td.kc { background: rgba(15,110,86,0.13); }
 .compare-table td:first-child { color: var(--ink); font-weight: 500; }
 .tick { color: var(--forest); } .cross { color: #aaa; } .maybe { color: #BA7517; }
-.subject-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.85rem; }
-.subject-card { background: var(--sage); border: var(--border); border-radius: var(--radius); padding: 1.1rem; text-align: center; flex: 1 1 260px; max-width: 300px; }
-.subject-card.featured { background: var(--forest-pale); border-color: var(--forest-border); }
-.subject-card h4 { font-family: var(--sans); font-size: 0.95rem; color: var(--ink); margin-bottom: 0.25rem; font-weight: 500; }
-.subject-card.featured h4 { color: var(--forest-dark); }
-.subject-card p { font-size: 0.8rem; color: var(--hint); line-height: 1.5; }
-.subject-card.featured p { color: var(--forest); }
 .form-wrap { background: var(--sage); border: var(--border); border-radius: var(--radius-lg); padding: 2rem; max-width: 540px; margin: 0 auto; }
 .form-section-label { font-family: var(--sans); font-size: 0.68rem; font-weight: 600; color: var(--forest-dark); letter-spacing: 0.1em; text-transform: uppercase; margin: 1.5rem 0 0.85rem; padding-top: 1.25rem; border-top: 1px solid rgba(15,110,86,0.15); }
 .form-section-label:first-child { margin-top: 0; padding-top: 0; border-top: none; }
@@ -150,17 +142,6 @@ footer p + p { margin-top: 0.3rem; }
 .price-table td:last-child { color: var(--forest-dark); font-weight: 600; white-space: nowrap; }
 .price-table tr:last-child td { border-bottom: none; }
 @media (max-width: 600px) { .price-table { font-size: 0.82rem; } .price-table th, .price-table td { padding: 0.65rem 0.7rem; } }
-.area-map { height: 440px; border-radius: var(--radius-lg); border: var(--border); background: var(--sage); overflow: hidden; position: relative; z-index: 0; }
-.area-map .leaflet-tile-pane { filter: grayscale(0.55) contrast(0.96) brightness(1.03); }
-.area-map .area-label { background: white; border: 1px solid var(--forest-border); border-radius: 20px; color: var(--forest-dark); font-family: var(--sans); font-size: 0.78rem; font-weight: 500; padding: 0.2rem 0.65rem; box-shadow: none; }
-.area-map .area-label.key { background: var(--forest-dark); color: white; border-color: var(--forest-dark); }
-.area-map .area-label::before { display: none; }
-.area-map .leaflet-popup-content { font-family: var(--sans); font-size: 0.85rem; margin: 0.75rem 1rem; line-height: 1.5; }
-.area-map .leaflet-popup-content a { color: var(--forest-dark); font-weight: 500; }
-.area-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; margin-top: 1.25rem; }
-.area-chips a { font-size: 0.85rem; color: var(--forest-dark); background: var(--forest-pale); border: 1px solid var(--forest-mid); padding: 0.4rem 1rem; border-radius: 20px; text-decoration: none; font-weight: 500; }
-.area-chips a:hover { background: var(--forest-mid); }
-@media (max-width: 600px) { .area-map { height: 340px; } }
 @keyframes fadeUp { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
 .hero-content > * { animation: fadeUp 0.6s ease forwards; opacity: 0; }
 .hero-content > *:nth-child(1) { animation-delay: 0.1s; }
@@ -179,6 +160,14 @@ footer p + p { margin-top: 0.3rem; }
 .founder-card p + p { margin-top: 0.75rem; }
 .founder-card .founder-sign { font-family: var(--serif); font-style: italic; font-size: 1.15rem; color: var(--forest-dark); margin-top: 0.75rem; }
 @media (max-width: 600px) { .founder-card { flex-direction: column; padding: 1.5rem; } }
+.subject-list { list-style: none; max-width: 720px; margin: 0 auto; border-top: var(--border); }
+.subject-list li { display: grid; grid-template-columns: 220px 1fr; gap: 1rem; padding: 0.85rem 0.75rem; border-bottom: var(--border); font-size: 0.92rem; }
+.subject-list li strong { font-weight: 500; color: var(--ink); }
+.subject-list li span { color: var(--muted); }
+.subject-list li.featured strong { color: var(--forest-dark); }
+.subject-list li.featured { background: var(--forest-pale); }
+@media (max-width: 600px) { .subject-list li { grid-template-columns: 1fr; gap: 0.15rem; } }
+@media (max-width: 600px) { .compare-table { min-width: 0; } .compare-table th:nth-child(n+4), .compare-table td:nth-child(n+4) { display: none; } }
 </style>
 <script type="application/ld+json">
 {
@@ -257,10 +246,6 @@ footer p + p { margin-top: 0.3rem; }
         <p>A number of our tutors have training or hands-on experience supporting children with learning differences. Where it&rsquo;s relevant, it shapes who we match your child with.</p>
       </div>
     </div>
-    <div style="background:rgba(225,245,238,0.1);border:1px solid rgba(157,225,203,0.3);border-radius:var(--radius);padding:1.1rem 1.5rem;margin-top:1.25rem;display:flex;align-items:flex-start;gap:1rem">
-      <svg style="flex-shrink:0;margin-top:2px" width="18" height="18" fill="none" stroke="#9FE1CB" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-      <p style="font-size:0.88rem;color:rgba(255,255,255,0.8);line-height:1.75"><strong style="color:rgba(255,255,255,0.95);font-weight:500">Why in-person?</strong> A tutor in the room picks up on frustration and confusion straight away and adjusts in the moment. There are fewer distractions than online, and a face-to-face relationship tends to build a child&rsquo;s confidence faster.</p>
-    </div>
   </div>
 </div>
 
@@ -292,11 +277,7 @@ footer p + p { margin-top: 0.3rem; }
     </div>
     <div class="step">
       <span class="step-num">3</span>
-      <div><h4>50% off your first lesson</h4><p>See how your child responds before committing. If it isn&rsquo;t right, we&rsquo;ll find someone better.</p></div>
-    </div>
-    <div class="step">
-      <span class="step-num">4</span>
-      <div><h4>Lesson notes and direct contact</h4><p>After the trial, you get notes after every lesson and message your tutor directly.</p></div>
+      <div><h4>Try a first lesson</h4><p>If it&rsquo;s right, you message your tutor directly and get notes after every lesson. If not, we&rsquo;ll find someone better.</p></div>
     </div>
   </div>
   <div style="text-align:center;margin-top:2rem">
@@ -323,9 +304,6 @@ footer p + p { margin-top: 0.3rem; }
         <tr><td>Prices shown before you enquire</td><td class="kc tick">&#10003; Yes</td><td class="cross">Rarely</td><td class="tick">Usually</td><td class="maybe">Varies</td></tr>
         <tr><td>No registration or finder&rsquo;s fee</td><td class="kc tick">&#10003; Never</td><td class="maybe">Often charged</td><td class="maybe">Sometimes</td><td class="tick">None</td></tr>
         <tr><td>In-person, local tutors</td><td class="kc tick">&#10003; Always</td><td class="maybe">Sometimes</td><td class="cross">Online only</td><td class="maybe">Usually</td></tr>
-        <tr><td>Enhanced DBS checked</td><td class="kc tick">&#10003; Always</td><td class="tick">Usually</td><td class="maybe">Variable</td><td class="cross">Not guaranteed</td></tr>
-        <tr><td>Personal matching</td><td class="kc tick">&#10003; Every child</td><td class="tick">Often</td><td class="cross">Algorithm</td><td class="cross">You do it yourself</td></tr>
-        <tr><td>Lesson notes</td><td class="kc tick">&#10003; Every lesson</td><td class="maybe">Sometimes</td><td class="maybe">Sometimes</td><td class="maybe">Sometimes</td></tr>
       </tbody>
     </table>
   </div>
@@ -335,14 +313,14 @@ footer p + p { margin-top: 0.3rem; }
 
 <div class="section-sm" id="subjects">
   <h2 style="text-align:center">Subjects &amp; levels</h2>
-  <div class="subject-grid">
-    <div class="subject-card featured"><h4>Entrance exams</h4><p>7+, 11+, 13+ &amp; Common Entrance: Maths, English and Reasoning</p></div>
-    <div class="subject-card"><h4>GCSE &amp; A-Level</h4><p>Maths, English, Sciences, History, Economics, Computer Science &amp; more</p></div>
-    <div class="subject-card"><h4>Primary</h4><p>Maths, English, Reading &amp; Phonics, SATs</p></div>
-    <div class="subject-card"><h4>Dyslexia &amp; learning support</h4><p>Tutors experienced with dyslexia, ADHD and SEN</p></div>
-    <div class="subject-card"><h4>Oxbridge &amp; university entry</h4><p>Personal statements, interviews and admissions tests, including medicine</p></div>
-    <div class="subject-card"><h4>Specialist subjects</h4><p>Languages, Classics, Philosophy, Politics, Psychology &amp; more. Ask us.</p></div>
-  </div>
+  <ul class="subject-list">
+    <li class="featured"><strong>Entrance exams</strong><span>7+, 11+, 13+ &amp; Common Entrance: Maths, English and Reasoning</span></li>
+    <li><strong>GCSE &amp; A-Level</strong><span>Maths, English, Sciences, History, Economics, Computer Science &amp; more</span></li>
+    <li><strong>Primary</strong><span>Maths, English, Reading &amp; Phonics, SATs</span></li>
+    <li><strong>Dyslexia &amp; learning support</strong><span>Tutors experienced with dyslexia, ADHD and SEN</span></li>
+    <li><strong>Oxbridge &amp; university entry</strong><span>Personal statements, interviews and admissions tests, including medicine</span></li>
+    <li><strong>Specialist subjects</strong><span>Languages, Classics, Philosophy, Politics, Psychology &amp; more. Just ask.</span></li>
+  </ul>
 </div>
 
 <div class="divider"></div>
@@ -399,14 +377,6 @@ footer p + p { margin-top: 0.3rem; }
 
 <div class="divider"></div>
 
-<div class="section-sm" id="areas">
-  <h2 style="text-align:center">Areas we serve</h2>
-  <p style="text-align:center;color:var(--muted);font-size:0.92rem;margin-bottom:2rem;max-width:520px;margin-left:auto;margin-right:auto;line-height:1.85">In-person tutoring across Highgate, Hampstead, Muswell Hill, Crouch End, East Finchley and neighbouring areas. Not sure if we cover you? Just ask.</p>
-  <div class="area-map" id="area-map" role="region" aria-label="Map of the North London areas we serve"></div>
-</div>
-
-<div class="divider"></div>
-
 <div class="section-sm" id="faq">
   <h2 style="text-align:center">Frequently asked questions</h2>
   <div style="max-width:640px;margin:0 auto;display:grid;gap:0.75rem">
@@ -415,20 +385,12 @@ footer p + p { margin-top: 0.3rem; }
       <p style="font-size:0.88rem;color:var(--muted);line-height:1.8;margin-top:0.75rem">A tutor found through a Facebook group or Nextdoor post hasn&rsquo;t been checked by anyone. We interview every tutor, check their references and enhanced DBS, and choose the one who fits your child. If the first match isn&rsquo;t right, we find you someone else.</p>
     </details>
     <details style="background:var(--sage);border:var(--border);border-radius:var(--radius-lg);padding:1.25rem">
-      <summary style="font-family:var(--sans);font-size:0.95rem;font-weight:500;color:var(--ink);list-style:none;display:flex;justify-content:space-between;align-items:center">Are your tutors really Oxbridge or Russell Group-educated? <span style="color:var(--forest);font-size:1.2rem">+</span></summary>
-      <p style="font-size:0.88rem;color:var(--muted);line-height:1.8;margin-top:0.75rem">Most of our tutors studied at Oxbridge or Russell Group universities. We also work with some tutors who bring outstanding experience instead, such as qualified teachers and heads of department. Every tutor goes through the same vetting: interview, references and an enhanced DBS check.</p>
-    </details>
-    <details style="background:var(--sage);border:var(--border);border-radius:var(--radius-lg);padding:1.25rem">
       <summary style="font-family:var(--sans);font-size:0.95rem;font-weight:500;color:var(--ink);list-style:none;display:flex;justify-content:space-between;align-items:center">What is your approach to safeguarding? <span style="color:var(--forest);font-size:1.2rem">+</span></summary>
       <p style="font-size:0.88rem;color:var(--muted);line-height:1.8;margin-top:0.75rem">An enhanced DBS check, the highest level of UK government background check, is required for every tutor before they meet any family. On top of that, every tutor agrees to our Safeguarding Policy and Code of Conduct, and for students under 18 a responsible adult must be at home throughout the lesson. If anything ever feels wrong, we want to hear about it straight away.</p>
     </details>
     <details style="background:var(--sage);border:var(--border);border-radius:var(--radius-lg);padding:1.25rem">
       <summary style="font-family:var(--sans);font-size:0.95rem;font-weight:500;color:var(--ink);list-style:none;display:flex;justify-content:space-between;align-items:center">Do you only offer in-person tutoring? <span style="color:var(--forest);font-size:1.2rem">+</span></summary>
       <p style="font-size:0.88rem;color:var(--muted);line-height:1.8;margin-top:0.75rem">Yes. We believe a tutor in the same room gets better results for most children, especially those who need confidence as much as content. We focus on doing in-person well.</p>
-    </details>
-    <details style="background:var(--sage);border:var(--border);border-radius:var(--radius-lg);padding:1.25rem">
-      <summary style="font-family:var(--sans);font-size:0.95rem;font-weight:500;color:var(--ink);list-style:none;display:flex;justify-content:space-between;align-items:center">Do you have tutors experienced with dyslexia, ADHD or SEN? <span style="color:var(--forest);font-size:1.2rem">+</span></summary>
-      <p style="font-size:0.88rem;color:var(--muted);line-height:1.8;margin-top:0.75rem">Yes. A number of our tutors have training or hands-on experience adapting their teaching for learning differences. Tell us what would help your child and we&rsquo;ll factor it into who we match.</p>
     </details>
     <details style="background:var(--sage);border:var(--border);border-radius:var(--radius-lg);padding:1.25rem">
       <summary style="font-family:var(--sans);font-size:0.95rem;font-weight:500;color:var(--ink);list-style:none;display:flex;justify-content:space-between;align-items:center">How does payment work? Is there anything to pay upfront? <span style="color:var(--forest);font-size:1.2rem">+</span></summary>
@@ -447,7 +409,7 @@ footer p + p { margin-top: 0.3rem; }
 
 <div style="background:var(--forest-pale);border-top:1px solid var(--forest-border);border-bottom:1px solid var(--forest-border);padding:2rem;text-align:center">
   <p style="font-size:0.95rem;color:var(--forest-dark);margin-bottom:0.4rem;font-weight:500">Ready to get matched with a tutor?</p>
-  <p style="font-size:0.85rem;color:var(--forest);margin-bottom:1rem">No registration fee. Your first lesson is 50% off, with no obligation to continue.</p>
+  <p style="font-size:0.85rem;color:var(--forest);margin-bottom:1rem">Send us a message and we&rsquo;ll talk you through your options.</p>
   <a href="#enquiry" class="btn-primary">Get in touch</a>
 </div>
 
@@ -618,38 +580,5 @@ form.addEventListener('submit', async function(e) {
 });
 </script>
 
-<script>
-(function() {
-  var el = document.getElementById('area-map');
-  if (!el) return;
-  var areas = [
-    { name: 'Highgate',      pc: 'N6',  lat: 51.5717, lng: -0.1477, r: 850, key: true,  url: 'areas/highgate' },
-    { name: 'Hampstead',     pc: 'NW3', lat: 51.5565, lng: -0.1780, r: 850, key: true,  url: 'areas/hampstead' },
-    { name: 'Muswell Hill',  pc: 'N10', lat: 51.5906, lng: -0.1436, r: 850, key: true,  url: 'areas/muswell-hill' },
-    { name: 'Crouch End',    pc: 'N8',  lat: 51.5795, lng: -0.1230, r: 700, key: false },
-    { name: 'East Finchley', pc: 'N2',  lat: 51.5874, lng: -0.1650, r: 700, key: false }
-  ];
-  var started = false;
-  function init() {
-    if (started || typeof L === 'undefined') return;
-    started = true;
-    var map = L.map(el, { zoomSnap: 0.25, scrollWheelZoom: false, dragging: !L.Browser.mobile, tap: false, zoomControl: true, attributionControl: true });
-    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 17, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors' }).addTo(map);
-    map.setView([51.5735, -0.152], 13);
-    var group = L.featureGroup();
-    areas.forEach(function(a) {
-      var c = L.circle([a.lat, a.lng], { radius: a.r, color: '#0F6E56', weight: a.key ? 2 : 1.5, fillColor: '#0F6E56', fillOpacity: a.key ? 0.28 : 0.16, interactive: false }).addTo(group);
-      c.bindTooltip(a.name, { permanent: true, direction: 'center', className: 'area-label' + (a.key ? ' key' : '') });
-    });
-    group.addTo(map);
-    map.fitBounds(group.getBounds(), { padding: [30, 30] });
-  }
-  if ('IntersectionObserver' in window) {
-    new IntersectionObserver(function(entries, obs) {
-      if (entries[0].isIntersecting) { init(); obs.disconnect(); }
-    }, { rootMargin: '300px' }).observe(el);
-  } else { init(); }
-})();
-</script>
 </body>
 </html>
