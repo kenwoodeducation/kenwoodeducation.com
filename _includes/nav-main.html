@@ -3,7 +3,7 @@
 @media (min-width:901px) and (max-width:1100px){
   #nav-links-desktop{display:none!important}
   #nav-links-mobile{display:flex!important}
-  #nav-mobile-panel[style*="flex"]{display:flex!important}
+  #nav-mobile-panel.is-open{display:flex!important}
 }
 #site-header{position:sticky;top:0;z-index:100}
 #site-header nav{position:static!important}
@@ -72,10 +72,11 @@
     e.stopImmediatePropagation();
     var isOpen = panel.style.display === 'flex';
     panel.style.display = isOpen ? 'none' : 'flex';
+    panel.classList.toggle('is-open', !isOpen);
     burger.setAttribute('aria-expanded', String(!isOpen));
   });
   panel.querySelectorAll('a').forEach(function(a) {
-    a.addEventListener('click', function() { panel.style.display = 'none'; burger.setAttribute('aria-expanded', 'false'); });
+    a.addEventListener('click', function() { panel.style.display = 'none'; panel.classList.remove('is-open'); burger.setAttribute('aria-expanded', 'false'); });
   });
 })();
 </script>
