@@ -54,7 +54,7 @@ nav { position: sticky; top: 0; z-index: 100; background: rgba(243,247,244,0.96)
 h1 { font-family: var(--serif); font-size: clamp(2.4rem,5vw,3.5rem); font-weight: 400; line-height: 1.15; color: var(--ink); }
 h1 em { font-style: italic; color: var(--forest); }
 h2 { font-family: var(--sans); font-size: clamp(1.5rem,3vw,1.9rem); font-weight: 500; color: var(--ink); margin-bottom: 1.5rem; letter-spacing: -0.01em; }
-.lead { font-size: 1.05rem; font-weight: 400; color: var(--muted); line-height: 1.85; max-width: 520px; }
+.lead { font-size: 1.05rem; font-weight: 400; color: var(--muted); line-height: 1.85; max-width: 640px; }
 .badge { display: inline-block; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--forest); border: 1px solid var(--forest); padding: 0.3rem 0.9rem; border-radius: 20px; margin-bottom: 1.5rem; }
 .areas { display: flex; gap: 0.4rem; flex-wrap: wrap; justify-content: center; margin: 1.5rem 0; }
 .area-tag { font-size: 0.78rem; color: var(--forest-dark); background: var(--forest-pale); border: 1px solid var(--forest-mid); padding: 0.28rem 0.9rem; border-radius: 20px; font-weight: 500; }
@@ -91,7 +91,7 @@ h2 { font-family: var(--sans); font-size: clamp(1.5rem,3vw,1.9rem); font-weight:
 .compare-table tr:nth-child(even) td.kc { background: rgba(15,110,86,0.13); }
 .compare-table td:first-child { color: var(--ink); font-weight: 500; }
 .tick { color: var(--forest); } .cross { color: #aaa; } .maybe { color: #BA7517; }
-.form-wrap { background: var(--sage); border: var(--border); border-radius: var(--radius-lg); padding: 2rem; max-width: 540px; margin: 0 auto; }
+.form-wrap { background: var(--sage); border: var(--border); border-radius: var(--radius-lg); padding: 2rem; max-width: 640px; margin: 0 auto; }
 .form-section-label { font-family: var(--sans); font-size: 0.68rem; font-weight: 600; color: var(--forest-dark); letter-spacing: 0.1em; text-transform: uppercase; margin: 1.5rem 0 0.85rem; padding-top: 1.25rem; border-top: 1px solid rgba(15,110,86,0.15); }
 .form-section-label:first-child { margin-top: 0; padding-top: 0; border-top: none; }
 .form-row { margin-bottom: 1rem; }
@@ -133,7 +133,7 @@ footer p + p { margin-top: 0.3rem; }
 @media (min-width: 901px) {
   #nav-mobile-panel { display: none !important; }
 }
-.price-note { max-width: 640px; margin: 1.25rem auto 0; text-align: center; font-size: 0.9rem; color: var(--muted); line-height: 1.75; }
+.price-note { max-width: 760px; margin: 1.25rem auto 0; text-align: center; font-size: 0.9rem; color: var(--muted); line-height: 1.75; }
 .price-note a { color: var(--forest-dark); }
 .price-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0 1rem; font-size: 0.9rem; background: white; border: var(--border); border-radius: var(--radius-lg); overflow: hidden; }
 .price-table th { background: var(--forest-dark); color: var(--forest-pale); padding: 0.75rem 1rem; text-align: left; font-weight: 500; font-size: 0.7rem; letter-spacing: 0.06em; text-transform: uppercase; }
@@ -153,15 +153,15 @@ footer p + p { margin-top: 0.3rem; }
 .ta-badge { display: inline-flex; align-items: center; gap: 0.75rem; margin-top: 1.75rem; text-decoration: none; border: var(--border); border-radius: var(--radius); padding: 0.5rem 1rem; background: var(--sage); }
 .ta-mark { display: flex; flex-direction: column; font-family: var(--serif); font-size: 0.85rem; font-weight: 500; letter-spacing: 0.06em; color: var(--forest-dark); line-height: 1.05; text-align: left; }
 .ta-text { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); border-left: 1px solid rgba(15,110,86,0.25); padding-left: 0.75rem; }
-.founder-card { display: flex; gap: 1.5rem; align-items: flex-start; background: var(--sage); border: var(--border); border-radius: var(--radius-lg); padding: 2rem; max-width: 720px; margin: 0 auto; }
+.founder-card { display: flex; gap: 1.5rem; align-items: flex-start; background: var(--sage); border: var(--border); border-radius: var(--radius-lg); padding: 2rem 2.25rem; margin: 0 auto; }
 .founder-photo { flex-shrink: 0; width: 96px; height: 96px; border-radius: 50%; object-fit: cover; border: 2px solid var(--forest-pale); }
 .founder-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--forest); margin-bottom: 0.5rem; }
 .founder-card p { font-size: 0.95rem; color: var(--muted); line-height: 1.85; }
 .founder-card p + p { margin-top: 0.75rem; }
 .founder-card .founder-sign { font-family: var(--serif); font-style: italic; font-size: 1.15rem; color: var(--forest-dark); margin-top: 0.75rem; }
 @media (max-width: 600px) { .founder-card { flex-direction: column; padding: 1.5rem; } }
-.subject-list { list-style: none; max-width: 720px; margin: 0 auto; border-top: var(--border); }
-.subject-list li { display: grid; grid-template-columns: 220px 1fr; gap: 1rem; padding: 0.85rem 0.75rem; border-bottom: var(--border); font-size: 0.92rem; }
+.subject-list { list-style: none; margin: 0 auto; border-top: var(--border); }
+.subject-list li { display: grid; grid-template-columns: 260px 1fr; gap: 1rem; padding: 0.85rem 0.75rem; border-bottom: var(--border); font-size: 0.92rem; }
 .subject-list li strong { font-weight: 500; color: var(--ink); }
 .subject-list li span { color: var(--muted); }
 .subject-list li.featured strong { color: var(--forest-dark); }
@@ -327,7 +327,7 @@ footer p + p { margin-top: 0.3rem; }
 
 <div class="section-sm" id="pricing">
   <h2 style="text-align:center">What tutoring costs</h2>
-  <p style="text-align:center;color:var(--muted);font-size:0.95rem;max-width:560px;margin:0 auto;line-height:1.85">Each tutor&rsquo;s rate depends on their experience. The rate we confirm is the full rate you pay, with no hidden charges.</p>
+  <p style="text-align:center;color:var(--muted);font-size:0.95rem;max-width:680px;margin:0 auto;line-height:1.85">Each tutor&rsquo;s rate depends on their experience. The rate we confirm is the full rate you pay, with no hidden charges.</p>
   <table class="price-table">
       <thead><tr><th>Level</th><th>Tutor profile</th><th>Typical price per hour</th></tr></thead>
       <tbody>
@@ -379,7 +379,7 @@ footer p + p { margin-top: 0.3rem; }
 
 <div class="section-sm" id="faq">
   <h2 style="text-align:center">Frequently asked questions</h2>
-  <div style="max-width:640px;margin:0 auto;display:grid;gap:0.75rem">
+  <div style="margin:0 auto;display:grid;gap:0.75rem">
     <details style="background:var(--sage);border:var(--border);border-radius:var(--radius-lg);padding:1.25rem">
       <summary style="font-family:var(--sans);font-size:0.95rem;font-weight:500;color:var(--ink);list-style:none;display:flex;justify-content:space-between;align-items:center">Why use an agency rather than finding a tutor yourself? <span style="color:var(--forest);font-size:1.2rem">+</span></summary>
       <p style="font-size:0.88rem;color:var(--muted);line-height:1.8;margin-top:0.75rem">A tutor found through a Facebook group or Nextdoor post hasn&rsquo;t been checked by anyone. We interview every tutor, check their references and enhanced DBS, and choose the one who fits your child. If the first match isn&rsquo;t right, we find you someone else.</p>
