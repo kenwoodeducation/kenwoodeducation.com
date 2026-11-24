@@ -83,12 +83,20 @@ h2 { font-family: var(--sans); font-size: clamp(1.5rem,3vw,1.9rem); font-weight:
 .why-item p { font-size: 0.94rem; color: var(--muted); line-height: 1.75; }
 .why-item p a { color: var(--forest-dark); }
 @media (max-width: 760px) { .why-wrap { grid-template-columns: 1fr; gap: 1.75rem; } .why-intro { text-align: center; } .why-intro .btn-primary { display: none; } .why-section { padding: 3.25rem 1.25rem; } }
-.steps { display: grid; gap: 0.85rem; }
-@media (min-width: 761px) { .steps { grid-template-columns: repeat(3, 1fr); } .step { flex-direction: column; gap: 0.6rem; } }
-.step { display: flex; gap: 1.25rem; background: var(--sage); border: var(--border); border-radius: var(--radius-lg); padding: 1.35rem; align-items: flex-start; }
-.step-num { font-family: var(--serif); font-size: 1.75rem; color: var(--forest); opacity: 0.35; font-weight: 400; line-height: 1; min-width: 1.5rem; flex-shrink: 0; }
-.step h4 { font-family: var(--sans); font-size: 1rem; color: var(--ink); margin-bottom: 0.35rem; font-weight: 500; letter-spacing: -0.01em; }
-.step p { font-size: 0.9rem; color: var(--muted); line-height: 1.75; font-weight: 400; }
+.how-sub { text-align: center; color: var(--muted); font-size: 0.98rem; margin: -0.75rem auto 2.5rem; }
+.steps { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; position: relative; }
+.steps::before { content: ""; position: absolute; top: 22px; left: calc(100% / 6); right: calc(100% / 6); height: 2px; background: var(--forest-mid); z-index: 0; }
+.step { position: relative; z-index: 1; text-align: center; }
+.step-num { width: 46px; height: 46px; margin: 0 auto 1.1rem; border-radius: 50%; background: var(--forest); color: white; font-family: var(--serif); font-size: 1.45rem; line-height: 1; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 6px white; }
+.step h4 { font-family: var(--sans); font-size: 1.02rem; color: var(--ink); margin-bottom: 0.45rem; font-weight: 600; letter-spacing: -0.01em; }
+.step p { font-size: 0.92rem; color: var(--muted); line-height: 1.75; }
+@media (max-width: 760px) {
+  .steps { grid-template-columns: 1fr; gap: 1.5rem; }
+  .steps::before { display: none; }
+  .step:not(:last-child)::after { content: ""; position: absolute; left: 22px; top: 46px; bottom: -1.5rem; width: 2px; background: var(--forest-mid); }
+  .step { text-align: left; padding-left: 4.25rem; min-height: 46px; }
+  .step-num { position: absolute; left: 0; top: 0; margin: 0; }
+}
 .compare-wrap { overflow-x: auto; }
 .compare-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; min-width: 560px; }
 .compare-table th { background: var(--forest-dark); color: var(--forest-pale); padding: 0.75rem 1rem; text-align: left; font-weight: 500; font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; }
@@ -276,21 +284,25 @@ footer p + p { margin-top: 0.3rem; }
 
 <div class="section-sm" id="how-it-works">
   <h2 style="text-align:center">How it works</h2>
-  <div class="steps">
-    <div class="step">
+  <p class="how-sub">Three simple steps, and no commitment until you&rsquo;re happy.</p>
+  <ol class="steps">
+    <li class="step">
       <span class="step-num">1</span>
-      <div><h4>Tell us about your child</h4><p>Year group, what they need help with, and any target grade or school.</p></div>
-    </div>
-    <div class="step">
+      <h4>Tell us about your child</h4>
+      <p>Send a message or fill in our short form. Year group, what they need help with, and any target grade or school.</p>
+    </li>
+    <li class="step">
       <span class="step-num">2</span>
-      <div><h4>We choose the tutor</h4><p>We match on subject, exam board, teaching style and personality, not just whoever is available.</p></div>
-    </div>
-    <div class="step">
+      <h4>We choose the tutor</h4>
+      <p>We match on subject, exam board, teaching style and personality, not just whoever is free, then introduce you.</p>
+    </li>
+    <li class="step">
       <span class="step-num">3</span>
-      <div><h4>Try a first lesson</h4><p>If it&rsquo;s right, you message your tutor directly and get notes after every lesson. If not, we&rsquo;ll find someone better.</p></div>
-    </div>
-  </div>
-  <div style="text-align:center;margin-top:2rem">
+      <h4>Try a first lesson</h4>
+      <p>If it&rsquo;s right, you arrange lessons directly with your tutor and get notes after every one. If not, we&rsquo;ll find someone better.</p>
+    </li>
+  </ol>
+  <div style="text-align:center;margin-top:2.25rem">
     <a href="#enquiry" class="btn-primary">Get in touch</a>
   </div>
 </div>
