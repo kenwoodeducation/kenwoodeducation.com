@@ -184,7 +184,7 @@ footer p + p { margin-top: 0.3rem; }
 .subject-list li.featured strong { color: var(--forest-dark); }
 .subject-list li.featured { background: var(--forest-pale); }
 @media (max-width: 600px) { .subject-list li { grid-template-columns: 1fr; gap: 0.15rem; } }
-@media (max-width: 600px) { .compare-table { min-width: 0; } .compare-table th:nth-child(n+4), .compare-table td:nth-child(n+4) { display: none; } }
+@media (max-width: 600px) { .compare-table { min-width: 0; } .compare-table th:nth-child(3), .compare-table td:nth-child(3), .compare-table th:nth-child(4), .compare-table td:nth-child(4) { display: none; } }
 .faq-list { border-top: var(--border); }
 .faq-item { border-bottom: var(--border); }
 .faq-item summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1.5rem; padding: 1.2rem 0.25rem; font-size: 1rem; font-weight: 500; color: var(--ink); }
@@ -390,9 +390,12 @@ footer p + p { margin-top: 0.3rem; }
         </tr>
       </thead>
       <tbody>
-        <tr><td>Prices shown before you enquire</td><td class="kc tick">&#10003; Yes</td><td class="cross">Rarely</td><td class="tick">Usually</td><td class="maybe">Varies</td></tr>
-        <tr><td>No registration or finder&rsquo;s fee</td><td class="kc tick">&#10003; Never</td><td class="maybe">Often charged</td><td class="maybe">Sometimes</td><td class="tick">None</td></tr>
-        <tr><td>In-person, local tutors</td><td class="kc tick">&#10003; Always</td><td class="maybe">Sometimes</td><td class="cross">Online only</td><td class="maybe">Usually</td></tr>
+        <tr><td>Interview, references &amp; enhanced DBS checked</td><td class="kc tick">&#10003; Always</td><td class="tick">Usually</td><td class="maybe">DBS only, varies</td><td class="cross">You check yourself</td></tr>
+        <tr><td>Tutor recommended for your child</td><td class="kc tick">&#10003; Always</td><td class="tick">Usually</td><td class="cross">You browse profiles</td><td class="cross">You search yourself</td></tr>
+        <tr><td>In-person, local tutors</td><td class="kc tick">&#10003; Always</td><td class="maybe">Sometimes</td><td class="cross">Mostly online</td><td class="tick">Usually</td></tr>
+        <tr><td>If it&rsquo;s not the right fit</td><td class="kc tick">&#10003; First lesson with a new tutor free</td><td class="maybe">Varies</td><td class="maybe">Some offer a guarantee</td><td class="cross">Start your search again</td></tr>
+        <tr><td>Lesson notes after every lesson</td><td class="kc tick">&#10003; Always</td><td class="maybe">Sometimes</td><td class="maybe">Sometimes</td><td class="maybe">Sometimes</td></tr>
+        <tr><td>Prices shown, no registration fee</td><td class="kc tick">&#10003; Yes</td><td class="cross">Rarely</td><td class="tick">Yes</td><td class="maybe">Varies</td></tr>
       </tbody>
     </table>
   </div>
