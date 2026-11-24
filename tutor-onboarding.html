@@ -8,7 +8,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tutor Onboarding | Kenwood Education</title>
 <meta name="robots" content="noindex, nofollow">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230F6E56'/><circle cx='16' cy='14' r='10' fill='none' stroke='white' stroke-width='1.5'/><path d='M16 5 C16 5 8 10 8 15 C8 19 11 22 16 22 C21 22 24 19 24 15 C24 10 16 5 16 5Z' fill='white' opacity='0.25'/><path d='M16 5 C16 5 8 10 8 15 C8 19 11 22 16 22 C21 22 24 19 24 15 C24 10 16 5 16 5Z' fill='none' stroke='white' stroke-width='1.3'/><line x1='16' y1='21' x2='16' y2='27' stroke='white' stroke-width='1.3' stroke-linecap='round'/></svg>">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -47,6 +50,19 @@ input:focus, select:focus, textarea:focus { border-color: var(--forest); }
 .form-submit { width: 100%; background: var(--forest); color: white; border: none; padding: 0.9rem; font-family: var(--sans); font-size: 0.92rem; font-weight: 500; border-radius: var(--radius); cursor: pointer; transition: background 0.2s; letter-spacing: 0.03em; margin-top: 0.5rem; }
 .form-submit:hover { background: var(--forest-dark); }
 .form-submit:disabled { background: var(--forest-dark); cursor: default; }
+.choices-col { display: grid; gap: 0.55rem; }
+.choice { display: flex !important; align-items: center; gap: 0.55rem; text-transform: none !important; letter-spacing: normal !important; font-size: 0.9rem !important; font-weight: 400 !important; color: var(--ink) !important; margin: 0 !important; cursor: pointer; }
+.choice input { width: 16px; height: 16px; accent-color: var(--forest); margin: 0; flex: 0 0 16px; }
+.dbs-note { font-size: 0.85rem; color: var(--forest-deeper); background: var(--forest-pale); border: 1px solid var(--forest-border); border-radius: var(--radius); padding: 0.75rem 0.95rem; margin-bottom: 1rem; line-height: 1.6; }
+.dbs-note a { color: var(--forest-dark); font-weight: 500; }
+.ref-intro { font-size: 0.88rem; color: var(--muted); margin: 1.5rem 0 -0.5rem; padding-top: 1.25rem; border-top: 1px solid rgba(15,110,86,0.18); line-height: 1.6; }
+.ref-intro + .form-section-label { border-top: none; padding-top: 0; }
+.onb-done { text-align: center; padding: 1.5rem 1rem; outline: none; }
+.onb-done-icon { width: 52px; height: 52px; margin: 0 auto 1rem; border-radius: 50%; background: var(--forest); color: white; display: flex; align-items: center; justify-content: center; }
+.onb-done h2 { font-family: var(--serif); font-size: 2rem; font-weight: 400; color: var(--ink); margin-bottom: 0.6rem; }
+.onb-done p { color: var(--forest-deeper); font-size: 0.95rem; line-height: 1.8; }
+.onb-done .onb-done-small { margin-top: 0.75rem; font-size: 0.85rem; color: var(--muted); }
+.onb-done a { color: var(--forest-dark); font-weight: 500; }
 .form-note { font-size: 0.78rem; color: var(--hint); text-align: center; margin-top: 0.75rem; line-height: 1.6; }
 footer { background: var(--ink); padding: 2.5rem 2rem; text-align: center; }
 footer p { font-size: 0.78rem; color: white; font-weight: 300; }
@@ -138,16 +154,29 @@ footer p + p { margin-top: 0.3rem; }
       </div>
 
       <div class="form-section-label">Background check</div>
-      <div class="form-row">
-        <label>DBS Certificate Number <span>(optional)</span></label>
-        <input type="text" name="entry.278369993">
-        <p class="field-hint">Leave blank if you do not yet hold a DBS</p>
+      <div class="form-row" id="dbs-status-row">
+        <label>Do you already hold an enhanced DBS certificate? <span style="color:var(--forest);font-weight:600">*</span></label>
+        <div class="choices-col">
+          <label class="choice"><input type="radio" name="dbs_status" value="update"> Yes, and it&rsquo;s on the DBS Update Service</label>
+          <label class="choice"><input type="radio" name="dbs_status" value="no-update"> Yes, but it&rsquo;s not on the Update Service</label>
+          <label class="choice"><input type="radio" name="dbs_status" value="none"> No, not yet</label>
+        </div>
+        <p class="field-error" id="dbs-status-error">Please select one.</p>
       </div>
-      <div class="form-row">
-        <label>Date of birth <span>(optional)</span></label>
-        <input type="date" name="entry.1510012245">
-        <p class="field-hint">This allows us to check your DBS status if it is on the update service. If it is not on the update service, please email a copy of the certificate to hello@kenwoodeducation.com.</p>
+      <div class="form-row" id="dbs-number-row" style="display:none">
+        <label>DBS certificate number <span style="color:var(--forest);font-weight:600">*</span></label>
+        <input type="text" name="entry.278369993" id="dbs-number" inputmode="numeric" placeholder="e.g. 001234567890" disabled>
+        <p class="field-hint">You&rsquo;ll find this on your certificate. It&rsquo;s 12 digits and usually starts with 00.</p>
+        <p class="field-error">This field is required.</p>
       </div>
+      <div class="form-row" id="dbs-dob-row" style="display:none">
+        <label>Date of birth <span style="color:var(--forest);font-weight:600">*</span></label>
+        <input type="date" name="entry.1510012245" id="dbs-dob" disabled>
+        <p class="field-hint">We only use this to check your certificate on the Update Service.</p>
+        <p class="field-error">This field is required.</p>
+      </div>
+      <p class="dbs-note" id="dbs-note-email" style="display:none">Please email a copy of your DBS certificate to <a href="mailto:hello@kenwoodeducation.com?subject=DBS%20certificate">hello@kenwoodeducation.com</a>.</p>
+      <p class="dbs-note" id="dbs-note-none" style="display:none">That&rsquo;s fine. We can apply for an enhanced DBS check on your behalf. The cost of the check is yours to cover, and it typically takes up to two weeks.</p>
 
       <div class="form-section-label">Teaching details</div>
       <div class="form-row">
@@ -158,7 +187,7 @@ footer p + p { margin-top: 0.3rem; }
       <div class="form-row">
         <label>Desired hourly rate <span style="color:var(--forest);font-weight:600">*</span></label>
         <input type="text" name="entry.1001086480" required>
-        <p class="field-hint">Input the amount you wish to receive per hour in &pound;/GBP. We will always try to achieve a better rate for you where possible.</p>
+        <p class="field-hint">The amount you&rsquo;d like to receive per hour, in &pound;. We add our margin on top, so this is exactly what you&rsquo;ll be paid.</p>
         <p class="field-error">This field is required.</p>
       </div>
       <div class="form-row">
@@ -167,6 +196,7 @@ footer p + p { margin-top: 0.3rem; }
         <p class="field-error">This field is required.</p>
       </div>
 
+      <p class="ref-intro">Please give two referees. At least one should have seen you teach, tutor or work with children.</p>
       <div class="form-section-label">Reference 1</div>
       <div class="form-row">
         <label>Full name <span style="color:var(--forest);font-weight:600">*</span></label>
@@ -242,6 +272,13 @@ footer p + p { margin-top: 0.3rem; }
       <button type="submit" class="form-submit">Submit</button>
       <p class="form-note"><span style="color:var(--forest);font-weight:600">*</span> Required field. Thank you &mdash; please give your referees a heads-up, as we&rsquo;ll be in touch with them as part of the onboarding process.</p>
     </form>
+    <div id="onb-done" class="onb-done" style="display:none" role="status" aria-live="polite" tabindex="-1">
+      <span class="onb-done-icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+      <h2>Thank you<span id="onb-done-name"></span></h2>
+      <p>We&rsquo;ve received your details. Please give your referees a heads-up, as we&rsquo;ll be in touch with them shortly.</p>
+      <p class="onb-done-small" id="onb-done-dbs" style="display:none">Don&rsquo;t forget to email a copy of your DBS certificate to <a href="mailto:hello@kenwoodeducation.com?subject=DBS%20certificate">hello@kenwoodeducation.com</a>.</p>
+      <p class="onb-done-small">Any questions? Email <a href="mailto:hello@kenwoodeducation.com">hello@kenwoodeducation.com</a> or call <a href="tel:+447466641281">07466 641281</a>.</p>
+    </div>
   </div>
 </div>
 
@@ -273,12 +310,32 @@ document.querySelectorAll('#tutor-onboarding-form input, #tutor-onboarding-form 
   field.addEventListener('change', () => clearFieldError(field));
 });
 
+/* DBS: show the right follow-up for each answer */
+const dbsRadios = document.querySelectorAll('input[name="dbs_status"]');
+const dbsNumber = document.getElementById('dbs-number');
+const dbsDob = document.getElementById('dbs-dob');
+function setField(input, rowId, on) {
+  document.getElementById(rowId).style.display = on ? '' : 'none';
+  input.disabled = !on; input.required = on;
+  if (!on) { input.value = ''; clearFieldError(input); }
+}
+dbsRadios.forEach(function(r) {
+  r.addEventListener('change', function() {
+    const v = this.value;
+    document.getElementById('dbs-status-error').style.display = 'none';
+    setField(dbsNumber, 'dbs-number-row', v === 'update' || v === 'no-update');
+    setField(dbsDob, 'dbs-dob-row', v === 'update');
+    document.getElementById('dbs-note-email').style.display = v === 'no-update' ? '' : 'none';
+    document.getElementById('dbs-note-none').style.display = v === 'none' ? '' : 'none';
+  });
+});
+
 form.addEventListener('submit', async function(e) {
   e.preventDefault();
 
   let firstInvalid = null;
   document.querySelectorAll('#tutor-onboarding-form input[required], #tutor-onboarding-form textarea[required]').forEach(field => {
-    if (field.type === 'checkbox') return; // handled separately below
+    if (field.type === 'checkbox' || field.type === 'radio') return; // handled separately below
     if (!field.checkValidity()) {
       showFieldError(field);
       if (!firstInvalid) firstInvalid = field;
@@ -286,6 +343,11 @@ form.addEventListener('submit', async function(e) {
       clearFieldError(field);
     }
   });
+
+  if (!Array.from(dbsRadios).some(function(r) { return r.checked; })) {
+    document.getElementById('dbs-status-error').style.display = 'block';
+    if (!firstInvalid) firstInvalid = dbsRadios[0];
+  }
 
   const tutorAgreementCb = document.getElementById('tutor-agreement-checkbox');
   if (!tutorAgreementCb.checked) {
@@ -331,9 +393,17 @@ form.addEventListener('submit', async function(e) {
       mode: 'no-cors',
       body: formData
     });
-    btn.textContent = "Thank you \u2014 we've received your details";
-    btn.style.background = '#085041';
-    form.querySelectorAll('input, select, textarea, button').forEach(el => el.disabled = true);
+    const preferred = (form.querySelector('[name="entry.730713962"]').value || '').trim();
+    const first = (form.querySelector('[name="entry.591413194"]').value || '').trim();
+    const name = (preferred || first).split(/\s+/)[0] || '';
+    document.getElementById('onb-done-name').textContent = name ? ', ' + name : '';
+    const status = (Array.from(dbsRadios).find(function(r) { return r.checked; }) || {}).value;
+    document.getElementById('onb-done-dbs').style.display = status === 'no-update' ? '' : 'none';
+    form.style.display = 'none';
+    const done = document.getElementById('onb-done');
+    done.style.display = 'block';
+    done.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    done.focus({ preventScroll: true });
     if (typeof gtag === 'function') {
       gtag('event', 'tutor_onboarding_submitted');
     }

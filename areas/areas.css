@@ -132,3 +132,46 @@ footer p + p { margin-top: 0.3rem; }
 
 @media (max-width: 900px) { .school-grid, .explore-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 520px) { .school-grid, .explore-grid { grid-template-columns: 1fr; } }
+.subject-list { list-style: none; margin: 0 auto; border-top: var(--border); }
+.subject-list li { display: grid; grid-template-columns: 260px 1fr; gap: 1rem; padding: 0.85rem 0.75rem; border-bottom: var(--border); font-size: 0.92rem; }
+.subject-list li strong { font-weight: 500; color: var(--ink); }
+.subject-list li span { color: var(--muted); }
+@media (max-width: 600px) { .subject-list li { grid-template-columns: 1fr; gap: 0.15rem; } }
+/* Area page layout (Nov 2026) */
+.ap-why { background: var(--sage); padding: 4rem 2rem; }
+.ap-why-wrap { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 3rem; align-items: start; }
+.ap-why-intro h2 { font-family: var(--serif); font-size: clamp(1.9rem, 3.2vw, 2.4rem); font-weight: 400; line-height: 1.15; margin-bottom: 1rem; }
+.ap-why-intro p { font-size: 0.98rem; color: var(--muted); line-height: 1.8; }
+.ap-why-list { display: grid; }
+.ap-why-item { display: flex; gap: 1.1rem; padding: 1.3rem 0; border-bottom: var(--border); }
+.ap-why-item:first-child { padding-top: 0.25rem; }
+.ap-why-item:last-child { border-bottom: none; padding-bottom: 0; }
+.ap-why-icon { flex-shrink: 0; width: 44px; height: 44px; border-radius: 50%; background: white; border: 1px solid var(--forest-border); color: var(--forest); display: flex; align-items: center; justify-content: center; }
+.ap-why-item h3 { font-family: var(--sans); font-size: 1rem; font-weight: 600; color: var(--ink); margin-bottom: 0.3rem; }
+.ap-why-item p { font-size: 0.92rem; color: var(--muted); line-height: 1.75; }
+.ap-why-item p a { color: var(--forest-dark); }
+.ap-sub { text-align: center; color: var(--muted); font-size: 0.95rem; max-width: 640px; margin: -0.5rem auto 1.75rem; line-height: 1.8; }
+.ap-note { text-align: center; color: var(--muted); font-size: 0.9rem; max-width: 640px; margin: 1.75rem auto 0; line-height: 1.8; }
+.ap-note a { color: var(--forest-dark); }
+.ap-close { background: var(--forest-pale); border-top: 1px solid var(--forest-border); border-bottom: 1px solid var(--forest-border); padding: 3rem 2rem; text-align: center; }
+.ap-close h2 { margin-bottom: 0.6rem; }
+.ap-close p { color: var(--forest-dark); font-size: 0.95rem; margin-bottom: 1.5rem; }
+ol.steps { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; position: relative; }
+ol.steps::before { content: ""; position: absolute; top: 22px; left: calc(100% / 6); right: calc(100% / 6); height: 2px; background: var(--forest-mid); z-index: 0; }
+ol.steps .step { position: relative; z-index: 1; text-align: center; display: block; background: none; border: none; padding: 0; }
+ol.steps .step-num { width: 46px; height: 46px; margin: 0 auto 1.1rem; border-radius: 50%; background: var(--forest); color: white; font-family: var(--serif); font-size: 1.45rem; line-height: 1; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 6px white; opacity: 1; min-width: 0; }
+ol.steps .step h4 { font-size: 1.02rem; font-weight: 600; margin-bottom: 0.45rem; }
+ol.steps .step p { font-size: 0.92rem; color: var(--muted); line-height: 1.75; }
+@media (max-width: 760px) {
+  .ap-why-wrap { grid-template-columns: 1fr; gap: 1.5rem; }
+  .ap-why { padding: 3rem 1.25rem; }
+  ol.steps { grid-template-columns: 1fr; gap: 1.5rem; }
+  ol.steps::before { display: none; }
+  ol.steps .step:not(:last-child)::after { content: ""; position: absolute; left: 22px; top: 46px; bottom: -1.5rem; width: 2px; background: var(--forest-mid); }
+  ol.steps .step { text-align: left; padding-left: 4.25rem; min-height: 46px; }
+  ol.steps .step-num { position: absolute; left: 0; top: 0; margin: 0; }
+}
+.btn-wa { display: inline-flex; align-items: center; gap: 0.5rem; background: white; color: var(--forest-dark); border: 1.5px solid #25D366; padding: 0.8rem 1.6rem; font-family: var(--sans); font-size: 0.9rem; font-weight: 500; border-radius: var(--radius); text-decoration: none; transition: background 0.2s; }
+.btn-wa:hover { background: #f1fbf4; }
+.ap-contact { margin-top: 0.9rem; font-size: 0.82rem; color: var(--hint); }
+.ap-contact a { color: var(--forest-dark); }

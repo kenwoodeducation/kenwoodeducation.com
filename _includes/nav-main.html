@@ -3,7 +3,7 @@
 @media (min-width:901px) and (max-width:1100px){
   #nav-links-desktop{display:none!important}
   #nav-links-mobile{display:flex!important}
-  #nav-mobile-panel[style*="flex"]{display:flex!important}
+  #nav-mobile-panel.is-open{display:flex!important}
 }
 #site-header{position:sticky;top:0;z-index:100}
 #site-header nav{position:static!important}
@@ -26,9 +26,9 @@
       </span>
     </a>
     <span id="nav-phone-divider" style="width:1px;height:26px;background:rgba(15,110,86,0.2)"></span>
-    <a href="tel:+442039515827" id="nav-phone" style="color:var(--forest-dark);text-decoration:none;font-size:1.05rem;font-weight:600;letter-spacing:-0.01em;display:flex;align-items:center;gap:0.4rem">
+    <a href="tel:+447466641281" id="nav-phone" style="color:var(--forest-dark);text-decoration:none;font-size:1.05rem;font-weight:600;letter-spacing:-0.01em;display:flex;align-items:center;gap:0.4rem">
       <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-      020 3951 5827
+      07466 641281
     </a>
   </div>
   <div id="nav-links-desktop" style="display:flex;align-items:center;gap:1.75rem">
@@ -50,9 +50,9 @@
   </div>
 </nav>
 <div id="nav-mobile-panel" style="display:none;background:var(--cream);border-bottom:var(--border);padding:1rem 1.25rem;flex-direction:column;gap:0.85rem">
-  <a href="tel:+442039515827" style="color:var(--forest-dark);text-decoration:none;font-size:0.92rem;font-weight:600;display:flex;align-items:center;gap:0.45rem">
+  <a href="tel:+447466641281" style="color:var(--forest-dark);text-decoration:none;font-size:0.92rem;font-weight:600;display:flex;align-items:center;gap:0.45rem">
     <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-    020 3951 5827
+    07466 641281
   </a>
   <a href="/" style="color:{% if page.url == '/' %}var(--forest-dark){% else %}#3D5247{% endif %};text-decoration:none;font-size:0.92rem;font-weight:{% if page.url == '/' %}700{% else %}500{% endif %}"{% if page.url == '/' %} aria-current="page"{% endif %}>Home</a>
   <a href="/#subjects" style="color:#3D5247;text-decoration:none;font-size:0.92rem;font-weight:500">Subjects</a>
@@ -72,10 +72,11 @@
     e.stopImmediatePropagation();
     var isOpen = panel.style.display === 'flex';
     panel.style.display = isOpen ? 'none' : 'flex';
+    panel.classList.toggle('is-open', !isOpen);
     burger.setAttribute('aria-expanded', String(!isOpen));
   });
   panel.querySelectorAll('a').forEach(function(a) {
-    a.addEventListener('click', function() { panel.style.display = 'none'; burger.setAttribute('aria-expanded', 'false'); });
+    a.addEventListener('click', function() { panel.style.display = 'none'; panel.classList.remove('is-open'); burger.setAttribute('aria-expanded', 'false'); });
   });
 })();
 </script>

@@ -5,6 +5,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <title>Safeguarding | Kenwood Education</title>
 <meta name="description" content="Kenwood Education's commitment to safeguarding and child welfare. How we vet every tutor, what we ask of families and tutors, and how to raise a concern.">
 <script src="/assets/js/kenwood-consent.js"></script>
@@ -44,18 +48,53 @@ nav { position: sticky; top: 0; z-index: 100; background: rgba(243,247,244,0.96)
     display: none !important;
   }
 }
-.wrap { max-width: 760px; margin: 0 auto; padding: 4rem 2rem 4.5rem; }
-h1 { font-family: var(--serif); font-size: clamp(2.4rem,5vw,3.25rem); font-weight: 400; color: var(--ink); margin-bottom: 0.5rem; line-height: 1.15; }
-h2 { font-family: var(--sans); font-size: 1.15rem; font-weight: 500; color: var(--forest-dark); margin: 2.2rem 0 0.75rem; letter-spacing: -0.01em; border-bottom: 1px solid var(--forest-border); padding-bottom: 0.4rem; }
-p { color: var(--muted); font-size: 0.95rem; line-height: 1.85; margin-bottom: 1rem; }
-ul { margin: 0 0 1rem 1.3rem; }
-li { font-size: 0.95rem; color: var(--muted); line-height: 1.85; margin-bottom: 0.4rem; }
-.meta { font-size: 0.78rem; color: var(--forest); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 500; margin-bottom: 1rem; }
-.lead { font-size: 0.9rem; color: var(--hint); margin-bottom: 2rem; }
-.contact-block { background: var(--sage); border: var(--border); border-radius: var(--radius-lg); padding: 1.5rem 1.75rem; margin-top: 1rem; }
-.contact-block p { margin-bottom: 0; }
-.contact-block a { color: var(--forest-dark); text-decoration: none; font-weight: 500; }
-.contact-block a:hover { text-decoration: underline; }
+h1 { font-family: var(--serif); font-size: clamp(2.4rem,5vw,3.25rem); font-weight: 400; color: var(--ink); line-height: 1.15; }
+.badge { display: inline-block; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--forest); border: 1px solid var(--forest); padding: 0.3rem 0.9rem; border-radius: 20px; margin-bottom: 1.5rem; }
+.lead { font-size: 1.02rem; color: var(--muted); line-height: 1.85; max-width: 620px; margin: 1.25rem auto 0; }
+.btn-primary { background: var(--forest); color: white; padding: 0.8rem 1.6rem; font-family: var(--sans); font-size: 0.9rem; font-weight: 500; border-radius: var(--radius); text-decoration: none; display: inline-block; transition: background 0.2s; }
+.btn-primary:hover { background: var(--forest-dark); }
+.btn-wa { display: inline-flex; align-items: center; gap: 0.5rem; background: white; color: var(--forest-dark); border: 1.5px solid #25D366; padding: 0.75rem 1.5rem; font-family: var(--sans); font-size: 0.9rem; font-weight: 500; border-radius: var(--radius); text-decoration: none; transition: background 0.2s; }
+.btn-wa:hover { background: #f1fbf4; }
+.sg-hero { text-align: center; padding: 4.5rem 2rem 3.5rem; max-width: 900px; margin: 0 auto; }
+.sg-band { background: var(--sage); padding: 4rem 2rem; }
+.sg-two { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 3rem; align-items: start; }
+.sg-intro h2 { font-family: var(--serif); font-size: clamp(1.9rem,3.2vw,2.4rem); font-weight: 400; line-height: 1.15; color: var(--ink); margin-bottom: 1rem; }
+.sg-intro p, .sg-section p { font-size: 0.95rem; color: var(--muted); line-height: 1.8; }
+.sg-item { display: flex; gap: 1.1rem; padding: 1.2rem 0; border-bottom: var(--border); }
+.sg-item:first-child { padding-top: 0.25rem; }
+.sg-item:last-child { border-bottom: none; padding-bottom: 0; }
+.sg-icon { flex-shrink: 0; width: 44px; height: 44px; border-radius: 50%; background: white; border: 1px solid var(--forest-border); color: var(--forest); display: flex; align-items: center; justify-content: center; }
+.sg-item h3, .sg-col h3 { font-family: var(--sans); font-size: 1rem; font-weight: 600; color: var(--ink); margin-bottom: 0.3rem; }
+.sg-item p { font-size: 0.92rem; color: var(--muted); line-height: 1.75; }
+.sg-section { max-width: 900px; margin: 0 auto; padding: 3.5rem 2rem 0; }
+.sg-last { padding-bottom: 4rem; }
+.sg-h2 { font-family: var(--sans); font-size: clamp(1.4rem,3vw,1.75rem); font-weight: 500; color: var(--ink); margin-bottom: 1.5rem; text-align: center; letter-spacing: -0.01em; }
+.sg-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+.sg-col { border: var(--border); border-radius: var(--radius-lg); padding: 1.5rem 1.6rem; }
+.sg-col h3 { margin-bottom: 0.75rem; }
+.sg-col ul { list-style: none; }
+.sg-col li { position: relative; padding-left: 1.6rem; font-size: 0.92rem; color: var(--muted); line-height: 1.7; margin-bottom: 0.6rem; }
+.sg-col li:last-child { margin-bottom: 0; }
+.sg-col li::before { content: ""; position: absolute; left: 0; top: 0.45rem; width: 12px; height: 7px; border-left: 2px solid var(--forest); border-bottom: 2px solid var(--forest); transform: rotate(-45deg); }
+.sg-concern { background: var(--forest-pale); border: 1px solid var(--forest-border); border-radius: var(--radius-lg); padding: 2.25rem 2.5rem; }
+.sg-concern h2 { font-family: var(--sans); font-size: clamp(1.4rem,3vw,1.75rem); font-weight: 500; color: var(--ink); margin-bottom: 1rem; letter-spacing: -0.01em; }
+.sg-concern p { margin-bottom: 0.9rem; color: var(--forest-deeper); }
+.sg-concern p:last-child { margin-bottom: 0; }
+.sg-concern a:not(.btn-primary):not(.btn-wa), .sg-last a { color: var(--forest-dark); font-weight: 500; }
+.sg-emergency { background: white; border-left: 3px solid #B4231F; padding: 0.7rem 1rem; border-radius: 4px; }
+.sg-emergency strong { color: #8A1C18; font-weight: 600; }
+.sg-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; margin: 1.25rem 0 0.75rem; }
+.sg-small { font-size: 0.85rem !important; }
+.sg-last p { text-align: center; }
+.sg-updated { margin-top: 1.5rem; font-size: 0.8rem !important; color: var(--hint) !important; }
+@media (max-width: 760px) {
+  .sg-two, .sg-cols { grid-template-columns: 1fr; gap: 1.5rem; }
+  .sg-band { padding: 3rem 1.25rem; }
+  .sg-hero { padding: 3rem 1.25rem 2.5rem; }
+  .sg-section { padding: 3rem 1.25rem 0; }
+  .sg-last { padding-bottom: 3rem; }
+  .sg-concern { padding: 1.75rem 1.4rem; }
+}
 footer { background: var(--ink); padding: 2.5rem 2rem; text-align: center; }
 footer p { font-size: 0.78rem; color: white; font-weight: 300; margin-bottom: 0; }
 footer p + p { margin-top: 0.3rem; }
@@ -63,66 +102,79 @@ footer p + p { margin-top: 0.3rem; }
 .social-row a { color: rgba(255,255,255,0.78); text-decoration: none; font-size: 0.75rem; border: 1px solid rgba(255,255,255,0.3); padding: 0.4rem 0.9rem; border-radius: 20px; transition: color 0.2s, border-color 0.2s; }
 .social-row a:hover { color: white; border-color: rgba(255,255,255,0.5); }
 footer a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.72rem; }
-@media (max-width: 600px) { .wrap { padding: 2.5rem 1.25rem 4rem; } nav { padding: 0.85rem 1.25rem; } }
+@media (max-width: 600px) { nav { padding: 0.85rem 1.25rem; } }
 </style>
 </head>
 <body>
 
-{% include offer-banner.html %}
 {% include nav-main.html %}
 
-<div class="wrap">
-  <div class="meta">Kenwood Education</div>
+<header class="sg-hero">
+  <span class="badge">Keeping children safe</span>
   <h1>Safeguarding</h1>
-  <p class="lead">Our commitment to safeguarding and promoting the welfare of every child and young person we work with.</p>
+  <p class="lead">Kenwood Education is committed to safeguarding and promoting the welfare of every child and young person we work with. Every tutor we work with is thoroughly vetted before they meet your family, and we take every concern seriously and act on it promptly.</p>
+</header>
 
-  <h2>Our commitment</h2>
-  <p>Kenwood Education is committed to safeguarding and promoting the welfare of every child and young person we work with. Every tutor on our roster is vetted thoroughly before being introduced to any family, and we take any safeguarding concern seriously and act on it promptly.</p>
-
-  <h2>How we vet every tutor</h2>
-  <p>Before any tutor is introduced to your family, they will have completed:</p>
-  <ul>
-    <li>A structured interview assessing their experience, approach, and suitability to work with children</li>
-    <li>Two references, including someone who has directly observed them teaching, tutoring, or working with children or young people</li>
-    <li>An enhanced DBS check, registered on the Update Service where possible, re-verified every year, not just once</li>
-    <li>Identity verification, carried out as part of the DBS application process</li>
-  </ul>
-
-  <h2>While your tutor is in your home</h2>
-  <p>We ask every family to:</p>
-  <ul>
-    <li>Ensure a responsible adult is present in the property throughout any session involving a student under 18</li>
-  </ul>
-  <p>We ask every tutor to:</p>
-  <ul>
-    <li>Maintain clear, professional boundaries at all times</li>
-    <li>Avoid any private or unsupervised contact with a student outside agreed sessions</li>
-    <li>Never contact a student directly via personal social media or messaging outside the context of agreed tutoring</li>
-  </ul>
-
-  <h2>If you ever have a concern</h2>
-  <p>Please contact us directly and as soon as possible. We will listen, take it seriously, and act, whether that means a conversation with the tutor, additional support, or ending a placement entirely.</p>
-  <p>If a child is ever in immediate danger, please call 999 first.</p>
-
-  <h2>Questions</h2>
-  <div class="contact-block">
-    <p>If you'd like to know more about our safeguarding practices, please get in touch at <a href="mailto:hello@kenwoodeducation.com">hello@kenwoodeducation.com</a>.</p>
+<section class="sg-band">
+  <div class="sg-two">
+    <div class="sg-intro">
+      <h2>How we vet every tutor</h2>
+      <p>Before any tutor is introduced to your family, they will have completed every one of these checks.</p>
+    </div>
+    <div class="sg-list">
+      <div class="sg-item"><span class="sg-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span><div><h3>Structured interview</h3><p>Assessing their experience, their approach and their suitability to work with children.</p></div></div>
+      <div class="sg-item"><span class="sg-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span><div><h3>Two references</h3><p>Including someone who has directly observed them teaching, tutoring or working with children or young people.</p></div></div>
+      <div class="sg-item"><span class="sg-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span><div><h3>Enhanced DBS check</h3><p>Registered on the Update Service where possible, and re-verified every year, not just once.</p></div></div>
+      <div class="sg-item"><span class="sg-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="12" r="2.5"/><path d="M14 10h4M14 14h3"/></svg></span><div><h3>Identity verification</h3><p>Carried out as part of the DBS application process.</p></div></div>
+    </div>
   </div>
-</div>
+</section>
+
+<section class="sg-section">
+  <h2 class="sg-h2">While your tutor is in your home</h2>
+  <div class="sg-cols">
+    <div class="sg-col">
+      <h3>We ask every family to</h3>
+      <ul>
+        <li>Make sure a responsible adult is in the home throughout any lesson with a student under 18</li>
+        <li>Where possible, hold lessons in a shared space or a room where the door can stay open</li>
+      </ul>
+    </div>
+    <div class="sg-col">
+      <h3>We ask every tutor to</h3>
+      <ul>
+        <li>Keep clear, professional boundaries at all times</li>
+        <li>Arrange lessons with parents, not directly with students under 18</li>
+        <li>Avoid any private or unsupervised contact with a student outside agreed lessons</li>
+        <li>Never contact students through personal social media or messaging</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="sg-section sg-concern-wrap">
+  <div class="sg-concern">
+    <h2>If you ever have a concern</h2>
+    <p class="sg-emergency"><strong>If a child is in immediate danger, call 999 first.</strong></p>
+    <p>Otherwise, please contact us directly and as soon as possible. Ondi Tongchaitanawutti, Director of Kenwood Education, is our Designated Safeguarding Lead.</p>
+    <div class="sg-actions">
+      <a href="tel:+447466641281" class="btn-primary" data-cta="safeguarding_phone">Call 07466 641281</a>
+      <a href="https://wa.me/447466641281?text=Hi%20Ondi%2C%20I%27d%20like%20to%20talk%20to%20you%20about%20a%20safeguarding%20concern." target="_blank" rel="noopener" class="btn-wa" data-cta="safeguarding_whatsapp"><svg width="18" height="18" viewBox="0 0 24 24" fill="#25D366" aria-hidden="true"><path d="M12.004 2C6.486 2 2 6.486 2 12.004c0 1.87.505 3.628 1.386 5.13L2 22l4.99-1.35a9.958 9.958 0 0 0 5.014 1.348c5.518 0 10.004-4.486 10.004-10.004C22.008 6.486 17.522 2 12.004 2zm5.468 12.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg> WhatsApp</a>
+    </div>
+    <p class="sg-small">Or email <a href="mailto:hello@kenwoodeducation.com">hello@kenwoodeducation.com</a>.</p>
+    <p>We will listen, take it seriously and act, whether that means a conversation with the tutor, extra support, or finding your family a new tutor. We keep concerns confidential, but if a child may be at risk we may need to share information with children&rsquo;s services or the police.</p>
+    <p>You can also contact your local council&rsquo;s children&rsquo;s services directly, or call the NSPCC Helpline on <a href="tel:08088005000">0808 800 5000</a> for confidential advice.</p>
+  </div>
+</section>
+
+<section class="sg-section sg-last">
+  <h2 class="sg-h2">Questions</h2>
+  <p>If you&rsquo;d like to know more about how we keep children safe, please get in touch at <a href="mailto:hello@kenwoodeducation.com">hello@kenwoodeducation.com</a>.</p>
+  <p class="sg-updated">Last reviewed November 2026</p>
+</section>
 
 {% include footer-main.html %}
 
-<script>
-const navBurger = document.getElementById('nav-burger');
-const navMobilePanel = document.getElementById('nav-mobile-panel');
-if (navBurger && navMobilePanel) {
-  navBurger.addEventListener('click', function() {
-    const isOpen = navMobilePanel.style.display === 'flex';
-    navMobilePanel.style.display = isOpen ? 'none' : 'flex';
-    navBurger.setAttribute('aria-expanded', String(!isOpen));
-  });
-}
-</script>
 
 </body>
 </html>
