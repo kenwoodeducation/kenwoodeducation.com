@@ -70,13 +70,14 @@ h2 { font-family: var(--sans); font-size: clamp(1.5rem,3vw,1.9rem); font-weight:
 .dark-section { background: var(--ink); padding: 4rem 2rem; }
 .dark-section h2 { color: white; }
 .dark-section .lead { color: rgba(255,255,255,0.82); max-width: 580px; font-size: 1rem; font-weight: 400; }
-.why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 2.25rem; }
-.why-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-top: 3px solid var(--forest-border); border-radius: var(--radius-lg); padding: 1.5rem 1.35rem; }
-.why-card .why-stat { font-family: var(--serif); font-size: 2rem; line-height: 1.1; color: var(--forest-mid); font-weight: 500; margin-bottom: 0.35rem; }
-.why-card h4 { font-family: var(--sans); font-size: 0.95rem; color: white; margin-bottom: 0.6rem; font-weight: 500; letter-spacing: -0.01em; }
-.why-card p { font-size: 0.88rem; color: rgba(255,255,255,0.8); line-height: 1.75; font-weight: 400; }
-@media (max-width: 900px) { .why-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 560px) { .why-grid { grid-template-columns: 1fr; } }
+.why-section { background: var(--sage); border-top: var(--border); border-bottom: var(--border); padding: 4rem 2rem; }
+.why-section .lead { color: var(--muted); }
+.why-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; margin-top: 2.25rem; }
+.why-card { background: white; border: var(--border); border-top: 3px solid var(--forest); border-radius: var(--radius-lg); padding: 1.6rem 1.75rem; }
+.why-card .why-stat { font-family: var(--serif); font-size: 1.85rem; line-height: 1.1; color: var(--forest-dark); font-weight: 500; margin-bottom: 0.35rem; }
+.why-card h4 { font-family: var(--sans); font-size: 0.95rem; color: var(--ink); margin-bottom: 0.6rem; font-weight: 600; letter-spacing: -0.01em; }
+.why-card p { font-size: 0.92rem; color: var(--muted); line-height: 1.75; font-weight: 400; }
+@media (max-width: 560px) { .why-grid { grid-template-columns: 1fr; } .why-section { padding: 3rem 1.25rem; } }
 .steps { display: grid; gap: 0.85rem; }
 @media (min-width: 761px) { .steps { grid-template-columns: repeat(3, 1fr); } .step { flex-direction: column; gap: 0.6rem; } }
 .step { display: flex; gap: 1.25rem; background: var(--sage); border: var(--border); border-radius: var(--radius-lg); padding: 1.35rem; align-items: flex-start; }
@@ -227,30 +228,30 @@ footer p + p { margin-top: 0.3rem; }
 
 <div class="divider"></div>
 
-<div class="dark-section" id="why-kenwood">
+<div class="why-section" id="why-kenwood">
   <div style="max-width:900px;margin:0 auto">
     <h2 style="text-align:center">Why Kenwood Education</h2>
     <p class="lead" style="text-align:center;margin-left:auto;margin-right:auto">We do the vetting so you don&rsquo;t have to.</p>
     <div class="why-grid">
       <div class="why-card">
-        <p class="why-stat">1 in 18</p>
-        <h4>applicants make it through</h4>
-        <p>A structured interview, reference checks and an enhanced DBS check before any tutor meets a family.</p>
-      </div>
-      <div class="why-card">
-        <p class="why-stat">Top-tier</p>
-        <h4>graduates &amp; teachers</h4>
-        <p>Oxbridge and Russell Group graduates, or qualified teachers, heads of department and examiners.</p>
+        <p class="why-stat">Hand-picked</p>
+        <h4>by our founder</h4>
+        <p>I interview every tutor myself. Oxbridge and Russell Group graduates or experienced teachers, with references and an enhanced DBS check.</p>
       </div>
       <div class="why-card">
         <p class="why-stat">Local</p>
-        <h4>tutors who stay</h4>
-        <p>Our tutors live nearby, so they can keep coming week after week, right through exam years.</p>
+        <h4>tutors who live nearby</h4>
+        <p>No long commutes, so they can keep coming week after week, right through exam years.</p>
       </div>
       <div class="why-card">
-        <p class="why-stat">Specialist</p>
-        <h4>entrance exams &amp; dyslexia</h4>
-        <p>Focused preparation for 7+, 11+ and 13+, and tutors experienced with dyslexia, ADHD and SEN.</p>
+        <p class="why-stat">Fair</p>
+        <h4>to our tutors</h4>
+        <p>We&rsquo;re open with tutors about the margin we take, so we attract the best and they stay with us.</p>
+      </div>
+      <div class="why-card">
+        <p class="why-stat">Maths &amp; English</p>
+        <h4>our deepest bench</h4>
+        <p>More than a dozen tutors in each, from primary to A&#8209;Level, including 11+ and 13+ preparation.</p>
       </div>
     </div>
   </div>
