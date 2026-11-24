@@ -173,7 +173,7 @@ footer p + p { margin-top: 0.3rem; }
 .ta-mark { display: flex; flex-direction: column; font-family: var(--serif); font-size: 0.85rem; font-weight: 500; letter-spacing: 0.06em; color: var(--forest-dark); line-height: 1.05; text-align: left; }
 .ta-text { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); border-left: 1px solid rgba(15,110,86,0.25); padding-left: 0.75rem; }
 .founder-card { display: flex; gap: 1.5rem; align-items: flex-start; background: var(--sage); border: var(--border); border-radius: var(--radius-lg); padding: 2rem; max-width: 720px; margin: 0 auto; }
-.founder-initial { flex-shrink: 0; width: 64px; height: 64px; border-radius: 50%; background: var(--forest-pale); border: 1px solid var(--forest-border); display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-size: 1.9rem; color: var(--forest-dark); }
+.founder-photo { flex-shrink: 0; width: 96px; height: 96px; border-radius: 50%; object-fit: cover; border: 2px solid var(--forest-pale); }
 .founder-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--forest); margin-bottom: 0.5rem; }
 .founder-card p { font-size: 0.95rem; color: var(--muted); line-height: 1.85; }
 .founder-card p + p { margin-top: 0.75rem; }
@@ -266,7 +266,7 @@ footer p + p { margin-top: 0.3rem; }
 
 <div class="section-sm" id="founder">
   <div class="founder-card">
-    <div class="founder-initial" aria-hidden="true">O</div>
+    <img class="founder-photo" src="/assets/img/ondi-founder.jpg" alt="Ondi, founder of Kenwood Education" width="96" height="96" loading="lazy">
     <div>
       <p class="founder-label">A note from our founder</p>
       <p>I started out as a full-time tutor. I loved the work, but I saw its problems up close. Long commutes across London meant I sometimes had to stop working with students just as they were making real progress. And the agencies I worked through often took a large cut, leaving tutors with little for their time.</p>
