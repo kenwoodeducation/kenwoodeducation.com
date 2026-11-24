@@ -70,15 +70,19 @@ h2 { font-family: var(--sans); font-size: clamp(1.5rem,3vw,1.9rem); font-weight:
 .dark-section { background: var(--ink); padding: 4rem 2rem; }
 .dark-section h2 { color: white; }
 .dark-section .lead { color: rgba(255,255,255,0.82); max-width: 580px; font-size: 1rem; font-weight: 400; }
-.why-section { background: var(--sage); border-top: var(--border); border-bottom: var(--border); padding: 4rem 2rem; }
-.why-section .lead { color: var(--muted); }
-.why-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; margin-top: 2.25rem; }
-.why-card { background: white; border: var(--border); border-top: 3px solid var(--forest); border-radius: var(--radius-lg); padding: 1.6rem 1.75rem; }
-.why-card .why-stat { font-family: var(--serif); font-size: 1.85rem; line-height: 1.1; color: var(--forest-dark); font-weight: 500; margin-bottom: 0.35rem; }
-.why-card h4 { font-family: var(--sans); font-size: 0.95rem; color: var(--ink); margin-bottom: 0.6rem; font-weight: 600; letter-spacing: -0.01em; }
-.why-card p a { color: var(--forest-dark); }
-.why-card p { font-size: 0.92rem; color: var(--muted); line-height: 1.75; font-weight: 400; }
-@media (max-width: 560px) { .why-grid { grid-template-columns: 1fr; } .why-section { padding: 3rem 1.25rem; } }
+.why-section { background: var(--sage); border-top: var(--border); border-bottom: var(--border); padding: 4.5rem 2rem; }
+.why-wrap { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 3rem; align-items: start; }
+.why-intro h2 { font-family: var(--serif); font-size: clamp(2rem, 3.4vw, 2.6rem); font-weight: 400; line-height: 1.15; margin-bottom: 1rem; }
+.why-intro p { font-size: 1.05rem; color: var(--muted); line-height: 1.75; margin-bottom: 1.75rem; }
+.why-list { display: grid; }
+.why-item { display: flex; gap: 1.1rem; padding: 1.4rem 0; border-bottom: var(--border); }
+.why-item:first-child { padding-top: 0.25rem; }
+.why-item:last-child { border-bottom: none; padding-bottom: 0; }
+.why-icon { flex-shrink: 0; width: 44px; height: 44px; border-radius: 50%; background: white; border: 1px solid var(--forest-border); color: var(--forest); display: flex; align-items: center; justify-content: center; }
+.why-item h3 { font-family: var(--sans); font-size: 1.02rem; font-weight: 600; color: var(--ink); margin-bottom: 0.35rem; letter-spacing: -0.01em; }
+.why-item p { font-size: 0.94rem; color: var(--muted); line-height: 1.75; }
+.why-item p a { color: var(--forest-dark); }
+@media (max-width: 760px) { .why-wrap { grid-template-columns: 1fr; gap: 1.75rem; } .why-intro { text-align: center; } .why-intro .btn-primary { display: none; } .why-section { padding: 3.25rem 1.25rem; } }
 .steps { display: grid; gap: 0.85rem; }
 @media (min-width: 761px) { .steps { grid-template-columns: repeat(3, 1fr); } .step { flex-direction: column; gap: 0.6rem; } }
 .step { display: flex; gap: 1.25rem; background: var(--sage); border: var(--border); border-radius: var(--radius-lg); padding: 1.35rem; align-items: flex-start; }
@@ -230,29 +234,28 @@ footer p + p { margin-top: 0.3rem; }
 <div class="divider"></div>
 
 <div class="why-section" id="why-kenwood">
-  <div style="max-width:900px;margin:0 auto">
-    <h2 style="text-align:center">Why Kenwood Education</h2>
-    <p class="lead" style="text-align:center;margin-left:auto;margin-right:auto">We do the vetting so you don&rsquo;t have to.</p>
-    <div class="why-grid">
-      <div class="why-card">
-        <p class="why-stat">Fully vetted</p>
-        <h4>before they meet your family</h4>
-        <p>Every tutor has an interview, two references and an enhanced DBS check, and signs up to our Safeguarding Policy and Code of Conduct.</p>
+  <div class="why-wrap">
+    <div class="why-intro">
+      <h2>Why Kenwood Education</h2>
+      <p>We do the vetting so you don&rsquo;t have to.</p>
+      <a href="#enquiry" class="btn-primary">Get in touch</a>
+    </div>
+    <div class="why-list">
+      <div class="why-item">
+        <span class="why-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span>
+        <div><h3>Fully vetted before they meet your family</h3><p>Every tutor has an interview, two references and an enhanced DBS check, and signs up to our Safeguarding Policy and Code of Conduct.</p></div>
       </div>
-      <div class="why-card">
-        <p class="why-stat">Local</p>
-        <h4>tutors who live nearby</h4>
-        <p>No long commutes, so they can keep coming week after week, right through exam years.</p>
+      <div class="why-item">
+        <span class="why-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+        <div><h3>Local tutors who live nearby</h3><p>No long commutes, so they can keep coming week after week, right through exam years.</p></div>
       </div>
-      <div class="why-card">
-        <p class="why-stat">Fair</p>
-        <h4>to our tutors</h4>
-        <p>We&rsquo;re open with tutors about the margin we take, so we attract the best and they stay with us.</p>
+      <div class="why-item">
+        <span class="why-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M5 7h14"/><path d="m5 7-3 7a3 3 0 0 0 6 0z"/><path d="m19 7-3 7a3 3 0 0 0 6 0z"/></svg></span>
+        <div><h3>Fair to our tutors</h3><p>We&rsquo;re open with tutors about the margin we take, so we attract the best and they stay with us.</p></div>
       </div>
-      <div class="why-card">
-        <p class="why-stat">Maths &amp; English</p>
-        <h4>our specialism</h4>
-        <p>Experienced tutors at every stage, from primary to A&#8209;Level, including 11+ and 13+. We also cover the sciences, humanities, languages and more. <a href="#subjects">See all subjects</a>.</p>
+      <div class="why-item">
+        <span class="why-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span>
+        <div><h3>Maths &amp; English specialists</h3><p>Experienced tutors at every stage, from primary to A&#8209;Level, including 11+ and 13+. We also cover the sciences, humanities, languages and more. <a href="#subjects">See all subjects</a>.</p></div>
       </div>
     </div>
   </div>
