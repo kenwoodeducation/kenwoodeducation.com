@@ -83,7 +83,7 @@
     function reportAbandon() {
       if (started && !attempted && !abandonSent) {
         abandonSent = true;
-        send('enquiry_form_abandon', { last_field: lastField, transport_type: 'beacon' });
+        send('enquiry_form_abandon', { form_name: 'enquiry_form', last_field: lastField, transport_type: 'beacon' });
       }
     }
     /* pagehide only: 'visibilitychange' also fires when someone briefly switches tab or app
