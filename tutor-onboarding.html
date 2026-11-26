@@ -100,7 +100,7 @@ footer p + p { margin-top: 0.3rem; }
   <p class="lead" style="margin:1rem 0 2rem">A few details we need from you to begin the onboarding process.</p>
 
   <div class="form-wrap">
-    <form id="tutor-onboarding-form">
+    <form id="tutor-onboarding-form" name="tutor_onboarding">
       <div class="form-section-label">Personal details</div>
       <p class="field-hint" style="margin-bottom:0.75rem">Please enter your name as it appears on your official ID (passport, driving licence).</p>
       <div class="form-grid">
@@ -405,7 +405,7 @@ form.addEventListener('submit', async function(e) {
     done.scrollIntoView({ behavior: 'smooth', block: 'center' });
     done.focus({ preventScroll: true });
     if (typeof gtag === 'function') {
-      gtag('event', 'tutor_onboarding_submitted');
+      gtag('event', 'tutor_onboarding_submitted', { form_name: 'tutor_onboarding' });
     }
   } catch (error) {
     btn.textContent = 'Something went wrong \u2014 please email us directly';
